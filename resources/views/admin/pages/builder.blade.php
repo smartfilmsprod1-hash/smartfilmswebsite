@@ -138,91 +138,142 @@
         if (!Array.isArray(window.builderData)) window.builderData = [];
         window.activeSectionId = null;
 
-        // Rembrand Corporate Templates Registry
+        // SmartFilms Studio Section Templates Registry
         const sectionTemplates = {
-            'rembrand_hero': {
-                name: 'Rembrand Hero Video Loop',
-                category: 'Corporate Agency',
-                icon: 'bi-film',
+            'hero': {
+                name: 'Hero Vidéo Cinématique & Titre',
+                category: 'SmartFilms Studio',
+                icon: 'bi-camera-reels',
                 defaultProps: {
-                    subtitle: 'AGENCE DE PRODUCTION AUDIOVISUELLE & CONTENUS DE MARQUE',
-                    prefixText: 'agence de',
-                    title: 'PRODUCTION AUDIOVISUELLE',
-                    description: 'Nous créons des récits cinématographiques à fort impact pour sublimer l\'image de votre entreprise.',
-                    btnText: 'DÉCOUVRIR NOS OFFRES',
-                    btnLink: '#offres',
-                    videoUrl: 'https://drive.google.com/file/d/1J-9rCFYEvV598hW3GyBmZE9i1aXMrpRj/preview',
-                    bgColor: '#F8F9FC',
-                    paddingTop: '80',
-                    paddingBottom: '80'
+                    videoUrl: '/uploads/hero_youtube.mp4',
+                    eyebrow: 'AGENCE AUDIOVISUELLE & PHOTOGRAPHE • CASABLANCA',
+                    serifPrefix: 'agence de',
+                    titleLine1: 'PRODUCTION',
+                    titleLine2: 'AUDIOVISUELLE',
+                    description: 'Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires. Votre agence audiovisuelle et photographe de référence à Casablanca.',
+                    btn1Text: 'DÉCOUVRIR NOS EXPERTISES',
+                    btn1Link: '#expertises',
+                    btn2Text: 'NOS RÉALISATIONS',
+                    btn2Link: '/portfolio'
+                }
+            },
+            'clients': {
+                name: 'Clients & Partenaires (Marquee)',
+                category: 'SmartFilms Studio',
+                icon: 'bi-award',
+                defaultProps: {
+                    title: 'ILS FONT CONFIANCE À NOTRE AGENCE AUDIOVISUELLE & PHOTO AU MAROC'
+                }
+            },
+            'vision': {
+                name: 'Notre Vision & Chiffres Clés',
+                category: 'SmartFilms Studio',
+                icon: 'bi-eye',
+                defaultProps: {
+                    chapterTitle: '03 — NOTRE VISION & EXPERTISE',
+                    heading: 'L\'IMAGE VIDÉO & PHOTO AU SERVICE DES MARQUES AU MAROC.',
+                    statNumber: '+120',
+                    statLabel: 'projets terminés'
+                }
+            },
+            'expertise': {
+                name: 'Disciplines & Expertises (6 Cartes)',
+                category: 'SmartFilms Studio',
+                icon: 'bi-grid-3x3-gap',
+                defaultProps: {
+                    chapterTitle: '04 — NOS DISCIPLINES CLÉS',
+                    heading: 'NOTRE EXPERTISE AUDIOVISUELLE & PHOTO À CASABLANCA.',
+                    subtitle: 'De l\'écriture scénaristique jusqu\'à la diffusion multi-plateformes, nous accompagnons les entreprises et institutions exigeantes.'
+                }
+            },
+            'manifesto': {
+                name: 'Process & Méthode Storyboard',
+                category: 'SmartFilms Studio',
+                icon: 'bi-pencil-square',
+                defaultProps: {
+                    chapterTitle: '05 — NOTRE PROCESS DE PRODUCTION',
+                    heading: 'DE L\'IDÉE À L\'IMAGE : NOTRE MÉTHODE DE TOURNAGE & RÉALISATION.',
+                    image: '/uploads/storyboard_process_bg.webp'
+                }
+            },
+            'faq': {
+                name: 'Questions Fréquentes (FAQ)',
+                category: 'SmartFilms Studio',
+                icon: 'bi-question-circle',
+                defaultProps: {
+                    chapterTitle: '07 — QUESTIONS FRÉQUENTES',
+                    heading: 'TOUT CE QUE VOUS DEVEZ SAVOIR SUR NOTRE AGENCE AUDIOVISUELLE.'
+                }
+            },
+            'contact': {
+                name: 'Contact & Siège Casablanca',
+                category: 'SmartFilms Studio',
+                icon: 'bi-geo-alt',
+                defaultProps: {
+                    chapterTitle: '06 — PRENDRE CONTACT',
+                    heading: 'PARLONS DE VOTRE PROJET.',
+                    subtitle: 'Une vision, un film ou une campagne d\'envergure ? Rencontrons-nous à Casablanca ou échangeons directement sur vos objectifs.',
+                    address: 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250',
+                    phone: '+212 6 17 20 23 45',
+                    email: 'contact@smartfilmsprod.com'
+                }
+            },
+            'rembrand_hero': {
+                name: 'Hero Vidéo Cinématique & Titre',
+                category: 'SmartFilms Studio',
+                icon: 'bi-camera-reels',
+                defaultProps: {
+                    videoUrl: '/uploads/hero_youtube.mp4',
+                    eyebrow: 'AGENCE AUDIOVISUELLE & PHOTOGRAPHE • CASABLANCA',
+                    serifPrefix: 'agence de',
+                    titleLine1: 'PRODUCTION',
+                    titleLine2: 'AUDIOVISUELLE',
+                    description: 'Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires. Votre agence audiovisuelle et photographe de référence à Casablanca.'
                 }
             },
             'rembrand_client_logos': {
-                name: 'Client Trust Logos Banner',
-                category: 'Corporate Agency',
+                name: 'Clients & Partenaires (Marquee)',
+                category: 'SmartFilms Studio',
                 icon: 'bi-award',
                 defaultProps: {
-                    title: 'ILS NOUS FONT CONFIANCE',
-                    bgColor: '#F8F9FC',
-                    paddingTop: '40',
-                    paddingBottom: '40'
-                }
-            },
-            'rembrand_offres': {
-                name: 'Nos Offres / Services (Deep Navy)',
-                category: 'Corporate Agency',
-                icon: 'bi-grid-2x2',
-                defaultProps: {
-                    subtitle: 'Des solutions sur-mesure de communication et de production cinématographique.',
-                    bgColor: '#1E2046',
-                    paddingTop: '80',
-                    paddingBottom: '80'
+                    title: 'ILS FONT CONFIANCE À NOTRE AGENCE AUDIOVISUELLE & PHOTO AU MAROC'
                 }
             },
             'rembrand_mission': {
-                name: 'Notre Mission & Chiffres',
-                category: 'Corporate Agency',
-                icon: 'bi-rocket-takeoff',
+                name: 'Notre Vision & Chiffres Clés',
+                category: 'SmartFilms Studio',
+                icon: 'bi-eye',
                 defaultProps: {
-                    text: 'Les entreprises d\'aujourd\'hui ont besoin d\'histoires fortes. Chez SmartFilms Prod, nous combinons la rigueur technique du cinéma avec une compréhension stratégique des enjeux de votre marque.',
-                    bgColor: '#F8F9FC',
-                    paddingTop: '80',
-                    paddingBottom: '80'
+                    chapterTitle: '03 — NOTRE VISION & EXPERTISE',
+                    heading: 'L\'IMAGE VIDÉO & PHOTO AU SERVICE DES MARQUES AU MAROC.'
+                }
+            },
+            'rembrand_offres': {
+                name: 'Disciplines & Expertises',
+                category: 'SmartFilms Studio',
+                icon: 'bi-grid-3x3-gap',
+                defaultProps: {
+                    chapterTitle: '04 — NOS DISCIPLINES CLÉS',
+                    heading: 'NOTRE EXPERTISE AUDIOVISUELLE & PHOTO À CASABLANCA.'
                 }
             },
             'rembrand_contact': {
-                name: 'Contact & Formulaire Casablanca',
-                category: 'Corporate Agency',
-                icon: 'bi-envelope-at',
+                name: 'Contact & Siège Casablanca',
+                category: 'SmartFilms Studio',
+                icon: 'bi-geo-alt',
                 defaultProps: {
-                    bgColor: '#F8F9FC',
-                    paddingTop: '80',
-                    paddingBottom: '80'
+                    address: 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250',
+                    phone: '+212 6 17 20 23 45',
+                    email: 'contact@smartfilmsprod.com'
                 }
             },
             'rembrand_faq': {
-                name: 'Questions Fréquentes (Accordion)',
-                category: 'Corporate Agency',
+                name: 'Questions Fréquentes (FAQ)',
+                category: 'SmartFilms Studio',
                 icon: 'bi-question-circle',
                 defaultProps: {
-                    bgColor: '#1E2046',
-                    paddingTop: '80',
-                    paddingBottom: '80'
-                }
-            },
-            'genesis_hero': {
-                name: 'Genesis Cinema Hero Header',
-                category: 'Cinematic Studio',
-                icon: 'bi-camera-video',
-                defaultProps: {
-                    subtitle: 'CASABLANCA CINEMA PRODUCTION STUDIO',
-                    title: "GENESIS®\nWE MAKE VIDEOS",
-                    btnText: 'DISCOVER OUR WORK',
-                    btnLink: '#showcase',
-                    videoUrl: 'https://player.vimeo.com/video/1198491731?background=1&autoplay=1',
-                    bgColor: '#050505',
-                    paddingTop: '40',
-                    paddingBottom: '40'
+                    chapterTitle: '07 — QUESTIONS FRÉQUENTES',
+                    heading: 'TOUT CE QUE VOUS DEVEZ SAVOIR SUR NOTRE AGENCE AUDIOVISUELLE.'
                 }
             }
         };
@@ -530,6 +581,7 @@
             .then(res => res.json())
             .then(data => { 
                 if (data.success) {
+                    renderLivePreview();
                     btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i> Saved';
                     btn.classList.replace('bg-blue-600', 'bg-emerald-600');
                     setTimeout(() => { 

@@ -1,3 +1,11 @@
+@php
+    $vp = $props ?? [];
+    $visionChapter = !empty($vp['chapterTitle']) ? $vp['chapterTitle'] : '03 — NOTRE VISION & EXPERTISE';
+    $visionHeading = !empty($vp['heading']) ? $vp['heading'] : "L'IMAGE VIDÉO & PHOTO<br><span class=\"text-[#FF5A68]\">AU SERVICE DES MARQUES AU MAROC.</span>";
+    $visionStat = !empty($vp['statNumber']) ? $vp['statNumber'] : '+120';
+    $visionStatLabel = !empty($vp['statLabel']) ? $vp['statLabel'] : 'projets<br>terminés';
+@endphp
+
 <!-- CHAPTER 03: NOTRE VISION (L'IMAGE AU SERVICE DES MARQUES) -->
 <section id="vision" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 relative overflow-hidden border-t border-[#2D2658]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,12 +51,12 @@
 
                         <!-- +120 Counter -->
                         <span class="text-3xl sm:text-4xl lg:text-[2.6rem] font-light text-[#161828] tracking-tight leading-none">
-                            +120
+                            {{ $visionStat }}
                         </span>
 
                         <!-- projets terminés label -->
                         <div class="text-xs sm:text-sm font-normal text-[#161828] leading-[1.12] text-left">
-                            <span>projets</span><br><span>terminés</span>
+                            {!! $visionStatLabel !!}
                         </div>
                     </div>
                 </div>
@@ -60,15 +68,14 @@
                 <!-- Chapter Overline -->
                 <div class="flex items-center gap-3 mb-4">
                     <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase">
-                        03 — NOTRE VISION & EXPERTISE
+                        {{ $visionChapter }}
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
 
                 <!-- Main Heading -->
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-6">
-                    L'IMAGE VIDÉO & PHOTO<br>
-                    <span class="text-[#FF5A68]">AU SERVICE DES MARQUES AU MAROC.</span>
+                    {!! $visionHeading !!}
                 </h2>
 
                 <!-- Introduction Paragraph -->

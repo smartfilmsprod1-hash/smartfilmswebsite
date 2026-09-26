@@ -1,3 +1,8 @@
+@php
+    $cp = $props ?? [];
+    $clientTitle = !empty($cp['title']) ? $cp['title'] : 'ILS FONT CONFIANCE À NOTRE AGENCE AUDIOVISUELLE & PHOTO AU MAROC';
+@endphp
+
 <!-- CHAPTER 02: SELECTED CLIENTS & TRUST (#F8F6F1 WARM OFF-WHITE) -->
 <section id="clients" class="bg-[#F8F6F1] py-16 md:py-24 border-b border-[#2D2658]/10 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -5,7 +10,7 @@
         <!-- Minimalist Section Header -->
         <div class="text-center mb-10">
             <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#2D2658]/70 block">
-                ILS FONT CONFIANCE À NOTRE AGENCE AUDIOVISUELLE & PHOTO AU MAROC
+                {{ $clientTitle }}
             </span>
         </div>
 

@@ -1,3 +1,13 @@
+@php
+    $ctp = $props ?? [];
+    $contactChapter = !empty($ctp['chapterTitle']) ? $ctp['chapterTitle'] : '06 — PRENDRE CONTACT';
+    $contactHeading = !empty($ctp['heading']) ? $ctp['heading'] : 'PARLONS DE VOTRE <span class="text-[#FF5A68]">PROJET.</span>';
+    $contactSubtitle = !empty($ctp['subtitle']) ? $ctp['subtitle'] : 'Une vision, un film ou une campagne d\'envergure ? Rencontrons-nous à Casablanca ou échangeons directement sur vos objectifs.';
+    $contactAddress = !empty($ctp['address']) ? $ctp['address'] : ($settings['address'] ?? 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250');
+    $contactPhone = !empty($ctp['phone']) ? $ctp['phone'] : ($settings['phone'] ?? '+212 6 17 20 23 45');
+    $contactEmail = !empty($ctp['email']) ? $ctp['email'] : ($settings['email'] ?? 'contact@smartfilmsprod.com');
+@endphp
+
 <!-- CHAPTER 06: STUDIO CONTACT & CASABLANCA HEADQUARTERS (#F8F6F1 WARM OFF-WHITE) -->
 <section id="contact" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 border-b border-[#2D2658]/10 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -6,15 +16,15 @@
         <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
             <div class="flex items-center justify-center gap-3 mb-3">
                 <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase">
-                    06 — PRENDRE CONTACT
+                    {{ $contactChapter }}
                 </span>
                 <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
             </div>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15]">
-                PARLONS DE VOTRE <span class="text-[#FF5A68]">PROJET.</span>
+                {!! $contactHeading !!}
             </h2>
             <p class="text-[#686580] text-sm sm:text-base font-light max-w-xl mx-auto mt-3 leading-relaxed">
-                Une vision, un film ou une campagne d'envergure ? Rencontrons-nous à Casablanca ou échangeons directement sur vos objectifs.
+                {{ $contactSubtitle }}
             </p>
         </div>
 
@@ -53,7 +63,7 @@
                             <div>
                                 <h4 class="text-[10px] uppercase font-mono tracking-widest text-[#FADDE3] font-bold mb-0.5">ADRESSE</h4>
                                 <p class="text-white/90 text-xs sm:text-sm font-normal leading-relaxed">
-                                    {{ $settings['address'] ?? 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250' }}
+                                    {{ $contactAddress }}
                                 </p>
                             </div>
                         </div>
@@ -65,8 +75,8 @@
                             </div>
                             <div>
                                 <h4 class="text-[10px] uppercase font-mono tracking-widest text-[#FADDE3] font-bold mb-0.5">TÉLÉPHONE</h4>
-                                <a href="tel:{{ str_replace(' ', '', $settings['phone'] ?? '+212617202345') }}" class="text-white font-bold text-xs sm:text-sm hover:text-[#FF5A68] transition-colors">
-                                    {{ $settings['phone'] ?? '+212 6 17 20 23 45' }}
+                                <a href="tel:{{ str_replace(' ', '', $contactPhone) }}" class="text-white font-bold text-xs sm:text-sm hover:text-[#FF5A68] transition-colors">
+                                    {{ $contactPhone }}
                                 </a>
                             </div>
                         </div>
@@ -78,8 +88,8 @@
                             </div>
                             <div>
                                 <h4 class="text-[10px] uppercase font-mono tracking-widest text-[#FADDE3] font-bold mb-0.5">EMAIL</h4>
-                                <a href="mailto:{{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}" class="text-white/90 text-xs sm:text-sm hover:text-[#FF5A68] transition-colors">
-                                    {{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}
+                                <a href="mailto:{{ $contactEmail }}" class="text-white font-bold text-xs sm:text-sm hover:text-[#FF5A68] transition-colors">
+                                    {{ $contactEmail }}
                                 </a>
                             </div>
                         </div>

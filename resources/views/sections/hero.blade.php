@@ -1,3 +1,15 @@
+@php
+    $hp = $props ?? [];
+    $heroVideo = !empty($hp['videoUrl']) ? $hp['videoUrl'] : '/uploads/hero_youtube.mp4';
+    $heroEyebrow = !empty($hp['eyebrow']) ? $hp['eyebrow'] : 'AGENCE AUDIOVISUELLE & PHOTOGRAPHE &bull; CASABLANCA';
+    $heroPrefix = !empty($hp['serifPrefix']) ? $hp['serifPrefix'] : 'agence de';
+    $heroTitle1 = !empty($hp['titleLine1']) ? $hp['titleLine1'] : 'PRODUCTION';
+    $heroTitle2 = !empty($hp['titleLine2']) ? $hp['titleLine2'] : 'AUDIOVISUELLE';
+    $heroDesc = !empty($hp['description']) ? $hp['description'] : 'Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires. Votre agence audiovisuelle et photographe de référence à Casablanca.';
+    $heroBtnText = !empty($hp['btn1Text']) ? $hp['btn1Text'] : 'Découvrir nos expertises';
+    $heroBtnLink = !empty($hp['btn1Link']) ? $hp['btn1Link'] : '#expertises';
+@endphp
+
 <!-- CHAPTER 01: ROUNDED CINEMATIC HERO PANEL (Fits Fully on Screen with White Framing) -->
 <section id="hero" class="relative w-full h-[94dvh] sm:h-screen min-h-[580px] sm:min-h-[640px] max-h-[1080px] bg-[#FAF9F6] pt-20 sm:pt-24 pb-3 sm:pb-6 px-3 sm:px-6 lg:px-8 xl:px-10 overflow-hidden flex flex-col justify-center">
     
@@ -7,7 +19,7 @@
         <!-- 0ms: Cinematic Background Video (Exact Framing & Natural Colors Preserved - NO STATIC POSTER) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none bg-black">
             <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" aria-label="Showreel cinématique SmartFilms Prod - Production audiovisuelle et shooting photo à Casablanca" title="Production audiovisuelle et réalisation de films à Casablanca - SmartFilms Prod" class="w-full h-full object-cover">
-                <source src="/uploads/hero_youtube.mp4" type="video/mp4">
+                <source src="{{ $heroVideo }}" type="video/mp4">
             </video>
             
             <!-- Neutral Contrast Overlays for Crisp Text Legibility (NO PURPLE, NO TINT, NATURAL FOOTAGE) -->
@@ -23,7 +35,7 @@
                 <div>
                     <div class="hero-eyebrow inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[9.5px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest uppercase font-semibold text-white/95 shadow-md max-w-full">
                         <span class="w-2 h-2 rounded-full bg-[#FF5A68] animate-pulse shrink-0"></span>
-                        <span class="truncate sm:whitespace-normal">AGENCE AUDIOVISUELLE & PHOTOGRAPHE &bull; CASABLANCA</span>
+                        <span class="truncate sm:whitespace-normal">{!! $heroEyebrow !!}</span>
                     </div>
                 </div>
 
@@ -34,18 +46,18 @@
                         <!-- 250ms: Elegant Italic / Serif -->
                         <span class="reveal-mask block pr-4">
                             <span class="hero-serif font-serif-italic font-normal block lowercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 drop-shadow-lg mb-1 sm:mb-2 tracking-normal">
-                                agence de
+                                {{ $heroPrefix }}
                             </span>
                         </span>
                         <!-- 350ms & 450ms: Very Large Bold Sans-serif Stacked Title -->
                         <span class="reveal-mask block pr-4 sm:pr-6">
                             <span class="hero-title-line1 block font-black tracking-tight">
-                                PRODUCTION
+                                {{ $heroTitle1 }}
                             </span>
                         </span>
                         <span class="reveal-mask block mt-1 sm:mt-1.5 pr-4 sm:pr-6">
                             <span class="hero-title-line2 block font-black tracking-tight break-normal">
-                                AUDIOVISUELLE
+                                {{ $heroTitle2 }}
                             </span>
                         </span>
                         <span class="sr-only"> | Photographe Casablanca, Production de Films Institutionnels & Capsules Vidéo</span>
@@ -55,14 +67,14 @@
                 <!-- 700ms: Supporting Description (Lower-Left underneath Title) -->
                 <div class="reveal-mask pt-0.5">
                     <p class="hero-desc text-white/90 text-xs sm:text-sm md:text-base font-light max-w-xl leading-relaxed drop-shadow-md">
-                        Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires. Votre agence audiovisuelle et photographe de référence à Casablanca.
+                        {{ $heroDesc }}
                     </p>
                 </div>
 
                 <!-- 850ms: Primary CTA -->
                 <div class="pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                    <a href="#expertises" class="hero-cta inline-flex items-center justify-center gap-3 bg-[#FF5A68] hover:bg-[#E84554] text-white px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-[0_0_30px_rgba(255,90,104,0.5)] hover:shadow-[0_0_45px_rgba(255,90,104,0.75)] hover:scale-105 group text-center">
-                        <span>Découvrir nos expertises</span>
+                    <a href="{{ $heroBtnLink }}" class="hero-cta inline-flex items-center justify-center gap-3 bg-[#FF5A68] hover:bg-[#E84554] text-white px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-[0_0_30px_rgba(255,90,104,0.5)] hover:shadow-[0_0_45px_rgba(255,90,104,0.75)] hover:scale-105 group text-center">
+                        <span>{{ $heroBtnText }}</span>
                         <i class="bi bi-arrow-right text-xs transform group-hover:translate-x-1.5 transition-transform duration-300"></i>
                     </a>
                 </div>

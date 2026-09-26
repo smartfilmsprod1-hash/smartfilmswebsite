@@ -7,26 +7,28 @@
 @section('og_image', asset('uploads/vision_monitor.jpg'))
 
 @section('content')
+@php
+    $blocks = collect($page->content ?? [])->keyBy('type');
+@endphp
 
     {{-- CHAPTER 01: CINEMATIC FULL-BLEED HERO (#080914) --}}
-    @include('sections.hero')
+    @include('sections.hero', ['props' => $blocks['hero']['props'] ?? ($blocks['rembrand_hero']['props'] ?? [])])
 
     {{-- CHAPTER 02: TRUST & MONOCHROME CLIENT MARQUEE (#F7F6F3) --}}
-    @include('sections.clients')
+    @include('sections.clients', ['props' => $blocks['clients']['props'] ?? ($blocks['rembrand_client_logos']['props'] ?? [])])
 
     {{-- CHAPTER 03: NOTRE VISION (#F8F6F1) --}}
-    @include('sections.vision')
+    @include('sections.vision', ['props' => $blocks['vision']['props'] ?? ($blocks['rembrand_mission']['props'] ?? [])])
 
     {{-- CHAPTER 04: CORE DISCIPLINES & EXPERTISE (#F7F6F3) --}}
-    @include('sections.expertise')
+    @include('sections.expertise', ['props' => $blocks['expertise']['props'] ?? ($blocks['rembrand_offres']['props'] ?? [])])
 
     {{-- CHAPTER 05: MANIFESTO & CREATIVE PROCESS (#101229) --}}
-    @include('sections.manifesto')
+    @include('sections.manifesto', ['props' => $blocks['manifesto']['props'] ?? []])
 
     {{-- CHAPTER 06: QUESTIONS FRÉQUENTES & SEO ACCORDION (#F8F6F1) --}}
-    @include('sections.faq')
+    @include('sections.faq', ['props' => $blocks['faq']['props'] ?? ($blocks['rembrand_faq']['props'] ?? [])])
 
     {{-- CHAPTER 07: CONTACT & CASABLANCA HEADQUARTERS (#F8F6F1) --}}
-    @include('sections.contact')
-
+    @include('sections.contact', ['props' => $blocks['contact']['props'] ?? ($blocks['rembrand_contact']['props'] ?? [])])
 @endsection
