@@ -17,14 +17,19 @@
       "@type": "Service",
       "serviceType": "{{ $expertise['title'] }}",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "SmartFilms Prod",
-        "telephone": "{{ $settings['phone'] }}",
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "{{ url('/') }}#organization",
+        "name": "SMART FILMS",
+        "telephone": "{{ $settings['phone'] ?? '+212 6 17 20 23 45' }}",
+        "sameAs": [
+          "https://share.google/mE2q5vvNawrfN8ax5"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Villa Brion 7, rue Khadija courbée Khouailid",
           "addressLocality": "Casablanca",
           "postalCode": "20250",
+          "addressRegion": "Grand Casablanca",
           "addressCountry": "MA"
         }
       },

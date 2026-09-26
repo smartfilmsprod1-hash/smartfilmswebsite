@@ -50,14 +50,28 @@
         {
           "@type": ["LocalBusiness", "ProfessionalService"],
           "@id": "{{ url('/') }}#organization",
-          "name": "SmartFilms Prod",
-          "alternateName": ["SmartFilms Maroc", "SmartFilms Production Casablanca", "Agence SmartFilms Prod"],
-          "description": "SmartFilms Prod est l'agence audiovisuelle et le studio photographe professionnel de référence à Casablanca. Nous réalisons la production de films institutionnels 4K/6K, des capsules vidéo pour réseaux sociaux, des shootings photo corporate et des spots publicitaires au Maroc.",
+          "name": "SMART FILMS",
+          "legalName": "SMART FILMS",
+          "alternateName": [
+            "SMART FILMS PROD",
+            "SmartFilms Maroc",
+            "SmartFilms Production Casablanca",
+            "Agence SMART FILMS"
+          ],
+          "description": "SMART FILMS est une agence leader au Maroc spécialisée dans la production audiovisuelle, la réalisation cinématographique de films institutionnels, les capsules vidéo pour réseaux sociaux et les prestations de photographie professionnelle (shooting photo corporate, portraits de dirigeants, trombinoscopes d'entreprises, reportages industriels et packshots produits e-commerce).",
           "image": "{{ asset('uploads/smartfilms_logo_white.png') }}",
-          "logo": "{{ asset('uploads/smartfilms_logo_white.png') }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset('uploads/smartfilms_logo_white.png') }}",
+            "width": "600",
+            "height": "150"
+          },
           "telephone": "{{ $settings['phone'] ?? '+212 6 17 20 23 45' }}",
           "email": "{{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}",
           "url": "{{ url('/') }}",
+          "sameAs": [
+            "https://share.google/mE2q5vvNawrfN8ax5"
+          ],
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Villa Brion 7, rue Khadija courbée Khouailid",
@@ -86,6 +100,7 @@
             { "@type": "City", "name": "Marrakech" },
             { "@type": "City", "name": "Fès" },
             { "@type": "City", "name": "Agadir" },
+            { "@type": "AdministrativeArea", "name": "Grand Casablanca" },
             { "@type": "Country", "name": "Maroc" }
           ],
           "priceRange": "MAD $$$$",
@@ -93,54 +108,60 @@
           "paymentAccepted": "Cash, Credit Card, Bank Transfer",
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Services de Production Audiovisuelle & Photo Professionnelle",
+            "name": "Prestations de Photographie Professionnelle, Réalisation et Production Audiovisuelle au Maroc",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Production de Films Institutionnels & Films d'Entreprise",
-                  "description": "Réalisation de films institutionnels, vidéos d'entreprise 4K/6K, marque employeur et communication interne à Casablanca et partout au Maroc."
+                  "name": "Production de Films Institutionnels & Vidéos d'Entreprise",
+                  "serviceType": "Corporate Filmmaking & Production",
+                  "description": "Scénarisation, tournage cinéma en 4K/6K, direction d'acteurs et post-production complète de films institutionnels et vidéos d'entreprise à Casablanca et partout au Maroc."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Photographe Casablanca & Shooting Photo Corporate",
-                  "description": "Photographe professionnel à Casablanca : portraits de dirigeants, trombinoscopes d'équipes, reportages industriels et packshots produits e-commerce."
+                  "name": "Shooting Photo Professionnel & Photographe Corporate Casablanca",
+                  "serviceType": "Professional Photography",
+                  "description": "Séances de shooting photo professionnel : portraits de dirigeants, trombinoscopes d'équipes, reportages industriels sur site et packshots produits e-commerce en studio."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Création de Capsules Vidéo Réseaux Sociaux (Reels & TikTok)",
-                  "description": "Production de capsules vidéo percutantes au format 9:16 optimisées pour booster l'engagement sur Instagram, TikTok et LinkedIn."
+                  "name": "Création de Capsules Vidéo Réseaux Sociaux (Formats Verticaux 9:16)",
+                  "serviceType": "Social Media Video Production",
+                  "description": "Conception et montage de capsules vidéo dynamiques optimisées pour l'engagement sur Instagram Reels, TikTok et LinkedIn."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Spots Publicitaires TV, Cinéma & Campagnes Digitales",
-                  "description": "Conception créative, scénarisation et tournage de spots publicitaires pour la télévision, le cinéma et les plateformes digitales."
+                  "name": "Réalisation de Spots Publicitaires TV, Cinéma & Campagnes Digitales",
+                  "serviceType": "Commercials & TV Advertising",
+                  "description": "Conception créative et production technique de spots publicitaires à fort impact pour la télévision, les salles de cinéma et les plateformes digitales."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Captation Événementielle, Congrès & Aftermovies",
-                  "description": "Couverture vidéo et photo complète de congrès, séminaires, lancements de marques et réalisation d'aftermovies dynamiques."
+                  "name": "Captation Événementielle, Congrès & Aftermovies d'Entreprise",
+                  "serviceType": "Event Video & Photo Coverage",
+                  "description": "Couverture vidéo multi-caméras et reportages photo de congrès, séminaires professionnels, lancements de produits et aftermovies rythmés."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Prise de Vue Aérienne par Drone Homologué",
-                  "description": "Prises de vues aériennes d'appoint par drone homologué CCM et DGAC avec télépilotes certifiés pour valoriser vos infrastructures."
+                  "name": "Stratégie de Marque, Conception & Direction Artistique Audiovisuelle",
+                  "serviceType": "Brand Strategy & Creative Direction",
+                  "description": "Accompagnement en communication visuelle, storytelling de marque, écriture scénaristique et direction artistique globale."
                 }
               }
             ]

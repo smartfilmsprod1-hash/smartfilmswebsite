@@ -21,11 +21,15 @@
   "duration": "PT2M30S",
   "embedUrl": "{{ $project->video_url }}",
   "publisher": {
-    "@type": "Organization",
-    "name": "SmartFilms Prod",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "{{ url('/') }}#organization",
+    "name": "SMART FILMS",
+    "sameAs": [
+      "https://share.google/mE2q5vvNawrfN8ax5"
+    ],
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ asset('uploads/smartfilms_logo.png') }}"
+      "url": "{{ asset('uploads/smartfilms_logo_white.png') }}"
     }
   }
 }
