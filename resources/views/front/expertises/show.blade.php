@@ -133,7 +133,7 @@
 </section>
 
 <!-- SERVICE DETAILS, DELIVERABLES & EQUIPMENT -->
-<section id="details" class="py-24 bg-[#080914] text-white">
+<section id="details" class="py-24 bg-[#080914] text-white" aria-labelledby="approach-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -141,7 +141,7 @@
                 <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#FF4D42] block">
                     NOTRE APPROCHE DE PRODUCTION
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
+                <h2 id="approach-heading" class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
                     L'EXIGENCE DU DÉTAIL À CHAQUE ÉTAPE
                 </h2>
                 <p class="text-[#B8BDE0] text-base font-light leading-relaxed">
@@ -152,7 +152,7 @@
                     <span class="text-xs font-mono uppercase text-slate-400 font-bold block">Livrables Inclus :</span>
                     @foreach($expertise['deliverables'] as $del)
                         <div class="flex items-center gap-3 text-sm text-slate-200">
-                            <span class="w-5 h-5 rounded-full bg-[#FF4D42]/20 text-[#FF4D42] flex items-center justify-center text-xs">
+                            <span class="w-5 h-5 rounded-full bg-[#FF4D42]/20 text-[#FF4D42] flex items-center justify-center text-xs" aria-hidden="true">
                                 <i class="bi bi-check2"></i>
                             </span>
                             <span>{{ $del }}</span>
@@ -164,7 +164,7 @@
             <div class="lg:col-span-6">
                 <div class="p-8 md:p-10 rounded-3xl bg-[#171936] border border-white/10 space-y-6 shadow-2xl">
                     <div class="flex items-center gap-3">
-                        <i class="bi bi-camera-reels text-2xl text-[#FF4D42]"></i>
+                        <i class="bi bi-camera-reels text-2xl text-[#FF4D42]" aria-hidden="true"></i>
                         <h3 class="text-xl font-bold uppercase tracking-wider text-white">Parc Technique Mobilisé</h3>
                     </div>
                     <p class="text-xs text-[#B8BDE0] font-light leading-relaxed">
@@ -173,7 +173,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                         @foreach($expertise['equipment'] as $eq)
                             <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-xs text-slate-300 font-mono flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D42]"></span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D42]" aria-hidden="true"></span>
                                 <span>{{ $eq }}</span>
                             </div>
                         @endforeach
@@ -187,24 +187,24 @@
 
 <!-- RELATED CASE STUDIES -->
 @if($relatedProjects->isNotEmpty())
-<section class="py-24 bg-[#101229] text-white border-t border-white/10">
+<section class="py-24 bg-[#101229] text-white border-t border-white/10" aria-labelledby="related-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
             <div>
                 <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#FF4D42] block mb-2">
                     RÉFÉRENCES RÉCENTES
                 </span>
-                <h3 class="text-3xl font-black uppercase text-white">FILMS & RÉALISATIONS ASSOCIÉS</h3>
+                <h2 id="related-heading" class="text-3xl font-black uppercase text-white">FILMS & RÉALISATIONS ASSOCIÉS</h2>
             </div>
-            <a href="{{ route('portfolio') }}" class="text-xs uppercase font-mono tracking-widest text-[#B8BDE0] hover:text-white flex items-center gap-2">
+            <a href="{{ route('portfolio') }}" class="text-xs uppercase font-mono tracking-widest text-[#B8BDE0] hover:text-white flex items-center gap-2" aria-label="Voir toutes les réalisations du portfolio">
                 <span>Tous les films</span>
-                <i class="bi bi-arrow-right text-[#FF4D42]"></i>
+                <i class="bi bi-arrow-right text-[#FF4D42]" aria-hidden="true"></i>
             </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             @foreach($relatedProjects as $proj)
-                <div class="group relative flex flex-col justify-between">
+                <article class="group relative flex flex-col justify-between">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-[#171936] border border-white/10 shadow-xl">
                         @php
                             $relThumb = $proj->thumbnail ?? '/uploads/cinema_corporate_film.png';
@@ -216,20 +216,20 @@
                         </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                            <button onclick="openVideoModal('{{ $proj->video_url }}', '{{ $proj->title }} &bull; {{ $proj->client_name }}')" class="w-14 h-14 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-lg shadow-2xl hover:scale-110 transition-transform">
-                                <i class="bi bi-play-fill ml-0.5"></i>
+                            <button onclick="openVideoModal('{{ $proj->video_url }}', '{{ $proj->title }} &bull; {{ $proj->client_name }}')" class="w-14 h-14 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-lg shadow-2xl hover:scale-110 transition-transform" aria-label="Visionner le film {{ $proj->title }}">
+                                <i class="bi bi-play-fill ml-0.5" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                     <div class="pt-4 flex justify-between items-start">
                         <div>
                             <span class="text-[11px] font-mono uppercase text-[#FF4D42] font-semibold block mb-1">{{ $proj->client_name }}</span>
-                            <h4 class="text-lg font-bold text-white group-hover:text-[#FF4D42] transition-colors">
+                            <h3 class="text-lg font-bold text-white group-hover:text-[#FF4D42] transition-colors">
                                 <a href="{{ route('project.show', $proj->slug) }}">{{ $proj->title }}</a>
-                            </h4>
+                            </h3>
                         </div>
                     </div>
-                </div>
+                </article>
             @endforeach
         </div>
     </div>
@@ -238,28 +238,28 @@
 
 <!-- FREQUENTLY ASKED QUESTIONS (SEMANTIC FAQ SECTION) -->
 @if(!empty($expertise['faq']))
-<section class="py-24 bg-[#F7F6F3] text-[#101229] border-t border-slate-200">
+<section class="py-24 bg-[#F7F6F3] text-[#101229] border-t border-slate-200" aria-labelledby="expertise-faq-heading">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div class="text-center space-y-3">
             <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#FF4D42]">
                 QUESTIONS FRÉQUENTES
             </span>
-            <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#101229]">
+            <h2 id="expertise-faq-heading" class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#101229]">
                 TOUT CE QU'IL FAUT SAVOIR
-            </h3>
+            </h2>
         </div>
 
         <div class="space-y-4">
             @foreach($expertise['faq'] as $idx => $f)
-                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-                    <h4 class="text-base sm:text-lg font-bold text-[#101229] mb-2 flex items-start gap-3">
-                        <span class="text-[#FF4D42] font-mono">Q.</span>
+                <article class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <h3 class="text-base sm:text-lg font-bold text-[#101229] mb-2 flex items-start gap-3">
+                        <span class="text-[#FF4D42] font-mono" aria-hidden="true">Q.</span>
                         <span>{{ $f['q'] }}</span>
-                    </h4>
+                    </h3>
                     <p class="text-slate-600 text-sm font-light leading-relaxed pl-7">
                         {{ $f['a'] }}
                     </p>
-                </div>
+                </article>
             @endforeach
         </div>
     </div>

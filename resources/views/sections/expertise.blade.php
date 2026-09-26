@@ -1,5 +1,5 @@
 <!-- CHAPTER 04: NOS EXPERTISES (EDITORIAL MOCKUP CARDS) -->
-<section id="expertises" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 relative overflow-hidden border-t border-b border-[#2D2658]/10">
+<section id="expertises" aria-labelledby="expertises-heading" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 relative overflow-hidden border-t border-b border-[#2D2658]/10">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -12,7 +12,7 @@
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-[#161828] leading-[1.15]">
+                <h2 id="expertises-heading" class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-[#161828] leading-[1.15]">
                     PRODUCTION DE FILMS INSTITUTIONNELS, SHOOTING PHOTO & CAPSULES VIDÉO À CASABLANCA.
                 </h2>
                 <p class="text-[#686580] text-sm sm:text-base font-light max-w-xl leading-relaxed mt-2">
@@ -23,7 +23,7 @@
             <div>
                 <a href="{{ url('/expertises') }}" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FF5A68] hover:text-[#2D2658] transition-colors group">
                     <span>TOUTES NOS EXPERTISES</span>
-                    <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     $webpExp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $image);
                 @endphp
 
-                <div class="group relative bg-[#090D1D] rounded-[24px] overflow-hidden flex flex-col justify-between border border-white/[0.08] shadow-[0_16px_36px_-10px_rgba(15,23,42,0.2)] hover:shadow-[0_24px_50px_-10px_rgba(15,23,42,0.35),0_0_0_1px_rgba(255,90,104,0.35)] hover:-translate-y-1.5 transition-all duration-400 ease-out">
+                <article class="group relative bg-[#090D1D] rounded-[24px] overflow-hidden flex flex-col justify-between border border-white/[0.08] shadow-[0_16px_36px_-10px_rgba(15,23,42,0.2)] hover:shadow-[0_24px_50px_-10px_rgba(15,23,42,0.35),0_0_0_1px_rgba(255,90,104,0.35)] hover:-translate-y-1.5 transition-all duration-400 ease-out">
                     
                     <!-- Elegant Passe-Partout Framed Image Container -->
                     <div class="p-3 sm:p-3.5 pb-0">
@@ -121,7 +121,7 @@
 
                             <!-- Small Circular Category Icon Badge -->
                             <div class="absolute bottom-3 left-3 w-7 h-7 rounded-full bg-black/65 border border-white/25 backdrop-blur-md flex items-center justify-center text-white/90 text-xs shadow-md group-hover:border-[#FF5A68] group-hover:text-[#FF5A68] transition-colors">
-                                <i class="bi {{ $icon }}"></i>
+                                <i class="bi {{ $icon }}" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -148,14 +148,14 @@
 
                         <!-- Bottom Action Link: DÉCOUVRIR → -->
                         <div class="pt-2 flex items-center justify-between">
-                            <a href="{{ url('/expertises/' . $slug) }}" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
+                            <a href="{{ url('/expertises/' . $slug) }}" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors" aria-label="Découvrir l'expertise {{ $title }}">
                                 <span>DÉCOUVRIR</span>
-                                <i class="bi bi-arrow-right group-hover:translate-x-1.5 transition-transform duration-300"></i>
+                                <i class="bi bi-arrow-right group-hover:translate-x-1.5 transition-transform duration-300" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
 
-                </div>
+                </article>
             @endforeach
         </div>
 

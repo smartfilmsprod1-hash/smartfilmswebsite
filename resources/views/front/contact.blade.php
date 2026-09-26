@@ -30,17 +30,17 @@
 </section>
 
 <!-- MAIN CONTACT INFORMATION -->
-<section class="py-24 bg-[#080914] text-white">
+<section class="py-24 bg-[#080914] text-white" aria-labelledby="contact-main-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             <!-- Left Contact Info Details (NAP consistency) -->
-            <div class="lg:col-span-5 space-y-10">
+            <aside class="lg:col-span-5 space-y-10" aria-label="Coordonnées de l'agence">
                 <div class="space-y-4">
                     <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#FF4D42] block">
                         COORDONNÉES DE PRODUCTION
                     </span>
-                    <h2 class="text-3xl font-bold text-white uppercase">SmartFilms Prod</h2>
+                    <h2 id="contact-main-heading" class="text-3xl font-bold text-white uppercase">SmartFilms Prod</h2>
                     <p class="text-[#B8BDE0] text-sm font-light leading-relaxed">
                         Maison de production cinématographique et audiovisuelle agréée au Maroc.
                     </p>
@@ -49,7 +49,7 @@
                 <div class="space-y-6">
                     <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#171936] border border-white/10">
                         <div class="w-10 h-10 rounded-full bg-[#FF4D42]/20 text-[#FF4D42] flex items-center justify-center shrink-0">
-                            <i class="bi bi-geo-alt-fill text-lg"></i>
+                            <i class="bi bi-geo-alt-fill text-lg" aria-hidden="true"></i>
                         </div>
                         <div>
                             <span class="text-[11px] font-mono uppercase text-slate-400 block mb-1">Bureaux & Production</span>
@@ -60,11 +60,11 @@
 
                     <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#171936] border border-white/10">
                         <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                            <i class="bi bi-whatsapp text-lg"></i>
+                            <i class="bi bi-whatsapp text-lg" aria-hidden="true"></i>
                         </div>
                         <div>
                             <span class="text-[11px] font-mono uppercase text-slate-400 block mb-1">Ligne Directe & WhatsApp VIP</span>
-                            <a href="https://wa.me/{{ $settings['whatsapp'] }}" target="_blank" class="text-sm text-white font-bold hover:text-[#FF4D42] transition-colors block">
+                            <a href="https://wa.me/{{ $settings['whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="text-sm text-white font-bold hover:text-[#FF4D42] transition-colors block" aria-label="Contacter l'agence sur WhatsApp au {{ $settings['phone'] }} (ouvre un nouvel onglet)">
                                 {{ $settings['phone'] }}
                             </a>
                             <span class="text-xs text-[#B8BDE0] mt-1 block">Réponse immédiate aux demandes professionnelles</span>
@@ -73,11 +73,11 @@
 
                     <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#171936] border border-white/10">
                         <div class="w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
-                            <i class="bi bi-envelope-fill text-lg"></i>
+                            <i class="bi bi-envelope-fill text-lg" aria-hidden="true"></i>
                         </div>
                         <div>
                             <span class="text-[11px] font-mono uppercase text-slate-400 block mb-1">Courrier Électronique</span>
-                            <a href="mailto:{{ $settings['email'] }}" class="text-sm text-white font-medium hover:text-[#FF4D42] transition-colors block">
+                            <a href="mailto:{{ $settings['email'] }}" class="text-sm text-white font-medium hover:text-[#FF4D42] transition-colors block" aria-label="Envoyer un email à l'agence à {{ $settings['email'] }}">
                                 {{ $settings['email'] }}
                             </a>
                         </div>
@@ -85,7 +85,7 @@
 
                     <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#171936] border border-white/10">
                         <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                            <i class="bi bi-clock-fill text-lg"></i>
+                            <i class="bi bi-clock-fill text-lg" aria-hidden="true"></i>
                         </div>
                         <div>
                             <span class="text-[11px] font-mono uppercase text-slate-400 block mb-1">Horaires d'Ouverture</span>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </aside>
 
             <!-- Right Interactive Form -->
             <div class="lg:col-span-7">
@@ -113,29 +113,29 @@
                         @csrf
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Nom Complet *</label>
-                                <input type="text" name="name" required placeholder="Votre nom" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
+                                <label for="direct_name" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Nom Complet *</label>
+                                <input type="text" id="direct_name" name="name" required autocomplete="name" placeholder="Votre nom" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Téléphone *</label>
-                                <input type="tel" name="phone" required placeholder="06..." class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
+                                <label for="direct_phone" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Téléphone *</label>
+                                <input type="tel" id="direct_phone" name="phone" required autocomplete="tel" placeholder="06..." class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Entreprise</label>
-                                <input type="text" name="company" placeholder="Nom de votre société" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
+                                <label for="direct_company" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Entreprise</label>
+                                <input type="text" id="direct_company" name="company" autocomplete="organization" placeholder="Nom de votre société" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Email</label>
-                                <input type="email" name="email" placeholder="votre@email.com" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
+                                <label for="direct_email" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Email</label>
+                                <input type="email" id="direct_email" name="email" autocomplete="email" placeholder="votre@email.com" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Type de Projet</label>
-                            <select name="project_type" class="w-full px-4 py-3 bg-[#101229] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
+                            <label for="direct_project_type" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Type de Projet</label>
+                            <select id="direct_project_type" name="project_type" class="w-full px-4 py-3 bg-[#101229] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
                                 <option value="Production de Films Institutionnels">Production de Films Institutionnels</option>
                                 <option value="Shooting Photo Corporate & Portraits">Shooting Photo Corporate & Portraits</option>
                                 <option value="Capsules Vidéo Réseaux Sociaux">Capsules Vidéo Réseaux Sociaux</option>
@@ -147,18 +147,18 @@
                         </div>
 
                         <div>
-                            <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Message / Objectifs du projet</label>
-                            <textarea name="message" rows="4" placeholder="Décrivez vos attentes, délais prévisionnels et contraintes de tournage..." class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]"></textarea>
+                            <label for="direct_message" class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Message / Objectifs du projet</label>
+                            <textarea id="direct_message" name="message" rows="4" placeholder="Décrivez vos attentes, délais prévisionnels et contraintes de tournage..." class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]"></textarea>
                         </div>
 
                         <button type="submit" id="contactSubmitBtn" class="w-full bg-[#FF4D42] hover:bg-[#E94239] text-white py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-xl shadow-rose-500/25">
-                            Envoyer ma demande <i class="bi bi-send ml-2"></i>
+                            <span>Envoyer ma demande</span> <i class="bi bi-send ml-2" aria-hidden="true"></i>
                         </button>
                     </form>
 
                     <div id="contactSuccessMsg" class="hidden text-center py-8 space-y-3 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6">
-                        <i class="bi bi-check-circle-fill text-3xl text-emerald-400"></i>
-                        <h4 class="text-lg font-bold text-white">Message bien reçu !</h4>
+                        <i class="bi bi-check-circle-fill text-3xl text-emerald-400" aria-hidden="true"></i>
+                        <p class="text-lg font-bold text-white">Message bien reçu !</p>
                         <p class="text-xs text-[#B8BDE0] font-light">Notre équipe de régie vous recontactera dans les plus brefs délais.</p>
                     </div>
                 </div>
@@ -169,14 +169,14 @@
 </section>
 
 <!-- GOOGLE MAPS EMBED SECTION -->
-<section class="w-full h-96 bg-[#101229] relative border-t border-white/10">
+<section class="w-full h-96 bg-[#101229] relative border-t border-white/10" aria-label="Carte de localisation du studio SmartFilms à Casablanca">
     <iframe 
         class="w-full h-full border-0 grayscale opacity-80 contrast-125" 
         src="https://maps.google.com/maps?q=Villa%20Brion%20Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade"
-        title="SmartFilms Prod Casablanca Location - Villa Brion">
+        title="Localisation Google Maps des bureaux SmartFilms Prod à Villa Brion Casablanca">
     </iframe>
 </section>
 

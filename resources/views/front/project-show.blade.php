@@ -90,7 +90,7 @@
     </header>
 
     <!-- 2. Master Film Player Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+    <section id="masterPlayerContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20" aria-label="Lecteur vidéo immersif du projet {{ $project->title }}">
         <div class="aspect-video w-full rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl relative group">
             @if($project->video_url)
                 @php
@@ -101,7 +101,8 @@
                         $embedUrl = str_replace('youtu.be/', 'www.youtube.com/embed/', $embedUrl);
                     }
                 @endphp
-                <iframe class="w-full h-full border-0" src="{{ $embedUrl }}" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe id="mainProjectIframe" class="w-full h-full border-0" src="{{ $embedUrl }}" title="Lecteur vidéo du film {{ $project->title }} - SmartFilms Prod Casablanca" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <div id="mainProjectShield" class="hidden absolute top-0 left-0 right-0 h-14 bg-black/90 pointer-events-auto z-10"></div>
             @else
                 @php
                     $mediaThumb = $project->thumbnail ?? '/uploads/cinema_corporate_film.png';
@@ -116,13 +117,13 @@
     </section>
 
     <!-- 3. Editorial Overview & Creative Approach -->
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16" aria-labelledby="challenge-heading">
         
         <!-- Synopsis / Le Défi -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div class="md:col-span-4">
                 <span class="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#FF4D42]">LE DÉFI CRÉATIF</span>
-                <h2 class="text-2xl font-bold uppercase text-white mt-2">Vision & Objectifs</h2>
+                <h2 id="challenge-heading" class="text-2xl font-bold uppercase text-white mt-2">Vision & Objectifs</h2>
             </div>
             <div class="md:col-span-8 text-base text-[#B8BDE0] font-light leading-relaxed space-y-4">
                 <p>
@@ -159,9 +160,9 @@
                 <span class="text-white font-bold block">Production : SmartFilms Prod Casablanca</span>
                 <span>Villa Brion &bull; Casablanca</span>
             </div>
-            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold" aria-label="Contacter le studio pour discuter d'un projet similaire">
                 <span>Discuter d'un projet similaire</span>
-                <i class="bi bi-arrow-right"></i>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
 
@@ -169,11 +170,11 @@
 
     <!-- 4. Campaign Deliverables & Multi-Video Showcase (if project has multiple videos/gallery) -->
     @if(!empty($galleryItems))
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 border-t border-white/10 pt-16 space-y-12">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 border-t border-white/10 pt-16 space-y-12" aria-labelledby="deliverables-heading">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                     <span class="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#FF4D42]">LIVRABLES DE LA CAMPAGNE</span>
-                    <h3 class="text-3xl sm:text-4xl font-black uppercase text-white mt-1">Série de Vidéos & Formats Déployés</h3>
+                    <h2 id="deliverables-heading" class="text-3xl sm:text-4xl font-black uppercase text-white mt-1">Série de Vidéos & Formats Déployés</h2>
                 </div>
                 <p class="text-xs font-mono text-slate-400 max-w-md">
                     Chaque livrable a été pensé pour un angle narratif précis. Cliquez sur une capsule pour la visionner instantanément dans le lecteur principal.
@@ -183,7 +184,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 @foreach($galleryItems as $idx => $item)
                     @if(($item['type'] ?? '') === 'video')
-                        <div class="group bg-[#101229] rounded-3xl p-6 border border-white/10 hover:border-[#FF4D42]/50 transition-all duration-500 shadow-2xl flex flex-col justify-between">
+                        <article class="group bg-[#101229] rounded-3xl p-6 border border-white/10 hover:border-[#FF4D42]/50 transition-all duration-500 shadow-2xl flex flex-col justify-between" aria-labelledby="capsule-title-{{ $idx }}">
                             <div>
                                 <!-- Card Media Box with Play Overlay -->
                                 <div class="relative aspect-video rounded-2xl overflow-hidden bg-black mb-5 group/box cursor-pointer"
@@ -208,7 +209,7 @@
 
                                     <!-- Center Play Action -->
                                     <div class="absolute inset-0 flex items-center justify-center">
-                                        <span class="w-14 h-14 rounded-full bg-[#FF4D42] group-hover/box:scale-110 text-white flex items-center justify-center text-xl shadow-2xl transition-transform">
+                                        <span class="w-14 h-14 rounded-full bg-[#FF4D42] group-hover/box:scale-110 text-white flex items-center justify-center text-xl shadow-2xl transition-transform" aria-hidden="true">
                                             <i class="bi bi-play-fill ml-0.5"></i>
                                         </span>
                                     </div>
@@ -216,15 +217,15 @@
                                     <!-- Bottom Label inside thumbnail -->
                                     <div class="absolute bottom-3 left-4 right-4 z-10">
                                         <span class="text-xs font-mono uppercase text-slate-300 font-semibold tracking-wider flex items-center gap-1.5">
-                                            <i class="bi bi-film text-[#FF4D42]"></i>
+                                            <i class="bi bi-film text-[#FF4D42]" aria-hidden="true"></i>
                                             {{ $item['format'] ?? '9:16' }} &bull; SmartFilms 4K
                                         </span>
                                     </div>
                                 </div>
 
-                                <h4 class="font-bold text-white text-lg sm:text-xl leading-snug mb-2 group-hover:text-[#FF4D42] transition-colors">
+                                <h3 id="capsule-title-{{ $idx }}" class="font-bold text-white text-lg sm:text-xl leading-snug mb-2 group-hover:text-[#FF4D42] transition-colors">
                                     {{ $item['title'] }}
-                                </h4>
+                                </h3>
                                 <p class="text-sm text-slate-300 font-light leading-relaxed mb-6">
                                     {{ $item['description'] ?? '' }}
                                 </p>
@@ -234,12 +235,13 @@
                                 <span class="text-xs font-mono text-slate-500 uppercase">Capsule {{ sprintf('%02d', $idx + 1) }}</span>
                                 <button type="button" 
                                         onclick="switchProjectVideo('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}'); document.getElementById('masterPlayerContainer').scrollIntoView({ behavior: 'smooth' });"
-                                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#FF4D42] text-white text-xs font-mono font-bold transition-all">
+                                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#FF4D42] text-white text-xs font-mono font-bold transition-all"
+                                        aria-label="Visionner {{ $item['title'] }} dans le lecteur vidéo">
                                     <span>Visionner dans le lecteur</span>
-                                    <i class="bi bi-arrow-up-right"></i>
+                                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                                 </button>
                             </div>
-                        </div>
+                        </article>
                     @endif
                 @endforeach
             </div>
@@ -293,17 +295,17 @@
 
     <!-- 4. Next Project Navigation -->
     @if(isset($nextProject) && $nextProject->id !== $project->id)
-        <nav class="border-t border-white/10 bg-[#101229] py-16">
+        <nav class="border-t border-white/10 bg-[#101229] py-16" aria-label="Projet suivant">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-1">PROJET SUIVANT</span>
-                    <h4 class="text-2xl font-bold text-white uppercase">{{ $nextProject->title }}</h4>
+                    <h2 class="text-2xl font-bold text-white uppercase">{{ $nextProject->title }}</h2>
                     <span class="text-xs text-[#FF4D42] font-mono">{{ $nextProject->client_name }}</span>
                 </div>
 
-                <a href="{{ route('project.show', $nextProject->slug ?? Str::slug($nextProject->title)) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2">
+                <a href="{{ route('project.show', $nextProject->slug ?? Str::slug($nextProject->title)) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2" aria-label="Découvrir le projet suivant : {{ $nextProject->title }}">
                     <span>Découvrir</span>
-                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </nav>

@@ -554,7 +554,7 @@
     @include('components.header')
 
     <!-- Main Content Flow -->
-    <main>
+    <main id="main-content" tabindex="-1" class="outline-none">
         @yield('content')
     </main>
 
@@ -562,27 +562,27 @@
     @include('components.footer')
 
     <!-- 4K Cinema Video Lightbox Modal -->
-    <div id="videoModal" class="fixed inset-0 z-50 bg-[#2D2658]/95 backdrop-blur-xl hidden flex items-center justify-center p-4 transition-opacity duration-300">
+    <div id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalVideoTitle" class="fixed inset-0 z-50 bg-[#2D2658]/95 backdrop-blur-xl hidden flex items-center justify-center p-4 transition-opacity duration-300">
         <div class="relative w-full max-w-5xl bg-[#2D2658] rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
             <div class="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-[#252238]">
-                <span id="modalVideoTitle" class="font-bold text-xs uppercase tracking-widest text-white/90 font-mono">SmartFilms Cinema Player</span>
-                <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#FF5A68] text-white flex items-center justify-center text-xs transition-colors">
-                    <i class="bi bi-x-lg"></i>
+                <h2 id="modalVideoTitle" class="font-bold text-xs uppercase tracking-widest text-white/90 font-mono">SmartFilms Cinema Player</h2>
+                <button type="button" onclick="closeVideoModal()" aria-label="Fermer le lecteur vidéo" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#FF5A68] text-white flex items-center justify-center text-xs transition-colors">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="aspect-video w-full bg-black">
-                <iframe id="modalIframe" class="w-full h-full border-0" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe id="modalIframe" title="Lecteur vidéo immersif SmartFilms" class="w-full h-full border-0" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
     <!-- WhatsApp VIP Concierge Button (Smaller & Soft Green) -->
-    <a href="https://wa.me/{{ $settings['whatsapp'] ?? '212617202345' }}?text={{ urlencode('Bonjour SmartFilms, j\'aimerais échanger sur un projet de production audiovisuelle.') }}" target="_blank" rel="noopener" class="fixed bottom-5 right-5 z-40 bg-[#25D366]/90 hover:bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2.5 transition-all hover:scale-105 group border border-white/30 backdrop-blur-sm">
-        <span class="relative flex h-2 w-2">
+    <a href="https://wa.me/{{ $settings['whatsapp'] ?? '212617202345' }}?text={{ urlencode('Bonjour SmartFilms, j\'aimerais échanger sur un projet de production audiovisuelle.') }}" target="_blank" rel="noopener noreferrer" aria-label="Contacter l'agence SmartFilms sur WhatsApp (ouvre un nouvel onglet)" class="fixed bottom-5 right-5 z-40 bg-[#25D366]/90 hover:bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2.5 transition-all hover:scale-105 group border border-white/30 backdrop-blur-sm">
+        <span class="relative flex h-2 w-2" aria-hidden="true">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
-        <i class="bi bi-whatsapp text-sm"></i>
+        <i class="bi bi-whatsapp text-sm" aria-hidden="true"></i>
         <span class="text-[11px] uppercase font-bold tracking-wider hidden sm:inline">WhatsApp Direct</span>
     </a>
 

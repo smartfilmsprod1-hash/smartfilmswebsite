@@ -1,8 +1,8 @@
 <!-- CHAPTER 07: PARLONS DE VOTRE PROJET (#F8F6F1 WARM OFF-WHITE) -->
-<section id="estimateur" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 border-b border-[#2D2658]/10 relative overflow-hidden">
+<section id="estimateur" aria-labelledby="estimator-heading" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 border-b border-[#2D2658]/10 relative overflow-hidden">
     
     <!-- Subtle Background Ambient Glows -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div class="absolute -top-24 right-1/4 w-96 h-96 bg-[#FF5A68]/5 rounded-full blur-3xl"></div>
         <div class="absolute -bottom-24 left-1/4 w-96 h-96 bg-[#2D2658]/5 rounded-full blur-3xl"></div>
     </div>
@@ -15,10 +15,10 @@
                 <span class="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#FF5A68]">
                     07 — PARLONS DE VOTRE PROJET
                 </span>
-                <span class="w-6 h-[1px] bg-[#FF5A68]/40"></span>
+                <span class="w-6 h-[1px] bg-[#FF5A68]/40" aria-hidden="true"></span>
             </div>
             
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-4">
+            <h2 id="estimator-heading" class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-4">
                 PARLONS DE VOTRE PROJET.
             </h2>
             
@@ -32,7 +32,7 @@
             
             <!-- Success Screen (Hidden initially) -->
             <div id="projectSuccessMessage" class="hidden py-10 sm:py-16 text-center space-y-6">
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-4xl sm:text-5xl mx-auto shadow-inner">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center text-4xl sm:text-5xl mx-auto shadow-inner" aria-hidden="true">
                     <i class="bi bi-check2-circle"></i>
                 </div>
                 <div class="space-y-3 max-w-lg mx-auto">
@@ -47,8 +47,8 @@
                     </p>
                 </div>
                 <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://wa.me/212617202345" target="_blank" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all">
-                        <i class="bi bi-whatsapp text-base"></i>
+                    <a href="https://wa.me/212617202345" target="_blank" rel="noopener noreferrer" aria-label="Échanger directement avec un producteur sur WhatsApp" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all">
+                        <i class="bi bi-whatsapp text-base" aria-hidden="true"></i>
                         <span>Échanger sur WhatsApp</span>
                     </a>
                     <button type="button" onclick="resetProjectForm()" class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#686580] hover:text-[#161828] px-5 py-3 rounded-full border border-[#2D2658]/15 hover:border-[#2D2658] transition-all">
@@ -65,7 +65,7 @@
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
                         <label class="text-xs font-mono font-bold uppercase tracking-wider text-[#161828] flex items-center gap-2">
-                            <span class="w-5 h-5 rounded-full bg-[#2D2658] text-white flex items-center justify-center text-[10px] font-bold">1</span>
+                            <span class="w-5 h-5 rounded-full bg-[#2D2658] text-white flex items-center justify-center text-[10px] font-bold" aria-hidden="true">1</span>
                             <span>TYPE DE PROJET</span>
                             <span class="text-[#FF5A68]">*</span>
                         </label>
@@ -118,18 +118,18 @@
                             <label class="project-type-card relative p-4 rounded-2xl border border-[#2D2658]/15 bg-[#F8F6F1]/60 hover:bg-white hover:border-[#FF5A68]/60 cursor-pointer transition-all duration-300 flex items-start gap-3.5 has-[:checked]:border-[#FF5A68] has-[:checked]:bg-[#FADDE3]/30 has-[:checked]:shadow-sm group">
                                 <input type="radio" name="project_type" value="{{ $p['title'] }}" class="hidden" {{ $loop->first ? 'checked' : '' }}>
                                 <div class="w-9 h-9 rounded-xl bg-white border border-[#2D2658]/10 text-[#FF5A68] flex items-center justify-center shrink-0 text-base shadow-sm group-hover:scale-105 transition-transform">
-                                    <i class="bi {{ $p['icon'] }}"></i>
+                                    <i class="bi {{ $p['icon'] }}" aria-hidden="true"></i>
                                 </div>
                                 <div class="pr-5">
-                                    <h4 class="font-bold text-xs sm:text-sm text-[#161828] uppercase tracking-wide leading-snug">
+                                    <span class="font-bold text-xs sm:text-sm text-[#161828] uppercase tracking-wide leading-snug block">
                                         {{ $p['title'] }}
-                                    </h4>
+                                    </span>
                                     <p class="text-[11px] text-[#7A7793] font-light mt-0.5 leading-snug">
                                         {{ $p['desc'] }}
                                     </p>
                                 </div>
                                 <!-- Radio Check Indicator -->
-                                <div class="absolute top-3.5 right-3.5 w-4 h-4 rounded-full border border-[#2D2658]/20 flex items-center justify-center check-circle">
+                                <div class="absolute top-3.5 right-3.5 w-4 h-4 rounded-full border border-[#2D2658]/20 flex items-center justify-center check-circle" aria-hidden="true">
                                     <span class="w-2 h-2 rounded-full bg-[#FF5A68] hidden check-dot"></span>
                                 </div>
                             </label>

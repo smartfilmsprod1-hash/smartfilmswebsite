@@ -30,16 +30,17 @@
 </section>
 
 <!-- PORTFOLIO GRID & CATEGORY FILTER -->
-<section class="py-24 bg-[#080914] text-white min-h-screen">
+<section class="py-24 bg-[#080914] text-white min-h-screen" aria-labelledby="portfolio-gallery-heading">
     <div class="max-w-[96rem] mx-auto px-6 sm:px-12">
+        <h2 id="portfolio-gallery-heading" class="sr-only">Sélection de réalisations et productions audiovisuelles à Casablanca</h2>
         
-        <!-- Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-3 pb-16 border-b border-white/10">
-            <button onclick="filterPortfolio('all')" class="portfolio-filter-btn active px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FF4D42] text-white shadow-lg shadow-rose-500/20">
+        <!-- Filter Tabs (Accessible Tablist) -->
+        <div class="flex flex-wrap items-center gap-3 pb-16 border-b border-white/10" role="tablist" aria-label="Filtrer les réalisations par catégorie">
+            <button role="tab" aria-selected="true" onclick="filterPortfolio(event, 'all')" class="portfolio-filter-btn active px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-[#FF4D42] text-white shadow-lg shadow-rose-500/20 focus:outline-none focus:ring-2 focus:ring-white">
                 Tous les films ({{ $projects->count() }})
             </button>
             @foreach($categories as $category)
-                <button onclick="filterPortfolio('{{ Str::slug($category) }}')" class="portfolio-filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/5 hover:bg-white/15 text-[#B8BDE0] hover:text-white border border-white/10">
+                <button role="tab" aria-selected="false" onclick="filterPortfolio(event, '{{ Str::slug($category) }}')" class="portfolio-filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/5 hover:bg-white/15 text-[#B8BDE0] hover:text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#FF4D42]">
                     {{ $category }}
                 </button>
             @endforeach
@@ -48,8 +49,8 @@
         <!-- 2-Column Editorial Grid -->
         <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-16">
             @forelse($projects as $project)
-                <div class="project-item group" data-category="{{ Str::slug($project->category) }}">
-                    <a href="{{ route('project.show', $project->slug ?? 'dell-empowering-digital-leaders') }}" class="block">
+                <article class="project-item group" data-category="{{ Str::slug($project->category) }}">
+                    <a href="{{ route('project.show', $project->slug ?? 'dell-empowering-digital-leaders') }}" class="block" aria-label="Découvrir le projet {{ $project->title }} pour {{ $project->client_name ?? $project->client ?? 'Client' }}">
                         <div class="relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#171936] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-[#FF4D42]/50 group-hover:shadow-[0_20px_50px_rgba(255,77,66,0.2)]">
                             
                             @if($project->thumbnail)
@@ -62,14 +63,14 @@
                                 </picture>
                             @else
                                 <div class="w-full h-full bg-gradient-to-br from-[#101229] to-[#171936] flex items-center justify-center">
-                                    <i class="bi bi-film text-5xl text-white/20"></i>
+                                    <i class="bi bi-film text-5xl text-white/20" aria-hidden="true"></i>
                                 </div>
                             @endif
 
                             <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
                             <!-- Play Overlay Badge -->
-                            <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                                 <div class="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border border-white/30 text-white flex items-center justify-center transform scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 shadow-2xl group-hover:bg-[#FF4D42] group-hover:border-transparent">
                                     <i class="bi bi-play-fill text-2xl ml-1"></i>
                                 </div>
@@ -101,11 +102,12 @@
                                 </h3>
                             </div>
                             <span class="text-xs font-bold uppercase tracking-widest text-[#B8BDE0] group-hover:text-white group-hover:translate-x-1 transition-all flex items-center gap-1.5 self-start sm:self-auto">
-                                Voir le film <i class="bi bi-arrow-right"></i>
+                                <span>Voir le film</span>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </span>
                         </div>
                     </a>
-                </div>
+                </article>
             @empty
                 <div class="col-span-2 text-center py-20">
                     <p class="text-[#B8BDE0] text-lg">Aucun projet disponible pour le moment.</p>
@@ -117,16 +119,20 @@
 
 @push('scripts')
 <script>
-function filterPortfolio(cat) {
+function filterPortfolio(e, cat) {
     const items = document.querySelectorAll('.project-item');
     const buttons = document.querySelectorAll('.portfolio-filter-btn');
 
     buttons.forEach(btn => {
         btn.classList.remove('active', 'bg-[#FF4D42]', 'text-white');
         btn.classList.add('bg-white/5', 'text-[#B8BDE0]');
+        btn.setAttribute('aria-selected', 'false');
     });
-    event.target.classList.add('active', 'bg-[#FF4D42]', 'text-white');
-    event.target.classList.remove('bg-white/5', 'text-[#B8BDE0]');
+
+    const targetBtn = e.currentTarget || e.target;
+    targetBtn.classList.add('active', 'bg-[#FF4D42]', 'text-white');
+    targetBtn.classList.remove('bg-white/5', 'text-[#B8BDE0]');
+    targetBtn.setAttribute('aria-selected', 'true');
 
     items.forEach(item => {
         if (cat === 'all' || item.getAttribute('data-category') === cat) {

@@ -33,32 +33,33 @@
 @include('sections.team')
 
 <!-- STUDIO LIFE / VALUES -->
-<section class="py-24 bg-[#101229] text-white border-t border-white/10">
+<section class="py-24 bg-[#101229] text-white border-t border-white/10" aria-labelledby="values-heading">
+    <h2 id="values-heading" class="sr-only">Nos engagements artistiques et techniques</h2>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
-                <span class="text-[#FF4D42] text-2xl font-bold font-mono">01</span>
+            <article class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
+                <span class="text-[#FF4D42] text-2xl font-bold font-mono" aria-hidden="true">01</span>
                 <h3 class="text-xl font-bold text-white uppercase">Regard d'Auteur</h3>
                 <p class="text-[#B8BDE0] text-xs font-light leading-relaxed">
                     Chaque production bénéficie d'une vision artistique singulière, refusant les modèles préconçus pour révéler l'ADN profond de votre marque.
                 </p>
-            </div>
+            </article>
 
-            <div class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
-                <span class="text-[#FF4D42] text-2xl font-bold font-mono">02</span>
+            <article class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
+                <span class="text-[#FF4D42] text-2xl font-bold font-mono" aria-hidden="true">02</span>
                 <h3 class="text-xl font-bold text-white uppercase">Précision Technique</h3>
                 <p class="text-[#B8BDE0] text-xs font-light leading-relaxed">
                     De la gestion colorimétrique ACES aux tournages haute vitesse, nous investissons en continu dans les outils cinéma les plus pointus.
                 </p>
-            </div>
+            </article>
 
-            <div class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
-                <span class="text-[#FF4D42] text-2xl font-bold font-mono">03</span>
+            <article class="p-8 rounded-3xl bg-[#171936] border border-white/10 space-y-3">
+                <span class="text-[#FF4D42] text-2xl font-bold font-mono" aria-hidden="true">03</span>
                 <h3 class="text-xl font-bold text-white uppercase">Engagement Total</h3>
                 <p class="text-[#B8BDE0] text-xs font-light leading-relaxed">
                     Un accompagnement personnalisé de la première note d'intention jusqu'aux livraisons multi-formats et au reporting d'impact.
                 </p>
-            </div>
+            </article>
         </div>
     </div>
 </section>

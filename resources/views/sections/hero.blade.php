@@ -11,7 +11,7 @@
 @endphp
 
 <!-- CHAPTER 01: ROUNDED CINEMATIC HERO PANEL (Fits Fully on Screen with White Framing) -->
-<section id="hero" class="relative w-full h-[94dvh] sm:h-screen min-h-[580px] sm:min-h-[640px] max-h-[1080px] bg-[#FAF9F6] pt-20 sm:pt-24 pb-3 sm:pb-6 px-3 sm:px-6 lg:px-8 xl:px-10 overflow-hidden flex flex-col justify-center">
+<section id="hero" aria-label="Présentation générale et showreel de SmartFilms Prod" class="relative w-full h-[94dvh] sm:h-screen min-h-[580px] sm:min-h-[640px] max-h-[1080px] bg-[#FAF9F6] pt-20 sm:pt-24 pb-3 sm:pb-6 px-3 sm:px-6 lg:px-8 xl:px-10 overflow-hidden flex flex-col justify-center">
     
     <!-- Large Rounded Cinematic Hero Container (Fully Visible Inside Viewport) -->
     <div class="relative w-full h-full max-w-[96rem] mx-auto rounded-[22px] sm:rounded-[30px] lg:rounded-[34px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-black flex items-center">
@@ -46,7 +46,7 @@
                 <!-- 150ms: Eyebrow / Tag -->
                 <div>
                     <div class="hero-eyebrow inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[9.5px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest uppercase font-semibold text-white/95 shadow-md max-w-full">
-                        <span class="w-2 h-2 rounded-full bg-[#FF5A68] animate-pulse shrink-0"></span>
+                        <span class="w-2 h-2 rounded-full bg-[#FF5A68] animate-pulse shrink-0" aria-hidden="true"></span>
                         <span class="truncate sm:whitespace-normal">{!! $heroEyebrow !!}</span>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                     <a href="{{ $heroBtnLink }}" class="hero-cta inline-flex items-center justify-center gap-3 bg-[#FF5A68] hover:bg-[#E84554] text-white px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs transition-all duration-300 shadow-[0_0_30px_rgba(255,90,104,0.5)] hover:shadow-[0_0_45px_rgba(255,90,104,0.75)] hover:scale-105 group text-center">
                         <span>{{ $heroBtnText }}</span>
-                        <i class="bi bi-arrow-right text-xs transform group-hover:translate-x-1.5 transition-transform duration-300"></i>
+                        <i class="bi bi-arrow-right text-xs transform group-hover:translate-x-1.5 transition-transform duration-300" aria-hidden="true"></i>
                     </a>
                 </div>
 

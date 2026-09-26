@@ -1,5 +1,5 @@
 <!-- CHAPTER 05: NOTRE PROCESS (DE L'IDÉE À L'IMAGE) -->
-<section id="manifesto" class="bg-[#080B1A] text-white py-20 md:py-28 relative overflow-hidden border-t border-b border-white/10">
+<section id="manifesto" aria-labelledby="process-heading" class="bg-[#080B1A] text-white py-20 md:py-28 relative overflow-hidden border-t border-b border-white/10">
     
     <!-- Background Cinematic Atmosphere: Storyboard Sketchbook Fade on Right -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -32,7 +32,7 @@
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                <h2 id="process-heading" class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
                     DE L'IDÉE À L'IMAGE :<br>
                     <span class="text-[#FF5A68]">NOTRE MÉTHODE DE TOURNAGE & RÉALISATION.</span>
                 </h2>
@@ -42,7 +42,7 @@
             <div class="max-w-lg w-full lg:w-auto">
                 <div class="relative pl-5 py-3.5 border-l-2 border-[#FF5A68] bg-[#080B1A]/60 backdrop-blur-md rounded-r-2xl border-t border-b border-r border-white/10 pr-6 shadow-2xl">
                     <div class="flex items-center gap-2 mb-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A68] animate-pulse"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A68] animate-pulse" aria-hidden="true"></span>
                         <span class="text-[10px] font-mono uppercase tracking-[0.22em] text-[#FF5A68] font-bold">
                             MÉTHODE & EXCELLENCE EN PRODUCTION
                         </span>
@@ -57,92 +57,92 @@
             </div>
         </div>
 
-        <!-- 4-Step Pipeline Connected with Lines & Arrows -->
+        <!-- 4-Step Pipeline Connected with Lines & Arrows (Semantic Ordered List) -->
         <div class="relative">
             
             <!-- Continuous Connection Line on Desktop -->
-            <div class="hidden lg:block absolute top-4 left-6 right-6 h-[1px] bg-gradient-to-r from-[#FF5A68]/40 via-white/20 to-[#FF5A68]/40 z-0"></div>
+            <div class="hidden lg:block absolute top-4 left-6 right-6 h-[1px] bg-gradient-to-r from-[#FF5A68]/40 via-white/20 to-[#FF5A68]/40 z-0" aria-hidden="true"></div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 list-none p-0 m-0">
                 
                 <!-- Step 01: IMAGINER -->
-                <div class="space-y-4 group">
+                <li class="space-y-4 group">
                     <div class="flex items-center justify-between pr-4">
                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF5A68]/15 border border-[#FF5A68]/50 text-[#FF5A68] font-mono text-xs font-bold shadow-sm group-hover:bg-[#FF5A68] group-hover:text-white transition-all">
                             01
                         </span>
-                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base">
+                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base" aria-hidden="true">
                             <i class="bi bi-arrow-right"></i>
                         </span>
                     </div>
                     <div>
-                        <h4 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
+                        <h3 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
                             IMAGINER
-                        </h4>
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
                             Concept, script & direction artistique
                         </p>
                     </div>
-                </div>
+                </li>
 
                 <!-- Step 02: PRODUIRE -->
-                <div class="space-y-4 group">
+                <li class="space-y-4 group">
                     <div class="flex items-center justify-between pr-4">
                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF5A68]/15 border border-[#FF5A68]/50 text-[#FF5A68] font-mono text-xs font-bold shadow-sm group-hover:bg-[#FF5A68] group-hover:text-white transition-all">
                             02
                         </span>
-                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base">
+                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base" aria-hidden="true">
                             <i class="bi bi-arrow-right"></i>
                         </span>
                     </div>
                     <div>
-                        <h4 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
+                        <h3 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
                             PRODUIRE
-                        </h4>
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
                             Tournage cinéma 6K & shooting photo
                         </p>
                     </div>
-                </div>
+                </li>
 
                 <!-- Step 03: FAÇONNER -->
-                <div class="space-y-4 group">
+                <li class="space-y-4 group">
                     <div class="flex items-center justify-between pr-4">
                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF5A68]/15 border border-[#FF5A68]/50 text-[#FF5A68] font-mono text-xs font-bold shadow-sm group-hover:bg-[#FF5A68] group-hover:text-white transition-all">
                             03
                         </span>
-                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base">
+                        <span class="hidden lg:inline text-white/30 group-hover:text-[#FF5A68] transition-colors text-base" aria-hidden="true">
                             <i class="bi bi-arrow-right"></i>
                         </span>
                     </div>
                     <div>
-                        <h4 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
+                        <h3 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
                             FAÇONNER
-                        </h4>
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
                             Montage, étalonnage DaVinci & son
                         </p>
                     </div>
-                </div>
+                </li>
 
                 <!-- Step 04: DÉPLOYER -->
-                <div class="space-y-4 group">
+                <li class="space-y-4 group">
                     <div class="flex items-center justify-between">
                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF5A68]/15 border border-[#FF5A68]/50 text-[#FF5A68] font-mono text-xs font-bold shadow-sm group-hover:bg-[#FF5A68] group-hover:text-white transition-all">
                             04
                         </span>
                     </div>
                     <div>
-                        <h4 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
+                        <h3 class="text-base sm:text-lg font-black uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
                             DÉPLOYER
-                        </h4>
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
                             Masters multi-formats & diffusion
                         </p>
                     </div>
-                </div>
+                </li>
 
-            </div>
+            </ol>
 
         </div>
 

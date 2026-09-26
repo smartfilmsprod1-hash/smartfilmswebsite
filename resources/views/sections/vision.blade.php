@@ -7,7 +7,7 @@
 @endphp
 
 <!-- CHAPTER 03: NOTRE VISION (L'IMAGE AU SERVICE DES MARQUES) -->
-<section id="vision" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 relative overflow-hidden border-t border-[#2D2658]/10">
+<section id="vision" aria-labelledby="vision-heading" class="bg-[#F8F6F1] text-[#252238] py-20 md:py-32 relative overflow-hidden border-t border-[#2D2658]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- Main Heading -->
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-6">
+                <h2 id="vision-heading" class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-6">
                     {!! $visionHeading !!}
                 </h2>
 
@@ -87,43 +87,43 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-[#2D2658]/10">
                     
                     <!-- Pillar 1: PENSER -->
-                    <div class="space-y-3">
+                    <article class="space-y-3">
                         <div class="w-11 h-11 rounded-full border border-[#2D2658]/15 bg-white flex items-center justify-center text-[#FF5A68] shadow-sm text-base">
-                            <i class="bi bi-lightbulb"></i>
+                            <i class="bi bi-lightbulb" aria-hidden="true"></i>
                         </div>
                         <div>
-                            <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PENSER</h4>
+                            <h3 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PENSER</h3>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
                                 Stratégie & Storytelling
                             </p>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Pillar 2: PRODUIRE -->
-                    <div class="space-y-3">
+                    <article class="space-y-3">
                         <div class="w-11 h-11 rounded-full border border-[#2D2658]/15 bg-white flex items-center justify-center text-[#FF5A68] shadow-sm text-base">
-                            <i class="bi bi-camera-reels"></i>
+                            <i class="bi bi-camera-reels" aria-hidden="true"></i>
                         </div>
                         <div>
-                            <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PRODUIRE</h4>
+                            <h3 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PRODUIRE</h3>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
                                 Tournage 6K & Shooting Photo
                             </p>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Pillar 3: RAYONNER -->
-                    <div class="space-y-3">
+                    <article class="space-y-3">
                         <div class="w-11 h-11 rounded-full border border-[#2D2658]/15 bg-white flex items-center justify-center text-[#FF5A68] shadow-sm text-base">
-                            <i class="bi bi-broadcast"></i>
+                            <i class="bi bi-broadcast" aria-hidden="true"></i>
                         </div>
                         <div>
-                            <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">RAYONNER</h4>
+                            <h3 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">RAYONNER</h3>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
                                 Post-Production & Diffusion
                             </p>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
 

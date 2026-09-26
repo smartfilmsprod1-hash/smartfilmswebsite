@@ -30,7 +30,8 @@
 </section>
 
 <!-- BLOG ARTICLES GRID -->
-<section class="py-20 md:py-28 bg-[#F8F6F1] text-[#252238] min-h-screen relative">
+<section class="py-20 md:py-28 bg-[#F8F6F1] text-[#252238] min-h-screen relative" aria-labelledby="articles-heading">
+    <h2 id="articles-heading" class="sr-only">Articles, guides et analyses de l'agence SmartFilms Prod</h2>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,13 +67,13 @@
                                 <span>{{ $article['date'] }}</span>
                                 <span>&bull;</span>
                                 <span class="flex items-center gap-1">
-                                    <i class="bi bi-clock"></i> {{ $article['read_time'] }}
+                                    <i class="bi bi-clock" aria-hidden="true"></i> {{ $article['read_time'] }}
                                 </span>
                             </div>
 
-                            <h2 class="text-base sm:text-lg font-bold text-white group-hover:text-[#FF5A68] transition-colors leading-snug">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-[#FF5A68] transition-colors leading-snug">
                                 {{ $article['title'] }}
-                            </h2>
+                            </h3>
 
                             <p class="text-[#8E8B9F] text-xs sm:text-[13px] font-light leading-relaxed">
                                 {{ $article['excerpt'] }}
@@ -83,7 +84,7 @@
                         <div class="pt-3 border-t border-white/10 flex items-center justify-between">
                             <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#FF5A68] transition-colors">
                                 <span>Lire l'article</span>
-                                <i class="bi bi-arrow-right group-hover:translate-x-1.5 transition-transform duration-300"></i>
+                                <i class="bi bi-arrow-right group-hover:translate-x-1.5 transition-transform duration-300" aria-hidden="true"></i>
                             </span>
                         </div>
                     </div>
@@ -93,26 +94,26 @@
         </div>
 
         <!-- Newsletter / Contact Teaser Box -->
-        <div class="mt-20 rounded-[28px] p-8 sm:p-12 bg-white border border-[#2D2658]/10 shadow-xl flex flex-col lg:flex-row justify-between items-center gap-8">
+        <aside class="mt-20 rounded-[28px] p-8 sm:p-12 bg-white border border-[#2D2658]/10 shadow-xl flex flex-col lg:flex-row justify-between items-center gap-8" aria-label="Accompagnement de projet audiovisuel">
             <div class="max-w-xl space-y-2">
                 <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase block">
                     VOTRE PROJET AUDIOVISUEL
                 </span>
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#161828]">
+                <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#161828]">
                     Prêt à donner une dimension cinématographique à votre marque ?
-                </h3>
+                </h2>
                 <p class="text-[#686580] text-sm font-light leading-relaxed">
                     Échangez avec nos producteurs à Casablanca pour élaborer votre prochaine campagne vidéo.
                 </p>
             </div>
 
             <div>
-                <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#FF5A68] hover:bg-[#E84554] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-rose-500/20 hover:-translate-y-0.5">
+                <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#FF5A68] hover:bg-[#E84554] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-rose-500/20 hover:-translate-y-0.5" aria-label="Échanger sur votre projet de production audiovisuelle">
                     <span>Échanger sur votre projet</span>
-                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
-        </div>
+        </aside>
 
     </div>
 </section>

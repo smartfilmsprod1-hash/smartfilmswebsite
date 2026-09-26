@@ -1,5 +1,5 @@
 <!-- CHAPTER 03: SELECTED WORKS / LES RÉALISATIONS (#F8F6F1 WARM OFF-WHITE) -->
-<section id="films" class="bg-[#F8F6F1] text-[#252238] py-24 md:py-36 relative overflow-hidden border-b border-[#2D2658]/10">
+<section id="films" class="bg-[#F8F6F1] text-[#252238] py-24 md:py-36 relative overflow-hidden border-b border-[#2D2658]/10" aria-labelledby="featured-projects-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
@@ -8,14 +8,14 @@
                 <span class="reveal-fade-up text-[11px] font-mono font-bold tracking-[0.25em] text-[#FF5A68] uppercase block mb-3">
                     03 • Portfolio Sélectionné
                 </span>
-                <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#2D2658]">
+                <h2 id="featured-projects-heading" class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#2D2658]">
                     Nos <span class="font-serif-italic font-normal lowercase text-[#40376F]">réalisations phares</span>
                 </h2>
             </div>
             
-            <a href="{{ route('portfolio') }}" class="reveal-fade-up delay-200 group inline-flex items-center space-x-2 text-xs font-mono font-bold tracking-wider uppercase text-[#2D2658] hover:text-white px-6 py-3.5 rounded-full bg-white hover:bg-[#2D2658] border border-[#2D2658]/15 shadow-sm transition-all duration-300">
+            <a href="{{ route('portfolio') }}" class="reveal-fade-up delay-200 group inline-flex items-center space-x-2 text-xs font-mono font-bold tracking-wider uppercase text-[#2D2658] hover:text-white px-6 py-3.5 rounded-full bg-white hover:bg-[#2D2658] border border-[#2D2658]/15 shadow-sm transition-all duration-300" aria-label="Explorer toutes les réalisations du portfolio SmartFilms">
                 <span>Explorer toutes les réalisations</span>
-                <span class="text-[#FF5A68] group-hover:text-white transform group-hover:translate-x-1.5 transition-transform">&rarr;</span>
+                <span class="text-[#FF5A68] group-hover:text-white transform group-hover:translate-x-1.5 transition-transform" aria-hidden="true">&rarr;</span>
             </a>
         </div>
 
@@ -26,7 +26,7 @@
 
         <!-- Main Cinematic Hero Project Card -->
         @if($featuredProject)
-            <div class="group relative rounded-[28px] overflow-hidden cursor-pointer w-full bg-white border border-[#2D2658]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-[#FF5A68]/40 mb-12 reveal-scale-up">
+            <article class="group relative rounded-[28px] overflow-hidden cursor-pointer w-full bg-white border border-[#2D2658]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-[#FF5A68]/40 mb-12 reveal-scale-up" aria-labelledby="featured-card-title">
               
               <!-- Thumbnail Media with Subtle Zoom -->
               <div class="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[440px] md:min-h-[520px] overflow-hidden bg-[#2D2658]">
@@ -73,7 +73,7 @@
                   aria-label="Lancer la vidéo {{ $featuredProject->title }}"
                   class="bg-[#FF5A68] hover:bg-[#E84554] text-white rounded-full p-6 md:p-7 transform transition-all duration-300 group-hover:scale-105 shadow-[0_0_35px_rgba(255,90,104,0.6)] flex items-center justify-center focus:outline-none"
                 >
-                  <svg class="w-8 h-8 md:w-9 md:h-9 ml-1 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-8 h-8 md:w-9 md:h-9 ml-1 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </button>
@@ -85,7 +85,7 @@
                   <p class="text-[#FADDE3] text-xs font-mono uppercase tracking-widest font-semibold mb-2">
                     {{ $featuredProject->client_name ?? 'Dell Technologies' }} • {{ $featuredProject->year ?? date('Y') }}
                   </p>
-                  <h3 class="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                  <h3 id="featured-card-title" class="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
                     <a href="{{ route('project.show', $featuredProject->slug ?? Str::slug($featuredProject->title)) }}" class="hover:text-[#FADDE3] transition-colors">
                       {{ $featuredProject->title }}
                     </a>
@@ -98,22 +98,22 @@
                 </div>
                 
                 <!-- Action Button -->
-                <a href="{{ route('project.show', $featuredProject->slug ?? Str::slug($featuredProject->title)) }}" class="inline-flex items-center space-x-2 text-white text-xs font-mono font-bold uppercase tracking-wider bg-white/15 hover:bg-white hover:text-[#2D2658] border border-white/20 px-6 py-3.5 rounded-full backdrop-blur-md transition-all duration-300 shrink-0">
+                <a href="{{ route('project.show', $featuredProject->slug ?? Str::slug($featuredProject->title)) }}" class="inline-flex items-center space-x-2 text-white text-xs font-mono font-bold uppercase tracking-wider bg-white/15 hover:bg-white hover:text-[#2D2658] border border-white/20 px-6 py-3.5 rounded-full backdrop-blur-md transition-all duration-300 shrink-0" aria-label="Consulter l'étude de cas du projet {{ $featuredProject->title }}">
                   <span>Voir le case study</span>
-                  <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
                   </svg>
                 </a>
               </div>
               
-            </div>
+            </article>
         @endif
 
         <!-- Secondary Projects Grid (2-Column Clean Cards) -->
         @if($gridProjects->isNotEmpty())
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                 @foreach($gridProjects as $idx => $project)
-                    <div class="group relative flex flex-col justify-between rounded-[26px] bg-white border border-[#2D2658]/10 overflow-hidden hover:border-[#FF5A68]/40 hover:shadow-xl transition-all duration-500 reveal-scale-up delay-{{ ($idx + 1) * 100 }}">
+                    <article class="group relative flex flex-col justify-between rounded-[26px] bg-white border border-[#2D2658]/10 overflow-hidden hover:border-[#FF5A68]/40 hover:shadow-xl transition-all duration-500 reveal-scale-up delay-{{ ($idx + 1) * 100 }}" aria-labelledby="grid-proj-title-{{ $idx }}">
                         
                         <!-- Media Container with Subtle Zoom -->
                         <div class="relative aspect-[16/10] overflow-hidden bg-[#2D2658]">
@@ -154,7 +154,7 @@
                                   class="w-14 h-14 rounded-full bg-[#FF5A68] hover:bg-[#E84554] text-white flex items-center justify-center text-lg shadow-[0_0_25px_rgba(255,90,104,0.6)] transform transition-transform duration-300 hover:scale-105 focus:outline-none"
                                   aria-label="Lire la vidéo {{ $project->title }}"
                                 >
-                                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M8 5v14l11-7z"/>
                                   </svg>
                                 </button>
@@ -167,20 +167,20 @@
                                 <span class="text-[11px] font-mono uppercase tracking-wider text-[#FF5A68] font-bold block mb-1">
                                     {{ $project->client_name }} • {{ $project->year ?? date('Y') }}
                                 </span>
-                                <h4 class="text-xl sm:text-2xl font-bold text-[#2D2658] group-hover:text-[#FF5A68] transition-colors leading-snug">
+                                <h3 id="grid-proj-title-{{ $idx }}" class="text-xl sm:text-2xl font-bold text-[#2D2658] group-hover:text-[#FF5A68] transition-colors leading-snug">
                                     <a href="{{ route('project.show', $project->slug ?? Str::slug($project->title)) }}">
                                         {{ $project->title }}
                                     </a>
-                                </h4>
+                                </h3>
                             </div>
 
                             <a href="{{ route('project.show', $project->slug ?? Str::slug($project->title)) }}" aria-label="Voir le projet {{ $project->title }}" class="shrink-0 w-10 h-10 rounded-full border border-[#2D2658]/15 text-[#2D2658] group-hover:text-white group-hover:border-[#FF5A68] group-hover:bg-[#FF5A68] flex items-center justify-center text-sm transition-all duration-300 shadow-sm">
-                                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/>
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
                 @endforeach
             </div>
         @endif

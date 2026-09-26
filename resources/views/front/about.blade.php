@@ -30,14 +30,14 @@
 </section>
 
 <!-- THE MANIFESTO & PHILOSOPHY -->
-<section class="py-24 bg-[#101229] text-white border-b border-white/10">
+<section class="py-24 bg-[#101229] text-white border-b border-white/10" aria-labelledby="manifesto-about-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-6 space-y-6">
                 <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#FF4D42] block">
                     NOTRE MANIFESTE
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-black uppercase text-white leading-tight">
+                <h2 id="manifesto-about-heading" class="text-3xl sm:text-4xl font-black uppercase text-white leading-tight">
                     NOUS NE PRODUISONS PAS DE SIMPLES VIDÉOS. NOUS FORGEONS VOTRE AUTORITÉ.
                 </h2>
                 <p class="text-[#B8BDE0] text-base font-light leading-relaxed">

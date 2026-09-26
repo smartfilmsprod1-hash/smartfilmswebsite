@@ -30,7 +30,8 @@
 </section>
 
 <!-- 5 POLES DETAILED SECTION -->
-<section class="py-24 bg-[#080914] text-white">
+<section class="py-24 bg-[#080914] text-white" aria-labelledby="poles-heading">
+    <h2 id="poles-heading" class="sr-only">Nos pôles d'expertise audiovisuelle et photo</h2>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
         @php
@@ -84,17 +85,17 @@
         @endphp
 
         @foreach($pillars as $idx => $p)
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center {{ $idx % 2 == 1 ? 'lg:flex-row-reverse' : '' }}">
+            <article class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center {{ $idx % 2 == 1 ? 'lg:flex-row-reverse' : '' }}" aria-labelledby="pillar-title-{{ $p['slug'] }}">
                 <div class="lg:col-span-6 space-y-6 {{ $idx % 2 == 1 ? 'lg:order-2' : '' }}">
                     <div class="flex items-center gap-4">
-                        <span class="text-3xl font-mono font-black text-[#FF4D42]">{{ $p['num'] }}</span>
-                        <span class="h-px w-12 bg-white/20"></span>
+                        <span class="text-3xl font-mono font-black text-[#FF4D42]" aria-hidden="true">{{ $p['num'] }}</span>
+                        <span class="h-px w-12 bg-white/20" aria-hidden="true"></span>
                         <span class="text-xs uppercase font-mono tracking-widest text-[#B8BDE0]">{{ $p['tagline'] }}</span>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                    <h3 id="pillar-title-{{ $p['slug'] }}" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
                         {{ $p['title'] }}
-                    </h2>
+                    </h3>
 
                     <p class="text-[#B8BDE0] text-base font-light leading-relaxed">
                         {{ $p['desc'] }}
@@ -105,7 +106,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
                             @foreach($p['deliverables'] as $del)
                                 <div class="flex items-center gap-2">
-                                    <i class="bi bi-check2 text-[#FF4D42]"></i>
+                                    <i class="bi bi-check2 text-[#FF4D42]" aria-hidden="true"></i>
                                     <span>{{ $del }}</span>
                                 </div>
                             @endforeach
@@ -113,11 +114,11 @@
                     </div>
 
                     <div class="pt-4 flex items-center gap-4">
-                        <a href="{{ url('/expertises/' . $p['slug']) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-lg hover:scale-105 flex items-center gap-2">
+                        <a href="{{ url('/expertises/' . $p['slug']) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-lg hover:scale-105 flex items-center gap-2" aria-label="Découvrir l'expertise {{ $p['title'] }}">
                             <span>Découvrir l'expertise</span>
-                            <i class="bi bi-arrow-right"></i>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
                         </a>
-                        <a href="{{ route('portfolio') }}" class="glass-dark hover:bg-white/15 text-white px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all border border-white/10">
+                        <a href="{{ route('portfolio') }}" class="glass-dark hover:bg-white/15 text-white px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all border border-white/10" aria-label="Voir les réalisations du portfolio">
                             <span>Voir les films</span>
                         </a>
                     </div>
@@ -136,16 +137,16 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     </div>
                 </div>
-            </div>
+            </article>
         @endforeach
 
     </div>
 </section>
 
 <!-- CALL TO ACTION ESTIMATOR -->
-<section class="py-20 bg-[#101229] border-t border-white/10 text-center">
+<section class="py-20 bg-[#101229] border-t border-white/10 text-center" aria-labelledby="cta-heading">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <h3 class="text-3xl sm:text-4xl font-black text-white uppercase">UN PROJET AUDIOVISUEL EN VUE ?</h3>
+        <h2 id="cta-heading" class="text-3xl sm:text-4xl font-black text-white uppercase">UN PROJET AUDIOVISUEL EN VUE ?</h2>
         <p class="text-[#B8BDE0] text-base font-light max-w-xl mx-auto">
             Discutez de vos objectifs avec nos réalisateurs et recevez un chiffrage prévisionnel adapté sous 24h.
         </p>
