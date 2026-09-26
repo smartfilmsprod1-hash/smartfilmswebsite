@@ -59,10 +59,7 @@ class FrontController extends Controller
      */
     public function portfolio()
     {
-        $projects = Project::where('is_published', true)->orderBy('order')->get();
-        if ($projects->isEmpty()) {
-            $projects = Project::orderBy('order')->get();
-        }
+        $projects = Project::orderBy('order')->get();
         $categories = $projects->pluck('category')->unique()->filter()->values();
         $common = $this->getCommonData();
 
@@ -100,7 +97,7 @@ class FrontController extends Controller
     {
         $common = $this->getCommonData();
         $expertises = \App\Models\Expertise::where('is_active', true)->orderBy('order')->get();
-        $projects = Project::where('is_published', true)->orderBy('order')->take(6)->get();
+        $projects = Project::orderBy('order')->take(6)->get();
 
         return view('front.expertises.index', [
             'menus' => $common['menus'],
@@ -375,7 +372,7 @@ class FrontController extends Controller
         }
 
         $common = $this->getCommonData();
-        $relatedProjects = Project::where('is_published', true)->orderBy('order')->take(4)->get();
+        $relatedProjects = Project::orderBy('order')->take(4)->get();
 
         return view('front.expertises.show', [
             'slug' => $slug,
