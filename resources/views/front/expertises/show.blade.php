@@ -89,7 +89,7 @@
         @endphp
         <picture>
             <source srcset="{{ $expHeroWebp }}" type="image/webp">
-            <img src="{{ $expHeroImg }}" alt="{{ $expertise['title'] }} — Expertise audiovisuelle SmartFilms Prod Casablanca" class="w-full h-full object-cover opacity-20 filter blur-sm scale-105" fetchpriority="high">
+            <img src="{{ $expHeroImg }}" alt="{{ $expertise['title'] }} — Expertise audiovisuelle SmartFilms Prod Casablanca" class="w-full h-full object-cover opacity-20 filter blur-sm scale-105" width="1920" height="1080" decoding="async" fetchpriority="high">
         </picture>
         <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/80 to-transparent"></div>
     </div>

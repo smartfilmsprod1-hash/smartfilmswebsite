@@ -230,40 +230,33 @@
     }
     </script>
 
-    <!-- Google Fonts + Feather / Modern Vector Icons -->
+    <!-- Performance Optimized Font Loading (Outfit & Cormorant Garamond) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Outfit:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Outfit:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Outfit:wght@400;500;600;700;800&display=swap">
+    </noscript>
 
-    <!-- Tailwind CSS Script CDN + Full Custom Configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#2D2658',
-                            secondary: '#40376F',
-                            coral: '#FF5A68',
-                            coralHover: '#E84554',
-                            pink: '#FADDE3',
-                            bg: '#F8F6F1',
-                            surface: '#F4F2F7',
-                            lavender: '#ECE9F3',
-                            text: '#252238',
-                            muted: '#726E8D',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Asynchronous Non-Blocking Bootstrap Icons -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    </noscript>
+
+    <!-- Precompiled Production Stylesheet (Eliminates Render-Blocking Tailwind CDN & JIT) -->
+    @php
+        $manifestPath = public_path('build/manifest.json');
+        $manifest = file_exists($manifestPath) ? json_decode(file_get_contents($manifestPath), true) : null;
+        $cssFile = $manifest['resources/css/app.css']['file'] ?? null;
+        $jsFile = $manifest['resources/js/app.js']['file'] ?? null;
+    @endphp
+    @if($cssFile)
+        <link rel="preload" as="style" href="{{ asset('build/' . $cssFile) }}">
+        <link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}">
+    @endif
 
     <!-- Rich Motion, Hero Entrance & Navbar Smooth Transition Styles -->
     <style>
@@ -300,62 +293,42 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        /* Hero Sequential Entrance Keyframes & Classes */
-        .hero-eyebrow {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 800ms var(--ease-premium), transform 800ms var(--ease-premium);
-            will-change: opacity, transform;
+        /* Instant High-Performance Hero Paint (Optimized for LCP & Zero CLS) */
+        @keyframes heroEntrance {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 14px, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
-        .hero-eyebrow.revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        .hero-serif {
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 850ms var(--ease-premium), transform 850ms var(--ease-premium);
-            will-change: opacity, transform;
-        }
-        .hero-serif.revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
+        .hero-eyebrow,
+        .hero-serif,
         .hero-title-line1,
-        .hero-title-line2 {
-            transform: translate3d(0, 105%, 0);
-            opacity: 0;
-            transition: transform 900ms var(--ease-premium), opacity 900ms var(--ease-premium);
-            will-change: transform, opacity;
-        }
-        .hero-title-line1.revealed,
-        .hero-title-line2.revealed {
-            transform: translate3d(0, 0, 0) !important;
-            opacity: 1 !important;
-        }
-
-        .hero-desc {
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 850ms var(--ease-premium), transform 850ms var(--ease-premium);
-            will-change: opacity, transform;
-        }
-        .hero-desc.revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
+        .hero-title-line2,
+        .hero-desc,
         .hero-cta {
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 850ms var(--ease-premium), transform 850ms var(--ease-premium), background-color 300ms ease, box-shadow 300ms ease;
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            animation: heroEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
             will-change: opacity, transform;
         }
+        .hero-eyebrow { animation-delay: 0.05s; }
+        .hero-serif { animation-delay: 0.1s; }
+        .hero-title-line1 { animation-delay: 0.16s; }
+        .hero-title-line2 { animation-delay: 0.22s; }
+        .hero-desc { animation-delay: 0.3s; }
+        .hero-cta { animation-delay: 0.38s; }
+        .hero-eyebrow.revealed,
+        .hero-serif.revealed,
+        .hero-title-line1.revealed,
+        .hero-title-line2.revealed,
+        .hero-desc.revealed,
         .hero-cta.revealed {
             opacity: 1 !important;
-            transform: translateY(0) !important;
+            transform: translate3d(0, 0, 0) !important;
         }
 
         /* Scroll Animations */
@@ -569,20 +542,6 @@
             }
         }
     </style>
-
-    <!-- Compiled Vite Assets (when available) -->
-    @php
-        $manifestPath = public_path('build/manifest.json');
-        $manifest = file_exists($manifestPath) ? json_decode(file_get_contents($manifestPath), true) : null;
-        $cssFile = $manifest['resources/css/app.css']['file'] ?? null;
-        $jsFile = $manifest['resources/js/app.js']['file'] ?? null;
-    @endphp
-    @if($cssFile)
-        <link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}">
-    @endif
-    @if($jsFile)
-        <script type="module" src="{{ asset('build/' . $jsFile) }}"></script>
-    @endif
 </head>
 <body class="bg-[#F8F6F1] text-[#252238] antialiased selection:bg-[#FF5A68] selection:text-white">
 
@@ -613,7 +572,7 @@
     </div>
 
     <!-- WhatsApp VIP Concierge Button (Smaller & Soft Green) -->
-    <a href="https://wa.me/{{ $settings['whatsapp'] ?? '212617202345' }}?text={{ urlencode('Bonjour SmartFilms, j\'aimerais échanger sur un projet de production audiovisuelle.') }}" target="_blank" class="fixed bottom-5 right-5 z-40 bg-[#25D366]/90 hover:bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2.5 transition-all hover:scale-105 group border border-white/30 backdrop-blur-sm">
+    <a href="https://wa.me/{{ $settings['whatsapp'] ?? '212617202345' }}?text={{ urlencode('Bonjour SmartFilms, j\'aimerais échanger sur un projet de production audiovisuelle.') }}" target="_blank" rel="noopener" class="fixed bottom-5 right-5 z-40 bg-[#25D366]/90 hover:bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2.5 transition-all hover:scale-105 group border border-white/30 backdrop-blur-sm">
         <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -622,25 +581,13 @@
         <span class="text-[11px] uppercase font-bold tracking-wider hidden sm:inline">WhatsApp Direct</span>
     </a>
 
-    <!-- Core Motion, Scroll Animation & Interactive Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Smooth Scroll Navbar Transition
-            const headerEl = document.getElementById('mainHeader');
-            if (headerEl) {
-                const onScroll = () => {
-                    if (window.scrollY > 60) {
-                        headerEl.classList.add('is-scrolled', 'scrolled');
-                    } else {
-                        headerEl.classList.remove('is-scrolled', 'scrolled');
-                    }
-                };
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll();
-            }
-        });
+    <!-- Deferred Core Application JavaScript Bundle -->
+    @if($jsFile)
+        <script type="module" src="{{ asset('build/' . $jsFile) }}" defer></script>
+    @endif
 
-        // Video Modal Lightbox
+    <!-- Lightweight Non-Blocking Video Lightbox Script -->
+    <script>
         function openVideoModal(url, title) {
             const modal = document.getElementById('videoModal');
             const iframe = document.getElementById('modalIframe');

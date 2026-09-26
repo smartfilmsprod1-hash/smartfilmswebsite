@@ -49,7 +49,7 @@
             @endphp
             <picture>
                 <source srcset="{{ $heroWebp }}" type="image/webp">
-                <img src="{{ $heroThumb }}" alt="{{ $project->title }} - Tournage et production par SmartFilms Prod agence audiovisuelle Casablanca" class="w-full h-full object-cover opacity-35 scale-105" fetchpriority="high">
+                <img src="{{ $heroThumb }}" alt="{{ $project->title }} - Tournage et production par SmartFilms Prod agence audiovisuelle Casablanca" class="w-full h-full object-cover opacity-35 scale-105" width="1920" height="1080" decoding="async" fetchpriority="high">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/70 to-transparent"></div>
         </div>
@@ -109,7 +109,7 @@
                 @endphp
                 <picture>
                     <source srcset="{{ $mediaWebp }}" type="image/webp">
-                    <img src="{{ $mediaThumb }}" class="w-full h-full object-cover" alt="Visuel principal du projet {{ $project->title }} - Agence audiovisuelle SmartFilms Prod Casablanca" loading="lazy" decoding="async">
+                    <img src="{{ $mediaThumb }}" class="w-full h-full object-cover" alt="Visuel principal du projet {{ $project->title }} - Agence audiovisuelle SmartFilms Prod Casablanca" width="1280" height="720" loading="lazy" decoding="async">
                 </picture>
             @endif
         </div>

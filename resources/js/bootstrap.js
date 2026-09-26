@@ -1,4 +1,3 @@
-import axios from 'axios';
-window.axios = axios;
+// SmartFilms Production Client Bootstrap
+window.SmartFilms = window.SmartFilms || {};
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
