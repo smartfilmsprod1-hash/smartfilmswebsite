@@ -4,9 +4,9 @@
     <!-- Large Rounded Cinematic Hero Container (Fully Visible Inside Viewport) -->
     <div class="relative w-full h-full max-w-[96rem] mx-auto rounded-[22px] sm:rounded-[30px] lg:rounded-[34px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-black flex items-center">
         
-        <!-- 0ms: Cinematic Background Video & Fallback Poster (Exact Framing & Natural Colors Preserved) -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none">
-            <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" poster="/uploads/cinema_corporate_film.png" class="w-full h-full object-cover">
+        <!-- 0ms: Cinematic Background Video (Exact Framing & Natural Colors Preserved - NO STATIC POSTER) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none bg-black">
+            <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover">
                 <source src="/uploads/hero_youtube.mp4" type="video/mp4">
             </video>
             
