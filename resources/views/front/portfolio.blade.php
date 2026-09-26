@@ -53,7 +53,13 @@
                         <div class="relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#171936] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-[#FF4D42]/50 group-hover:shadow-[0_20px_50px_rgba(255,77,66,0.2)]">
                             
                             @if($project->thumbnail)
-                                <img src="{{ $project->thumbnail }}" alt="{{ $project->title }} - SmartFilms Agence Audiovisuelle Casablanca" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                                @php
+                                    $portWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $project->thumbnail);
+                                @endphp
+                                <picture>
+                                    <source srcset="{{ $portWebp }}" type="image/webp">
+                                    <img src="{{ $project->thumbnail }}" alt="{{ $project->title }} - Réalisation par SmartFilms Prod agence audiovisuelle Casablanca" loading="lazy" decoding="async" width="600" height="375" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                                </picture>
                             @else
                                 <div class="w-full h-full bg-gradient-to-br from-[#101229] to-[#171936] flex items-center justify-center">
                                     <i class="bi bi-film text-5xl text-white/20"></i>

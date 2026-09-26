@@ -33,15 +33,23 @@
             <div class="client-marquee-track flex items-center gap-6 sm:gap-8 py-2">
                 <!-- Set 1 (Original) -->
                 @foreach($clientsList as $client)
+                    @php $webpClient = pathinfo($client['file'], PATHINFO_FILENAME) . '.webp'; @endphp
                     <div class="h-16 w-44 shrink-0 bg-white rounded-2xl border border-[#2D2658]/10 flex items-center justify-center p-3.5 shadow-sm hover:shadow-md hover:border-[#FF5A68]/40 transition-all duration-300 group cursor-pointer">
-                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }} - Partenaire & Client SmartFilms Casablanca" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        <picture>
+                            <source srcset="/uploads/{{ $webpClient }}" type="image/webp">
+                            <img src="/uploads/{{ $client['file'] }}" alt="Logo {{ $client['name'] }} - Référence client de l'agence audiovisuelle et photo SmartFilms Casablanca" loading="lazy" decoding="async" width="140" height="36" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        </picture>
                     </div>
                 @endforeach
 
                 <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
                 @foreach($clientsList as $client)
+                    @php $webpClient = pathinfo($client['file'], PATHINFO_FILENAME) . '.webp'; @endphp
                     <div class="h-16 w-44 shrink-0 bg-white rounded-2xl border border-[#2D2658]/10 flex items-center justify-center p-3.5 shadow-sm hover:shadow-md hover:border-[#FF5A68]/40 transition-all duration-300 group cursor-pointer">
-                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }} - Partenaire & Client SmartFilms Casablanca" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        <picture>
+                            <source srcset="/uploads/{{ $webpClient }}" type="image/webp">
+                            <img src="/uploads/{{ $client['file'] }}" alt="Logo {{ $client['name'] }} - Référence client de l'agence audiovisuelle et photo SmartFilms Casablanca" loading="lazy" decoding="async" width="140" height="36" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        </picture>
                     </div>
                 @endforeach
             </div>

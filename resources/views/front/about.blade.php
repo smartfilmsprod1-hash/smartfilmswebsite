@@ -57,7 +57,10 @@
 
             <div class="lg:col-span-6">
                 <div class="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#171936] border border-white/10 shadow-2xl">
-                    <img src="/uploads/cinema_corporate_film.png" alt="Tournage cinéma SmartFilms Prod Casablanca" class="w-full h-full object-cover">
+                    <picture>
+                        <source srcset="/uploads/cinema_corporate_film.webp" type="image/webp">
+                        <img src="/uploads/cinema_corporate_film.png" alt="Plateau de tournage cinéma, caméra RED et tournage de film corporate à Casablanca - SmartFilms Prod" loading="lazy" decoding="async" width="800" height="600" class="w-full h-full object-cover">
+                    </picture>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-xs font-mono text-slate-300">
                         Plateau de tournage régie &bull; Casablanca, Maroc

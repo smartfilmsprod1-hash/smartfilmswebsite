@@ -5,6 +5,13 @@
 
     RewriteEngine On
 
+    # WebP Automatic Content Negotiation:
+    # If the browser supports WebP (Accept: image/webp) and a .webp version exists on the server, serve it directly
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} (.+)\.(jpe?g|png)$
+    RewriteCond %1.webp -f
+    RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=EXISTING:1,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -22,4 +29,22 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Make sure caches know the image format varies with the Accept header
+    <FilesMatch "\.(jpe?g|png|webp)$">
+        Header append Vary Accept
+    </FilesMatch>
+    
+    # Modern caching headers for media assets (1 year max-age for static images)
+    <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|mp4|webm|woff2?|ttf)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType video/mp4 .mp4
 </IfModule>

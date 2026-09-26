@@ -6,7 +6,10 @@
             <!-- Col 1: Studio Brand -->
             <div class="space-y-4">
                 <a href="{{ route('home') }}" class="inline-block">
-                    <img src="/uploads/smartfilms_logo_white.png" alt="SmartFilms Prod Agence Audiovisuelle & Photo Casablanca" class="h-10 w-auto" style="height: 40px; max-height: 40px; width: auto;">
+                    <picture>
+                        <source srcset="/uploads/smartfilms_logo_white.webp" type="image/webp">
+                        <img src="/uploads/smartfilms_logo_white.png" alt="SmartFilms Prod - Agence de production audiovisuelle, shooting photo corporate et films institutionnels à Casablanca" class="h-10 w-auto" loading="lazy" decoding="async" width="160" height="40" style="height: 40px; max-height: 40px; width: auto;">
+                    </picture>
                 </a>
                 <p class="text-[#ECE9F3]/80 leading-relaxed text-xs max-w-xs">
                     Agence audiovisuelle et photographe professionnel à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo et spots publicitaires au Maroc.

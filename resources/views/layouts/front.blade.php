@@ -650,18 +650,3 @@
     @stack('scripts')
 </body>
 </html>
-            }
-        }
-
-        function closeVideoModal() {
-            const modal = document.getElementById('videoModal');
-            const iframe = document.getElementById('modalIframe');
-            if (modal && iframe) {
-                iframe.src = '';
-                modal.classList.add('hidden');
-            }
-        }
-    </script>
-    @stack('scripts')
-</body>
-</html>

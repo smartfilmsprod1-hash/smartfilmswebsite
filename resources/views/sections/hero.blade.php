@@ -6,7 +6,7 @@
         
         <!-- 0ms: Cinematic Background Video (Exact Framing & Natural Colors Preserved - NO STATIC POSTER) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none bg-black">
-            <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover">
+            <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" aria-label="Showreel cinématique SmartFilms Prod - Production audiovisuelle et shooting photo à Casablanca" title="Production audiovisuelle et réalisation de films à Casablanca - SmartFilms Prod" class="w-full h-full object-cover">
                 <source src="/uploads/hero_youtube.mp4" type="video/mp4">
             </video>
             

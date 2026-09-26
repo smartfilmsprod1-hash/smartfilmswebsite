@@ -45,7 +45,7 @@
                     'slug' => 'strategie-conception',
                     'hero_desc' => 'Storytelling de marque, écriture scénaristique et direction artistique : nous sculptons des récits percutants pour vos campagnes de communication.',
                     'image' => '/uploads/expertise_01_strategy.jpg',
-                    'alt' => 'Stratégie de communication et conception audiovisuelle Casablanca',
+                    'alt' => 'Stratégie et conception de films d\'entreprise par SmartFilms Prod agence audiovisuelle Casablanca',
                 ],
                 [
                     'order' => 2,
@@ -53,7 +53,7 @@
                     'slug' => 'production-audiovisuelle',
                     'hero_desc' => 'Production de films institutionnels, vidéos corporate d\'entreprise et reportages de marque en 4K/6K cinéma pour valoriser votre société au Maroc.',
                     'image' => '/uploads/expertise_02_production.jpg',
-                    'alt' => 'Production de films institutionnels et agence audiovisuelle Casablanca Maroc',
+                    'alt' => 'Tournage de film institutionnel en 4K cinéma par l\'agence audiovisuelle SmartFilms Prod à Casablanca',
                 ],
                 [
                     'order' => 3,
@@ -61,7 +61,7 @@
                     'slug' => 'contenus-sociaux',
                     'hero_desc' => 'Création de capsules vidéo dynamiques pour réseaux sociaux au format vertical 9:16 (Instagram Reels, TikTok, LinkedIn) pour maximiser votre impact digital.',
                     'image' => '/uploads/expertise_03_social.jpg',
-                    'alt' => 'Création de capsules vidéo réseaux sociaux et Reels Casablanca Maroc',
+                    'alt' => 'Création de capsules vidéo pour réseaux sociaux et Reels d\'entreprise à Casablanca',
                 ],
                 [
                     'order' => 4,
@@ -69,7 +69,7 @@
                     'slug' => 'shooting-photo-corporate',
                     'hero_desc' => 'Photographe professionnel à Casablanca : portraits de dirigeants, trombinoscopes d\'équipes, packshots produits e-commerce et reportages industriels.',
                     'image' => '/uploads/expertise_04_corporate.jpg',
-                    'alt' => 'Photographe corporate et shooting photo d\'entreprise Casablanca Maroc',
+                    'alt' => 'Shooting photo professionnel à Casablanca, portraits corporate et packshot studio Maroc',
                 ],
                 [
                     'order' => 5,
@@ -77,7 +77,7 @@
                     'slug' => 'publicite-campagnes',
                     'hero_desc' => 'Conception et production de spots publicitaires TV et digitaux à fort impact émotionnel pour vos lancements de produits et campagnes au Maroc.',
                     'image' => '/uploads/expertise_05_advertising.jpg',
-                    'alt' => 'Réalisation de spots publicitaires TV et digitaux Casablanca Maroc',
+                    'alt' => 'Production de spots publicitaires TV et digitaux par SmartFilms Prod Casablanca',
                 ],
                 [
                     'order' => 6,
@@ -85,7 +85,7 @@
                     'slug' => 'evenement-live',
                     'hero_desc' => 'Captation multi-caméras d\'événements professionnels, aftermovies rythmés, retransmission live streaming et prises de vues complémentaires au Maroc.',
                     'image' => '/uploads/expertise_06_events.jpg',
-                    'alt' => 'Captation événementielle aftermovie et réalisation vidéo Casablanca Maroc',
+                    'alt' => 'Captation vidéo d\'événements professionnels, aftermovie et streaming en direct à Casablanca',
                 ],
             ];
         @endphp
@@ -99,8 +99,9 @@
                     $slug = is_object($item) ? $item->slug : $item['slug'];
                     $desc = is_object($item) ? $item->hero_desc : $item['hero_desc'];
                     $image = is_object($item) ? ($item->image ?? '/uploads/expertise_01_strategy.jpg') : ($item['image'] ?? '/uploads/expertise_01_strategy.jpg');
-                    $imgAlt = is_object($item) ? ($item->title . ' Casablanca') : ($item['alt'] ?? $title);
+                    $imgAlt = is_object($item) ? ($item->title . ' - SmartFilms Prod agence audiovisuelle Casablanca') : ($item['alt'] ?? $title);
                     $icon = $iconMap[$orderNum] ?? 'bi-star';
+                    $webpExp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $image);
                 @endphp
 
                 <div class="group relative bg-[#090D1D] rounded-[24px] overflow-hidden flex flex-col justify-between border border-white/[0.08] shadow-[0_16px_36px_-10px_rgba(15,23,42,0.2)] hover:shadow-[0_24px_50px_-10px_rgba(15,23,42,0.35),0_0_0_1px_rgba(255,90,104,0.35)] hover:-translate-y-1.5 transition-all duration-400 ease-out">
@@ -108,7 +109,12 @@
                     <!-- Elegant Passe-Partout Framed Image Container -->
                     <div class="p-3 sm:p-3.5 pb-0">
                         <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#060813] border border-white/10 shadow-inner">
-                            <img src="{{ $image }}" alt="{{ $imgAlt }}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                            <picture>
+                                @if(file_exists(public_path(ltrim($webpExp, '/'))))
+                                    <source srcset="{{ $webpExp }}" type="image/webp">
+                                @endif
+                                <img src="{{ $image }}" alt="{{ $imgAlt }}" loading="lazy" decoding="async" width="600" height="375" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                            </picture>
                             
                             <!-- Subtle cinematic contrast vignette (Edges only, no black wash over the image) -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/15 pointer-events-none"></div>

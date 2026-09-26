@@ -40,7 +40,14 @@
                     <!-- Framed Passe-Partout Visual Container -->
                     <div class="p-3.5 pb-0">
                         <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#060813] border border-white/10 shadow-inner">
-                            <img src="{{ $article['image'] }}" alt="{{ $article['title'] }}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                            @php
+                                $artImg = $article['image'];
+                                $artWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $artImg);
+                            @endphp
+                            <picture>
+                                <source srcset="{{ $artWebp }}" type="image/webp">
+                                <img src="{{ $artImg }}" alt="{{ $article['title'] }} — Guide et conseils par SmartFilms Prod agence audiovisuelle Casablanca" loading="lazy" decoding="async" width="600" height="375" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                            </picture>
                             
                             <!-- Vignette -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>

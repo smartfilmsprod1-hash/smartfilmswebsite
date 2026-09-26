@@ -125,7 +125,14 @@
 
                 <div class="lg:col-span-6 {{ $idx % 2 == 1 ? 'lg:order-1' : '' }}">
                     <div class="relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#171936] border border-white/10 shadow-2xl group">
-                        <img src="{{ $p['image'] }}" alt="{{ $p['title'] }} — SmartFilms Prod Casablanca" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        @php
+                            $expImg = $p['image'];
+                            $expWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $expImg);
+                        @endphp
+                        <picture>
+                            <source srcset="{{ $expWebp }}" type="image/webp">
+                            <img src="{{ $expImg }}" alt="{{ $p['title'] }} — Production audiovisuelle et photographe professionnel SmartFilms Prod Casablanca" loading="lazy" decoding="async" width="800" height="500" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     </div>
                 </div>

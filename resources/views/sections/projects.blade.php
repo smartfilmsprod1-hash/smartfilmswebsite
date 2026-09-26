@@ -30,11 +30,22 @@
               
               <!-- Thumbnail Media with Subtle Zoom -->
               <div class="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[440px] md:min-h-[520px] overflow-hidden bg-[#2D2658]">
-                  <img 
-                      src="{{ $featuredProject->thumbnail ? asset($featuredProject->thumbnail) : asset('uploads/cinema_corporate_film.png') }}" 
-                      alt="{{ $featuredProject->title }} - SmartFilms Agence Audiovisuelle Casablanca" 
-                      class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025] filter brightness-[0.92] contrast-[1.02]" 
-                  />
+                  @php
+                      $featuredThumb = $featuredProject->thumbnail ? asset($featuredProject->thumbnail) : asset('uploads/cinema_corporate_film.png');
+                      $featuredWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $featuredThumb);
+                  @endphp
+                  <picture>
+                      <source srcset="{{ $featuredWebp }}" type="image/webp">
+                      <img 
+                          src="{{ $featuredThumb }}" 
+                          alt="Projet {{ $featuredProject->title }} - Production vidéo par SmartFilms Prod agence audiovisuelle Casablanca" 
+                          loading="lazy"
+                          decoding="async"
+                          width="1280"
+                          height="720"
+                          class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025] filter brightness-[0.92] contrast-[1.02]" 
+                      />
+                  </picture>
                   
                   <!-- Soft Cinematic Gradient Overlays -->
                   <div class="absolute inset-0 bg-gradient-to-t from-[#2D2658]/90 via-[#2D2658]/40 to-transparent pointer-events-none"></div>
@@ -106,11 +117,22 @@
                         
                         <!-- Media Container with Subtle Zoom -->
                         <div class="relative aspect-[16/10] overflow-hidden bg-[#2D2658]">
-                            <img 
-                                src="{{ $project->thumbnail ? asset($project->thumbnail) : asset('uploads/cinema_corporate_film.png') }}" 
-                                alt="{{ $project->title }} - SmartFilms Casablanca" 
-                                class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025] filter brightness-[0.92] contrast-[1.02]" 
-                            />
+                            @php
+                                $gridThumb = $project->thumbnail ? asset($project->thumbnail) : asset('uploads/cinema_corporate_film.png');
+                                $gridWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $gridThumb);
+                            @endphp
+                            <picture>
+                                <source srcset="{{ $gridWebp }}" type="image/webp">
+                                <img 
+                                    src="{{ $gridThumb }}" 
+                                    alt="Réalisation {{ $project->title }} - SmartFilms Prod agence audiovisuelle Casablanca" 
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="600"
+                                    height="375"
+                                    class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025] filter brightness-[0.92] contrast-[1.02]" 
+                                />
+                            </picture>
                             <div class="absolute inset-0 bg-gradient-to-t from-[#2D2658]/70 via-transparent to-transparent pointer-events-none"></div>
 
                             <!-- Category & Duration Pill -->

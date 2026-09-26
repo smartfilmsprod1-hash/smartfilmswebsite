@@ -5,7 +5,10 @@
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <!-- Storyboard Reference Visual on Right (Upright & perfectly visible) -->
         <div class="absolute right-0 top-0 bottom-0 w-full sm:w-3/4 lg:w-[55%] pointer-events-none overflow-hidden">
-            <img src="/uploads/storyboard_process_bg.jpg?v=2" alt="Process créatif de production audiovisuelle et storyboard film entreprise SmartFilms Casablanca" class="w-full h-full object-cover object-right opacity-60 sm:opacity-85 lg:opacity-90 filter contrast-110 brightness-95">
+            <picture>
+                <source srcset="/uploads/storyboard_process_bg.webp" type="image/webp">
+                <img src="/uploads/storyboard_process_bg.jpg" alt="Process de production audiovisuelle, storyboard et réalisation de films d'entreprise SmartFilms Casablanca" loading="lazy" decoding="async" width="1200" height="800" class="w-full h-full object-cover object-right opacity-60 sm:opacity-85 lg:opacity-90 filter contrast-110 brightness-95">
+            </picture>
             <!-- Organic Left Fade into Dark Navy (#080B1A) -->
             <div class="absolute inset-0 bg-gradient-to-r from-[#080B1A] via-[#080B1A]/85 sm:via-[#080B1A]/40 to-transparent"></div>
             <!-- Top & Bottom Subtle Blends -->

@@ -7,7 +7,10 @@
             <!-- Left Column: Cinema Camera Visual with Floating Stat Card -->
             <div class="lg:col-span-5 relative pb-8 sm:pb-10 lg:pb-0 mb-8 sm:mb-10 lg:mb-0">
                 <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-[#090C1A] aspect-[4/3] lg:aspect-[5/4] group border border-[#2D2658]/10">
-                    <img src="/uploads/vision_monitor.jpg?v=4" alt="Caméra cinéma et tournage vidéo par SmartFilms Prod agence de production audiovisuelle Casablanca Maroc" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-105">
+                    <picture>
+                        <source srcset="/uploads/vision_monitor.webp" type="image/webp">
+                        <img src="/uploads/vision_monitor.jpg" alt="Caméra cinéma 4K et moniteur de tournage vidéo - Agence audiovisuelle SmartFilms Prod Casablanca Maroc" loading="lazy" decoding="async" width="800" height="600" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-105">
+                    </picture>
                     
                     <!-- Subtle Contrast Gradient Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -19,13 +22,22 @@
                         <!-- 3 Overlapping Circular Images with White Borders -->
                         <div class="flex items-center -space-x-3 sm:-space-x-3.5 shrink-0">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-10">
-                                <img src="/uploads/1.jpg" alt="Tournage vidéo et film institutionnel Casablanca" class="w-full h-full object-cover">
+                                <picture>
+                                    <source srcset="/uploads/1.webp" type="image/webp">
+                                    <img src="/uploads/1.jpg" alt="Tournage de film institutionnel en régie cinéma à Casablanca" loading="lazy" decoding="async" width="48" height="48" class="w-full h-full object-cover">
+                                </picture>
                             </div>
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-20">
-                                <img src="/uploads/3.jpg" alt="Shooting photo professionnel entreprise Maroc" class="w-full h-full object-cover">
+                                <picture>
+                                    <source srcset="/uploads/3.webp" type="image/webp">
+                                    <img src="/uploads/3.jpg" alt="Shooting photo professionnel corporate et portraits d'entreprise au Maroc" loading="lazy" decoding="async" width="48" height="48" class="w-full h-full object-cover">
+                                </picture>
                             </div>
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-30">
-                                <img src="/uploads/2.jpg" alt="Capsules vidéo réseaux sociaux et captation Casablanca" class="w-full h-full object-cover">
+                                <picture>
+                                    <source srcset="/uploads/2.webp" type="image/webp">
+                                    <img src="/uploads/2.jpg" alt="Capsules vidéo dynamiques pour réseaux sociaux et captation événementielle à Casablanca" loading="lazy" decoding="async" width="48" height="48" class="w-full h-full object-cover">
+                                </picture>
                             </div>
                         </div>
 

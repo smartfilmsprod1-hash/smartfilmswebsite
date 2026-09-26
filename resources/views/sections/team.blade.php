@@ -46,7 +46,16 @@
                     <!-- Portrait Image Banner with Passe-Partout Framing -->
                     <div class="p-3 sm:p-3.5 pb-0">
                         <div class="relative w-full aspect-[4/5] rounded-[18px] overflow-hidden bg-[#060813] border border-white/10 shadow-inner">
-                            <img src="{{ $m->photo ?? '/uploads/team_yassine.jpg' }}" alt="{{ $m->name }} — {{ $m->role }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
+                            @php
+                                $photoUrl = $m->photo ?? '/uploads/team_yassine.jpg';
+                                $webpPhoto = preg_replace('/\.(jpe?g|png)$/i', '.webp', $photoUrl);
+                            @endphp
+                            <picture>
+                                @if(file_exists(public_path(ltrim($webpPhoto, '/'))))
+                                    <source srcset="{{ $webpPhoto }}" type="image/webp">
+                                @endif
+                                <img src="{{ $photoUrl }}" alt="{{ $m->name }} — {{ $m->role }} chez SmartFilms Prod agence audiovisuelle Casablanca" loading="lazy" decoding="async" width="400" height="500" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
+                            </picture>
                             <!-- Bottom Subtle Vignette -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none"></div>
                         </div>

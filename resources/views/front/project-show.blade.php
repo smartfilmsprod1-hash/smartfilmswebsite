@@ -39,7 +39,14 @@
     <!-- 1. Hero Header -->
     <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden pb-16 pt-36">
         <div class="absolute inset-0">
-            <img src="{{ $project->thumbnail ?? '/uploads/cinema_corporate_film.png' }}" alt="{{ $project->title }} - SmartFilms Prod Casablanca" class="w-full h-full object-cover opacity-35 scale-105">
+            @php
+                $heroThumb = $project->thumbnail ?? '/uploads/cinema_corporate_film.png';
+                $heroWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $heroThumb);
+            @endphp
+            <picture>
+                <source srcset="{{ $heroWebp }}" type="image/webp">
+                <img src="{{ $heroThumb }}" alt="{{ $project->title }} - Tournage et production par SmartFilms Prod agence audiovisuelle Casablanca" class="w-full h-full object-cover opacity-35 scale-105" fetchpriority="high">
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/70 to-transparent"></div>
         </div>
 
@@ -92,7 +99,14 @@
                 @endphp
                 <iframe class="w-full h-full border-0" src="{{ $embedUrl }}" allow="autoplay; fullscreen" allowfullscreen></iframe>
             @else
-                <img src="{{ $project->thumbnail ?? '/uploads/cinema_corporate_film.png' }}" class="w-full h-full object-cover" alt="{{ $project->title }}">
+                @php
+                    $mediaThumb = $project->thumbnail ?? '/uploads/cinema_corporate_film.png';
+                    $mediaWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $mediaThumb);
+                @endphp
+                <picture>
+                    <source srcset="{{ $mediaWebp }}" type="image/webp">
+                    <img src="{{ $mediaThumb }}" class="w-full h-full object-cover" alt="Visuel principal du projet {{ $project->title }} - Agence audiovisuelle SmartFilms Prod Casablanca" loading="lazy" decoding="async">
+                </picture>
             @endif
         </div>
     </section>
@@ -149,50 +163,6 @@
 
     </section>
 
-    <!-- 4. Next Project Navigation -->
-    @if(isset($nextProject) && $nextProject->id !== $project->id)
-        <nav class="border-t border-white/10 bg-[#101229] py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-                <div>
-                    <span class="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-1">PROJET SUIVANT</span>
-                    <h4 class="text-2xl font-bold text-white uppercase">{{ $nextProject->title }}</h4>
-                    <span class="text-xs text-[#FF4D42] font-mono">{{ $nextProject->client_name }}</span>
-                </div>
-
-                <a href="{{ route('project.show', $nextProject->slug ?? Str::slug($nextProject->title)) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                    <span>Découvrir</span>
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-        </nav>
-    @endif
-
-</article>
-@endsection
-                    <span class="text-slate-400 uppercase block">Prises de Vues Aériennes</span>
-                    <span class="font-bold text-white">Drone 4K Stabilisé &bull; FPV</span>
-                </div>
-                <div class="space-y-1">
-                    <span class="text-slate-400 uppercase block">Post-Production</span>
-                    <span class="font-bold text-white">Étalonnage HDR &bull; Mix Broadcast</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Studio Credits -->
-        <div class="border-t border-white/10 pt-10 flex flex-wrap justify-between items-center gap-6 text-xs font-mono text-slate-400">
-            <div>
-                <span class="text-white font-bold block">Production : SmartFilms Prod Casablanca</span>
-                <span>Villa Brion &bull; Casablanca</span>
-            </div>
-            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold">
-                <span>Discuter d'un projet similaire</span>
-                <i class="bi bi-arrow-right"></i>
-            </a>
-        </div>
-
-    </section>
-
     <!-- 4. Campaign Deliverables & Multi-Video Showcase (if project has multiple videos/gallery) -->
     @if(!empty($galleryItems))
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 border-t border-white/10 pt-16 space-y-12">
@@ -215,7 +185,14 @@
                                 <div class="relative aspect-video rounded-2xl overflow-hidden bg-black mb-5 group/box cursor-pointer"
                                      onclick="switchProjectVideo('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}'); document.getElementById('masterPlayerContainer').scrollIntoView({ behavior: 'smooth' });">
                                     
-                                    <img src="{{ asset($item['thumbnail']) }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    @php
+                                        $galThumb = asset($item['thumbnail']);
+                                        $galWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $galThumb);
+                                    @endphp
+                                    <picture>
+                                        <source srcset="{{ $galWebp }}" type="image/webp">
+                                        <img src="{{ $galThumb }}" alt="{{ $item['title'] ?? $project->title }} - SmartFilms Prod production audiovisuelle Casablanca" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" width="600" height="338">
+                                    </picture>
                                     <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/20 to-transparent"></div>
                                     
                                     <!-- Badge -->

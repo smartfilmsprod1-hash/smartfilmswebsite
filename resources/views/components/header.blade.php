@@ -8,8 +8,8 @@
             <!-- Two-Logo Stack (Seamless Crossfade without Layout Shift) -->
             <a href="{{ route('home') }}" class="relative inline-flex items-center group logo-container outline-none focus:outline-none ring-0 select-none" aria-label="SmartFilms Prod Accueil">
                 <div class="relative h-10 sm:h-11 w-40 sm:w-44 flex items-center outline-none">
-                    <img src="/uploads/smartfilms_logo_white.png" alt="SmartFilms Prod (Blanc)" class="logo-white h-10 sm:h-11 max-h-[44px] w-auto object-contain transition-all" style="max-height: 44px; width: auto;">
-                    <img src="/uploads/smartfilms_logo_black.png" alt="SmartFilms Prod (Noir)" class="logo-black h-10 sm:h-11 max-h-[44px] w-auto object-contain transition-all" style="max-height: 44px; width: auto;">
+                    <img src="/uploads/smartfilms_logo_white.png" alt="SmartFilms Prod - Agence de production audiovisuelle et photographe professionnel Casablanca" class="logo-white h-10 sm:h-11 max-h-[44px] w-auto object-contain transition-all" width="176" height="44" fetchpriority="high" style="max-height: 44px; width: auto;">
+                    <img src="/uploads/smartfilms_logo_black.png" alt="SmartFilms Prod Casablanca - Agence audiovisuelle et studio photo corporate" class="logo-black h-10 sm:h-11 max-h-[44px] w-auto object-contain transition-all" width="176" height="44" fetchpriority="high" style="max-height: 44px; width: auto;">
                 </div>
             </a>
             

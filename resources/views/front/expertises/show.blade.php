@@ -78,7 +78,14 @@
 <!-- EXPERTISE CINEMATIC HERO -->
 <section class="relative pt-44 pb-24 bg-[#080914] text-white overflow-hidden border-b border-white/10">
     <div class="absolute inset-0 z-0">
-        <img src="{{ $expertise['image'] }}" alt="{{ $expertise['title'] }} — SmartFilms Prod Casablanca" class="w-full h-full object-cover opacity-20 filter blur-sm scale-105">
+        @php
+            $expHeroImg = $expertise['image'];
+            $expHeroWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $expHeroImg);
+        @endphp
+        <picture>
+            <source srcset="{{ $expHeroWebp }}" type="image/webp">
+            <img src="{{ $expHeroImg }}" alt="{{ $expertise['title'] }} — Expertise audiovisuelle SmartFilms Prod Casablanca" class="w-full h-full object-cover opacity-20 filter blur-sm scale-105" fetchpriority="high">
+        </picture>
         <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/80 to-transparent"></div>
     </div>
 
@@ -194,7 +201,14 @@
             @foreach($relatedProjects as $proj)
                 <div class="group relative flex flex-col justify-between">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-[#171936] border border-white/10 shadow-xl">
-                        <img src="{{ $proj->thumbnail ?? '/uploads/cinema_corporate_film.png' }}" alt="{{ $proj->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        @php
+                            $relThumb = $proj->thumbnail ?? '/uploads/cinema_corporate_film.png';
+                            $relWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $relThumb);
+                        @endphp
+                        <picture>
+                            <source srcset="{{ $relWebp }}" type="image/webp">
+                            <img src="{{ $relThumb }}" alt="{{ $proj->title }} — Réalisation {{ $expertise['title'] }} SmartFilms Prod Casablanca" loading="lazy" decoding="async" width="600" height="338" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
                             <button onclick="openVideoModal('{{ $proj->video_url }}', '{{ $proj->title }} &bull; {{ $proj->client_name }}')" class="w-14 h-14 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-lg shadow-2xl hover:scale-110 transition-transform">
