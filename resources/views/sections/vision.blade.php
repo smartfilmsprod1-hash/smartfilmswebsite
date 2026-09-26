@@ -7,7 +7,7 @@
             <!-- Left Column: Cinema Camera Visual with Floating Stat Card -->
             <div class="lg:col-span-5 relative pb-8 sm:pb-10 lg:pb-0 mb-8 sm:mb-10 lg:mb-0">
                 <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-[#090C1A] aspect-[4/3] lg:aspect-[5/4] group border border-[#2D2658]/10">
-                    <img src="/uploads/vision_monitor.jpg?v=4" alt="Production audiovisuelle SmartFilms Casablanca" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-105">
+                    <img src="/uploads/vision_monitor.jpg?v=4" alt="Caméra cinéma et tournage vidéo par SmartFilms Prod agence de production audiovisuelle Casablanca Maroc" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out filter contrast-105">
                     
                     <!-- Subtle Contrast Gradient Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -19,13 +19,13 @@
                         <!-- 3 Overlapping Circular Images with White Borders -->
                         <div class="flex items-center -space-x-3 sm:-space-x-3.5 shrink-0">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-10">
-                                <img src="/uploads/1.jpg" alt="Projet SmartFilms" class="w-full h-full object-cover">
+                                <img src="/uploads/1.jpg" alt="Tournage vidéo et film institutionnel Casablanca" class="w-full h-full object-cover">
                             </div>
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-20">
-                                <img src="/uploads/3.jpg" alt="Projet SmartFilms" class="w-full h-full object-cover">
+                                <img src="/uploads/3.jpg" alt="Shooting photo professionnel entreprise Maroc" class="w-full h-full object-cover">
                             </div>
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-30">
-                                <img src="/uploads/2.jpg" alt="Projet SmartFilms" class="w-full h-full object-cover">
+                                <img src="/uploads/2.jpg" alt="Prise de vue aérienne par drone et aftermovie événementiel" class="w-full h-full object-cover">
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                 <!-- Chapter Overline -->
                 <div class="flex items-center gap-3 mb-4">
                     <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase">
-                        03 — NOTRE VISION
+                        03 — NOTRE VISION & EXPERTISE
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
@@ -56,12 +56,12 @@
                 <!-- Main Heading -->
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#161828] leading-[1.15] mb-6">
                     L'IMAGE VIDÉO & PHOTO<br>
-                    <span class="text-[#FF5A68]">AU SERVICE DES MARQUES.</span>
+                    <span class="text-[#FF5A68]">AU SERVICE DES MARQUES AU MAROC.</span>
                 </h2>
 
                 <!-- Introduction Paragraph -->
                 <p class="text-[#686580] text-sm sm:text-base font-light leading-relaxed mb-10 max-w-2xl">
-                    SmartFilms accompagne les entreprises, marques et institutions à Casablanca, Rabat, Marrakech et dans tout le Maroc. De la réalisation de films d'entreprise et spots publicitaires aux shootings photo professionnels (portraits corporate, packshots produits, captations d'événements), nous déployons une exigence esthétique totale.
+                    SmartFilms est une <strong>agence de production audiovisuelle et de création visuelle basée à Casablanca</strong>. Nous accompagnons les entreprises, institutions et grandes marques au Maroc (Casablanca, Rabat, Tanger, Marrakech) dans la réalisation de <strong>films d'entreprise</strong>, <strong>spots publicitaires</strong>, <strong>shootings photo corporate</strong> (portraits de dirigeants, reportages industriels, packshots produits) et <strong>tournages drone 8K</strong>. Nous conjuguons vision stratégique d'agence de communication et exigence technique cinématographique.
                 </p>
 
                 <!-- 3 Pillars Row -->
@@ -75,7 +75,7 @@
                         <div>
                             <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PENSER</h4>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
-                                Stratégie & conception
+                                Stratégie & Storytelling
                             </p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div>
                             <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">PRODUIRE</h4>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
-                                Réalisation & production
+                                Tournage 6K & Shooting Photo
                             </p>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         <div>
                             <h4 class="text-sm sm:text-base font-black uppercase tracking-wider text-[#161828]">RAYONNER</h4>
                             <p class="text-xs text-[#7A7793] font-light mt-1 leading-relaxed">
-                                Contenus & diffusion
+                                Post-Production & Diffusion
                             </p>
                         </div>
                     </div>

@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>@yield('title', 'SmartFilms Prod | Maison de Production Audiovisuelle & Cinématographique Casablanca')</title>
-    <meta name="description" content="@yield('meta_description', 'Maison de production audiovisuelle à Casablanca. Films de marque, spots publicitaires, prises de vues par drone 4K et narration cinématographique au Maroc.')">
-    <meta name="robots" content="index, follow">
+    <title>@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')</title>
+    <meta name="description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
+    <meta name="keywords" content="agence de production audiovisuelle casablanca, production audiovisuelle maroc, shooting photo corporate casablanca, photographe professionnel casablanca, film d'entreprise maroc, spot publicitaire tv, captation evenementielle, agence de communication casablanca, packshot produit, drone maroc 8k">
+    <meta name="author" content="SmartFilms Prod">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    <!-- Geo-Targeting for Casablanca, Morocco Local SEO -->
+    <meta name="geo.region" content="MA-06">
+    <meta name="geo.placename" content="Casablanca">
+    <meta name="geo.position" content="33.587579;-7.632947">
+    <meta name="ICBM" content="33.587579, -7.632947">
+
     <!-- OpenGraph Metadata -->
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="@yield('og_title', 'SmartFilms Prod | Production Cinématographique Haute Fidélité')">
-    <meta property="og:description" content="@yield('og_description', 'Films de marque, spots publicitaires et prises de vues par drone pour les leaders à Casablanca et à l\'international.')">
+    <meta property="og:title" content="@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')">
+    <meta property="og:description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="{{ asset('uploads/cinema_corporate_film.png') }}">
+    <meta property="og:site_name" content="SmartFilms Prod">
+    <meta property="og:image" content="{{ asset('uploads/vision_monitor.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
+    <meta name="twitter:image" content="{{ asset('uploads/vision_monitor.jpg') }}">
 
     <!-- JSON-LD Structured Data Schema for Casablanca, Morocco & Google Rich Snippets -->
     <script type="application/ld+json">
@@ -22,12 +37,24 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "{{ url('/') }}#website",
+          "url": "{{ url('/') }}",
+          "name": "SmartFilms Prod",
+          "description": "Agence de Production Audiovisuelle, Vidéo & Shooting Photo Corporate à Casablanca Maroc",
+          "inLanguage": "fr-FR",
+          "publisher": {
+            "@id": "{{ url('/') }}#organization"
+          }
+        },
+        {
           "@type": ["LocalBusiness", "ProfessionalService"],
           "@id": "{{ url('/') }}#organization",
           "name": "SmartFilms Prod",
-          "alternateName": ["SmartFilms Maroc", "SmartFilms Production Casablanca"],
-          "description": "Agence de production audiovisuelle et shooting photo à Casablanca. Films corporate, spots publicitaires, portraits professionnels, packshots et prises de vues drone au Maroc.",
+          "alternateName": ["SmartFilms Maroc", "SmartFilms Production Casablanca", "Agence SmartFilms Prod"],
+          "description": "SmartFilms Prod est l'agence de production audiovisuelle et de photographie professionnelle de référence à Casablanca. Nous réalisons des films d'entreprise 4K/6K, spots publicitaires, shootings photo corporate, packshots produits et prises de vues drone au Maroc.",
           "image": "{{ asset('uploads/smartfilms_logo_white.png') }}",
+          "logo": "{{ asset('uploads/smartfilms_logo_white.png') }}",
           "telephone": "{{ $settings['phone'] ?? '+212 6 17 20 23 45' }}",
           "email": "{{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}",
           "url": "{{ url('/') }}",
@@ -36,6 +63,7 @@
             "streetAddress": "130 Bv d'Anfa",
             "addressLocality": "Casablanca",
             "postalCode": "20300",
+            "addressRegion": "Grand Casablanca",
             "addressCountry": "MA"
           },
           "geo": {
@@ -43,59 +71,92 @@
             "latitude": 33.5875787,
             "longitude": -7.6329473
           },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "19:00"
+            }
+          ],
           "areaServed": [
             { "@type": "City", "name": "Casablanca" },
             { "@type": "City", "name": "Rabat" },
             { "@type": "City", "name": "Tanger" },
             { "@type": "City", "name": "Marrakech" },
+            { "@type": "City", "name": "Fès" },
+            { "@type": "City", "name": "Agadir" },
             { "@type": "Country", "name": "Maroc" }
           ],
           "priceRange": "MAD $$$$",
+          "currenciesAccepted": "MAD, EUR, USD",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Services de Production Audiovisuelle & Photo",
+            "name": "Services de Production Audiovisuelle & Photo Professionnelle",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Production de Films Corporate & Institutionnels",
-                  "description": "Réalisation de films d'entreprise 4K/6K, vidéos de marque employeur et communication institutionnelle."
+                  "name": "Production Audiovisuelle & Films d'Entreprise",
+                  "description": "Réalisation de films institutionnels, vidéos d'entreprise 4K/6K, marque employeur et communication interne à Casablanca et partout au Maroc."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Shooting Photo Professionnel & Corporate",
-                  "description": "Portraits de dirigeants, reportages industriels et packshots produits haute définition à Casablanca."
+                  "name": "Shooting Photo Corporate & Packshot Produit",
+                  "description": "Photographe professionnel à Casablanca : portraits de dirigeants, trombinoscopes d'équipes, reportages industriels et packshots produits e-commerce."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Spots Publicitaires TV & Digital",
-                  "description": "Conception créative et production de spots publicitaires haute cadence pour la télévision et les plateformes digitales."
+                  "name": "Spots Publicitaires TV, Cinéma & Campagnes Digitales",
+                  "description": "Conception créative, scénarisation et tournage de spots publicitaires pour la télévision, le cinéma et les plateformes digitales."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Prise de Vue Aérienne par Drone 8K & FPV",
-                  "description": "Tournages aériens par drone homologué DGAC au Maroc avec télépilotes certifiés et autorisations administratives."
+                  "name": "Prise de Vue Aérienne par Drone 8K & FPV au Maroc",
+                  "description": "Tournages aériens par drone homologué CCM et DGAC avec télépilotes certifiés pour le cinéma, l'immobilier et l'industrie."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Captation Événementielle Photo & Vidéo",
-                  "description": "Couverture complète de congrès, séminaires, lancements de produits et aftermovies événementiels."
+                  "name": "Captation Événementielle, Congrès & Aftermovie",
+                  "description": "Couverture vidéo et photo complète de congrès, séminaires, lancements de marques et réalisation d'aftermovies dynamiques."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Création de Contenu Vidéo Réseaux Sociaux (Reels & TikTok)",
+                  "description": "Production de capsules vidéos courtes verticales 9:16 optimisées pour booster l'engagement sur Instagram, TikTok et LinkedIn."
                 }
               }
             ]
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "{{ url('/') }}#showreel",
+          "name": "SmartFilms Showreel 2026 | Agence de Production Audiovisuelle Casablanca",
+          "description": "Showreel officiel de SmartFilms Prod : production cinématographique, films d'entreprise, spots publicitaires et prises de vues aériennes par drone à Casablanca et au Maroc.",
+          "thumbnailUrl": "{{ asset('uploads/vision_monitor.jpg') }}",
+          "uploadDate": "2026-01-15T00:00:00+01:00",
+          "contentUrl": "{{ asset('uploads/hero_youtube.mp4') }}",
+          "embedUrl": "{{ url('/') }}",
+          "publisher": {
+            "@id": "{{ url('/') }}#organization"
           }
         },
         {
@@ -107,7 +168,7 @@
               "name": "Quels types de productions audiovisuelles et films d'entreprise réalisez-vous au Maroc ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "SmartFilms réalise des films corporate, spots publicitaires TV et digitaux, vidéos de marque employeur, interviews de dirigeants et contenus capsules 9:16 pour les réseaux sociaux avec caméras cinéma 4K/6K et étalonnage DaVinci Resolve."
+                "text": "SmartFilms réalise l'ensemble de vos projets audiovisuels : films corporate & institutionnels, spots publicitaires TV et digitaux, vidéos de marque employeur & RSE, interviews de dirigeants, ainsi que des vidéos capsules 9:16 pour les réseaux sociaux (Reels, TikTok, LinkedIn) avec caméras cinéma 4K/6K et étalonnage DaVinci Resolve."
               }
             },
             {
@@ -115,7 +176,7 @@
               "name": "Proposez-vous des services de shooting photo corporate et packshot à Casablanca ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Oui, nous disposons d'un pôle de photographie professionnelle d'entreprise à Casablanca réalisant portraits de dirigeants, packshots produits et reportages photo sur site partout au Maroc."
+                "text": "Oui, nous disposons d'un pôle dédié à la photographie professionnelle d'entreprise à Casablanca : portraits de dirigeants, trombinoscopes d'équipes, packshots produits e-commerce haute définition et reportages industriels sur site partout au Maroc."
               }
             },
             {
@@ -139,7 +200,7 @@
               "name": "Dans quelles villes du Maroc intervenez-vous ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Basés à Casablanca (Boulevard d'Anfa), nos réalisateurs et techniciens interviennent partout au Maroc : Rabat, Tanger, Marrakech, Fès, Agadir ainsi que sur des sites industriels et miniers isolés."
+                "text": "Basés au Boulevard d'Anfa à Casablanca, nos réalisateurs et techniciens interviennent rapidement partout au Maroc : Rabat, Tanger, Marrakech, Fès, Agadir ainsi que sur des sites industriels et miniers isolés."
               }
             }
           ]
@@ -524,9 +585,8 @@
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
-            <div id="modalPlayerWrapper" class="aspect-video w-full bg-black relative overflow-hidden">
+            <div class="aspect-video w-full bg-black">
                 <iframe id="modalIframe" class="w-full h-full border-0" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                <div id="modalTopShield" class="absolute top-0 right-0 w-28 h-20 z-30 pointer-events-auto bg-transparent hidden"></div>
             </div>
         </div>
     </div>
@@ -564,38 +624,32 @@
             const modal = document.getElementById('videoModal');
             const iframe = document.getElementById('modalIframe');
             const titleEl = document.getElementById('modalVideoTitle');
-            const shieldEl = document.getElementById('modalTopShield');
             if (modal && iframe) {
                 titleEl.innerText = title || 'SmartFilms Cinema Player';
                 let embedUrl = url;
-                let isGoogleDrive = false;
                 if (url && url.includes('youtube.com/watch?v=')) {
                     embedUrl = url.replace('watch?v=', 'embed/');
-                } else if (url && url.includes('youtu.be/')) {
-                    embedUrl = url.replace('youtu.be/', 'www.youtube.com/embed/');
-                } else if (url && url.includes('drive.google.com/file/d/')) {
-                    isGoogleDrive = true;
-                    embedUrl = url.replace(/\/view(\?.*)?$/, '/preview');
-                    if (!embedUrl.includes('/preview')) {
-                        embedUrl = embedUrl.replace(/\/?$/, '/preview');
-                    }
                 }
-
-                if (isGoogleDrive) {
-                    iframe.className = "absolute -top-[56px] left-0 w-full h-[calc(100%+56px)] border-0";
-                    iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-presentation");
-                    if (shieldEl) shieldEl.classList.remove('hidden');
-                } else {
-                    iframe.className = "w-full h-full border-0";
-                    iframe.removeAttribute("sandbox");
-                    if (shieldEl) shieldEl.classList.add('hidden');
-                    if (embedUrl && !embedUrl.includes('autoplay=1')) {
-                        embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
-                    }
+                if (embedUrl && !embedUrl.includes('autoplay=1')) {
+                    embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
                 }
-
                 iframe.src = embedUrl || '';
                 modal.classList.remove('hidden');
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalIframe');
+            if (modal && iframe) {
+                iframe.src = '';
+                modal.classList.add('hidden');
+            }
+        }
+    </script>
+    @stack('scripts')
+</body>
+</html>
             }
         }
 

@@ -4,8 +4,8 @@
         
         <!-- Minimalist Section Header -->
         <div class="text-center mb-10">
-            <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#2D2658]/60 block">
-                ILS NOUS FONT CONFIANCE
+            <span class="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#2D2658]/70 block">
+                ILS FONT CONFIANCE À NOTRE AGENCE AUDIOVISUELLE & PHOTO AU MAROC
             </span>
         </div>
 
@@ -34,14 +34,14 @@
                 <!-- Set 1 (Original) -->
                 @foreach($clientsList as $client)
                     <div class="h-16 w-44 shrink-0 bg-white rounded-2xl border border-[#2D2658]/10 flex items-center justify-center p-3.5 shadow-sm hover:shadow-md hover:border-[#FF5A68]/40 transition-all duration-300 group cursor-pointer">
-                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }}" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }} - Partenaire & Client SmartFilms Casablanca" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                     </div>
                 @endforeach
 
                 <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
                 @foreach($clientsList as $client)
                     <div class="h-16 w-44 shrink-0 bg-white rounded-2xl border border-[#2D2658]/10 flex items-center justify-center p-3.5 shadow-sm hover:shadow-md hover:border-[#FF5A68]/40 transition-all duration-300 group cursor-pointer">
-                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }}" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                        <img src="/uploads/{{ $client['file'] }}" alt="{{ $client['name'] }} - Partenaire & Client SmartFilms Casablanca" class="max-h-9 max-w-full object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                     </div>
                 @endforeach
             </div>

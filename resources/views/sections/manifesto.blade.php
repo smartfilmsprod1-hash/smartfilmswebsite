@@ -5,7 +5,7 @@
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <!-- Storyboard Reference Visual on Right (Upright & perfectly visible) -->
         <div class="absolute right-0 top-0 bottom-0 w-full sm:w-3/4 lg:w-[55%] pointer-events-none overflow-hidden">
-            <img src="/uploads/storyboard_process_bg.jpg?v=2" alt="Storyboard & Process Créatif SmartFilms" class="w-full h-full object-cover object-right opacity-60 sm:opacity-85 lg:opacity-90 filter contrast-110 brightness-95">
+            <img src="/uploads/storyboard_process_bg.jpg?v=2" alt="Process créatif de production audiovisuelle et storyboard film entreprise SmartFilms Casablanca" class="w-full h-full object-cover object-right opacity-60 sm:opacity-85 lg:opacity-90 filter contrast-110 brightness-95">
             <!-- Organic Left Fade into Dark Navy (#080B1A) -->
             <div class="absolute inset-0 bg-gradient-to-r from-[#080B1A] via-[#080B1A]/85 sm:via-[#080B1A]/40 to-transparent"></div>
             <!-- Top & Bottom Subtle Blends -->
@@ -25,13 +25,13 @@
             <div>
                 <div class="flex items-center gap-3 mb-3">
                     <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase">
-                        05 — NOTRE PROCESS
+                        05 — NOTRE PROCESS DE PRODUCTION
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
                     DE L'IDÉE À L'IMAGE :<br>
-                    <span class="text-[#FF5A68]">NOTRE MÉTHODE DE TOURNAGE.</span>
+                    <span class="text-[#FF5A68]">NOTRE MÉTHODE DE TOURNAGE & RÉALISATION.</span>
                 </h2>
             </div>
 
@@ -41,13 +41,13 @@
                     <div class="flex items-center gap-2 mb-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A68] animate-pulse"></span>
                         <span class="text-[10px] font-mono uppercase tracking-[0.22em] text-[#FF5A68] font-bold">
-                            MÉTHODE & EXCELLENCE
+                            MÉTHODE & EXCELLENCE EN PRODUCTION
                         </span>
                     </div>
                     <p class="text-white/85 text-xs sm:text-sm font-light leading-relaxed">
-                        Une méthode claire, une équipe engagée et un seul objectif :
+                        Agence de communication et maison de production audiovisuelle à Casablanca :
                         <span class="block mt-1.5 font-serif text-base sm:text-lg italic text-white/95 font-normal tracking-wide">
-                            « donner vie à vos projets avec créativité et rigueur. »
+                            « donner vie à vos projets vidéo & photo avec créativité et rigueur. »
                         </span>
                     </p>
                 </div>
@@ -77,7 +77,7 @@
                             IMAGINER
                         </h4>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
-                            Concept & direction artistique
+                            Concept, script & direction artistique
                         </p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                             PRODUIRE
                         </h4>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
-                            Tournage & réalisation
+                            Tournage cinéma 6K & shooting photo
                         </p>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                             FAÇONNER
                         </h4>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
-                            Montage & post-production
+                            Montage, étalonnage DaVinci & son
                         </p>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                             DÉPLOYER
                         </h4>
                         <p class="text-xs sm:text-sm text-white/60 font-light mt-1.5 leading-relaxed">
-                            Formats & diffusion
+                            Masters multi-formats & diffusion
                         </p>
                     </div>
                 </div>

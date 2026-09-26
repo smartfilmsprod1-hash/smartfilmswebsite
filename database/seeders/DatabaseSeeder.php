@@ -184,8 +184,8 @@ class DatabaseSeeder extends Seeder
             ['slug' => 'accueil'],
             [
                 'title' => 'Accueil - SmartFilms Prod',
-                'meta_title' => 'SmartFilms Prod | Agence de Production Audiovisuelle & Films d\'Entreprise Casablanca',
-                'meta_description' => 'SmartFilms Prod est l\'agence de production audiovisuelle de référence à Casablanca : films d\'entreprise 4K, spots publicitaires, prises de vues par drone et storytelling cinématographique pour les grandes marques au Maroc.',
+                'meta_title' => 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca',
+                'meta_description' => 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.',
                 'is_active' => true,
                 'content' => [
                     [

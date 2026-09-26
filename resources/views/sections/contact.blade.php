@@ -39,7 +39,7 @@
                             SMARTFILMS <span class="text-[#FF5A68]">PROD</span>
                         </h3>
                         <p class="text-[#8E8B9F] text-xs sm:text-sm font-light mt-2 leading-relaxed">
-                            Notre équipe de réalisateurs, directeurs photo et créatifs vous accompagne à chaque étape de votre production.
+                            Agence de production audiovisuelle, shooting photo professionnel et réalisation de films d'entreprise au Maroc. Échangeons sur votre projet ou rendez-nous visite à nos bureaux à Casablanca.
                         </p>
                     </div>
 
@@ -187,6 +187,14 @@
                 </form>
             </div>
 
+        </div>
+
+        <!-- Geographic Presence & Keyword Cloud -->
+        <div class="mt-14 pt-8 border-t border-[#2D2658]/10 text-center">
+            <p class="text-[11px] font-mono uppercase tracking-wider text-[#686580]/85 leading-relaxed">
+                <span class="font-bold text-[#161828]">ZONES D'INTERVENTION & PRESTATIONS AUDIOVISUELLES AU MAROC :</span><br class="hidden sm:inline">
+                Agence de production audiovisuelle Casablanca &bull; Shooting photo corporate &bull; Film d'entreprise Rabat &bull; Photographe professionnel Tanger &bull; Spot publicitaire TV Marrakech &bull; Prises de vues par drone Agadir &bull; Vidéo marque employeur &bull; Aftermovie événementiel &bull; Packshot produit e-commerce
+            </p>
         </div>
 
     </div>

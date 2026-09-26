@@ -35,8 +35,8 @@ class FrontController extends Controller
             $page = new Page([
                 'title' => 'Accueil',
                 'slug' => 'accueil',
-                'meta_title' => 'SmartFilms Prod | Production Audiovisuelle à Casablanca & Maroc',
-                'meta_description' => 'SmartFilms Prod est une maison de production audiovisuelle à Casablanca spécialisée en films corporate, publicité, événementiel, contenus de marque et prises de vues aériennes au Maroc.',
+                'meta_title' => 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca',
+                'meta_description' => 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.',
                 'content' => []
             ]);
         }
@@ -59,7 +59,10 @@ class FrontController extends Controller
      */
     public function portfolio()
     {
-        $projects = Project::orderBy('order')->get();
+        $projects = Project::where('is_published', true)->orderBy('order')->get();
+        if ($projects->isEmpty()) {
+            $projects = Project::orderBy('order')->get();
+        }
         $categories = $projects->pluck('category')->unique()->filter()->values();
         $common = $this->getCommonData();
 
@@ -97,7 +100,7 @@ class FrontController extends Controller
     {
         $common = $this->getCommonData();
         $expertises = \App\Models\Expertise::where('is_active', true)->orderBy('order')->get();
-        $projects = Project::orderBy('order')->take(6)->get();
+        $projects = Project::where('is_published', true)->orderBy('order')->take(6)->get();
 
         return view('front.expertises.index', [
             'menus' => $common['menus'],
@@ -372,7 +375,7 @@ class FrontController extends Controller
         }
 
         $common = $this->getCommonData();
-        $relatedProjects = Project::orderBy('order')->take(4)->get();
+        $relatedProjects = Project::where('is_published', true)->orderBy('order')->take(4)->get();
 
         return view('front.expertises.show', [
             'slug' => $slug,

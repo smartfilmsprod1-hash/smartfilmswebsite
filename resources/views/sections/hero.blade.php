@@ -23,21 +23,21 @@
                 <div>
                     <div class="hero-eyebrow inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[9.5px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest uppercase font-semibold text-white/95 shadow-md max-w-full">
                         <span class="w-2 h-2 rounded-full bg-[#FF5A68] animate-pulse shrink-0"></span>
-                        <span class="truncate sm:whitespace-normal">PRODUCTION AUDIOVISUELLE &bull; CASABLANCA & MAROC</span>
+                        <span class="truncate sm:whitespace-normal">AGENCE DE PRODUCTION AUDIOVISUELLE & PHOTO &bull; CASABLANCA</span>
                     </div>
                 </div>
 
                 <!-- Main Title Hierarchy -->
                 <div class="space-y-1">
-                    <!-- 250ms: Elegant Italic / Serif -->
-                    <div class="reveal-mask pr-4">
-                        <span class="hero-serif font-serif-italic font-normal block lowercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 drop-shadow-lg">
-                            agence de
-                        </span>
-                    </div>
-
-                    <!-- 350ms & 450ms: Very Large Bold Sans-serif Stacked Title -->
+                    <!-- Complete H1 Tag for Google Crawlers -->
                     <h1 class="text-[1.85rem] xs:text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] font-black uppercase tracking-tight text-white leading-[0.92] drop-shadow-2xl select-none">
+                        <!-- 250ms: Elegant Italic / Serif -->
+                        <span class="reveal-mask block pr-4">
+                            <span class="hero-serif font-serif-italic font-normal block lowercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/90 drop-shadow-lg mb-1 sm:mb-2 tracking-normal">
+                                agence de
+                            </span>
+                        </span>
+                        <!-- 350ms & 450ms: Very Large Bold Sans-serif Stacked Title -->
                         <span class="reveal-mask block pr-4 sm:pr-6">
                             <span class="hero-title-line1 block font-black tracking-tight">
                                 PRODUCTION
@@ -48,13 +48,14 @@
                                 AUDIOVISUELLE
                             </span>
                         </span>
+                        <span class="sr-only"> & Shooting Photo Professionnel Casablanca Maroc</span>
                     </h1>
                 </div>
 
                 <!-- 700ms: Supporting Description (Lower-Left underneath Title) -->
                 <div class="reveal-mask pt-0.5">
                     <p class="hero-desc text-white/90 text-xs sm:text-sm md:text-base font-light max-w-xl leading-relaxed drop-shadow-md">
-                        Films corporate, spots publicitaires, shooting photo professionnel et prises de vues drone 8K. Nous façonnons des contenus percutants pour valoriser votre entreprise à Casablanca et partout au Maroc.
+                        Films d'entreprise, spots publicitaires, shooting photo corporate et prises de vues drone 8K. Votre agence de production audiovisuelle et photo de référence à Casablanca et au Maroc.
                     </p>
                 </div>
 

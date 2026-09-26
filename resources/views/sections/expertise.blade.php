@@ -8,15 +8,15 @@
             <div>
                 <div class="flex items-center gap-3 mb-3">
                     <span class="text-xs font-mono font-bold tracking-[0.2em] text-[#FF5A68] uppercase">
-                        04 — NOS EXPERTISES
+                        04 — NOS EXPERTISES & SERVICES
                     </span>
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-[#161828] leading-[1.15]">
-                    PRODUCTION VIDÉO, SHOOTING PHOTO & DRONE.
+                    PRODUCTION AUDIOVISUELLE, SHOOTING PHOTO & DRONE À CASABLANCA.
                 </h2>
                 <p class="text-[#686580] text-sm sm:text-base font-light max-w-xl leading-relaxed mt-2">
-                    De la conception narrative à la diffusion : films corporate, reportages photo d'entreprise et tournages aériens à Casablanca et partout au Maroc.
+                    De la conception narrative à la diffusion : films d'entreprise, reportages photo corporate, packshots produits et tournages aériens à Casablanca et partout au Maroc.
                 </p>
             </div>
 
@@ -43,43 +43,49 @@
                     'order' => 1,
                     'title' => 'STRATÉGIE & CONCEPTION',
                     'slug' => 'strategie-conception',
-                    'hero_desc' => 'Analyse, storytelling, direction artistique : une vision sur mesure pour des contenus qui ont du sens.',
+                    'hero_desc' => 'Storytelling de marque, écriture scénaristique et direction artistique : nous sculptons des récits percutants pour vos campagnes de communication.',
                     'image' => '/uploads/expertise_01_strategy.jpg',
+                    'alt' => 'Stratégie de communication et conception audiovisuelle Casablanca',
                 ],
                 [
                     'order' => 2,
                     'title' => 'PRODUCTION AUDIOVISUELLE',
                     'slug' => 'production-audiovisuelle',
-                    'hero_desc' => 'Du tournage à la post-production, nous assurons la réalisation de films sur mesure, avec un haut niveau d\'exigence.',
+                    'hero_desc' => 'Films d\'entreprise, vidéos corporate institutionnelles et reportages de marque en 4K/6K cinéma pour valoriser votre société au Maroc.',
                     'image' => '/uploads/expertise_02_production.jpg',
+                    'alt' => 'Agence de production audiovisuelle et film d\'entreprise Casablanca Maroc',
                 ],
                 [
                     'order' => 3,
-                    'title' => 'CONTENUS SOCIAUX',
+                    'title' => 'CONTENUS SOCIAUX & REELS',
                     'slug' => 'contenus-sociaux',
-                    'hero_desc' => 'Des formats adaptés aux réseaux sociaux pour engager vos communautés et renforcer votre visibilité.',
+                    'hero_desc' => 'Création de capsules vidéos percutantes au format vertical 9:16 pour Instagram Reels, TikTok et LinkedIn afin de booster votre visibilité.',
                     'image' => '/uploads/expertise_03_social.jpg',
+                    'alt' => 'Création de contenu vidéo réseaux sociaux Reels TikTok Casablanca',
                 ],
                 [
                     'order' => 4,
                     'title' => 'SHOOTING PHOTO CORPORATE',
                     'slug' => 'shooting-photo-corporate',
-                    'hero_desc' => 'Portraits de dirigeants, reportages industriels, packshots produits et banques d\'images sur mesure à Casablanca et au Maroc.',
+                    'hero_desc' => 'Photographe professionnel à Casablanca : portraits de dirigeants, trombinoscopes d\'équipes, packshots produits e-commerce et reportages industriels.',
                     'image' => '/uploads/expertise_04_corporate.jpg',
+                    'alt' => 'Photographe corporate et shooting photo d\'entreprise Casablanca Maroc',
                 ],
                 [
                     'order' => 5,
                     'title' => 'PUBLICITÉ & CAMPAGNES',
                     'slug' => 'publicite-campagnes',
-                    'hero_desc' => 'Des campagnes créatives et percutantes pour faire rayonner vos marques et atteindre vos objectifs.',
+                    'hero_desc' => 'Conception et production de spots publicitaires TV et digitaux à fort impact émotionnel pour vos lancements de produits et campagnes au Maroc.',
                     'image' => '/uploads/expertise_05_advertising.jpg',
+                    'alt' => 'Réalisation de spots publicitaires TV et digitaux Maroc',
                 ],
                 [
                     'order' => 6,
-                    'title' => 'ÉVÉNEMENT & LIVE',
+                    'title' => 'ÉVÉNEMENT, DRONE & LIVE',
                     'slug' => 'evenement-live',
-                    'hero_desc' => 'Captation, diffusion, régie multi-caméras... Nous donnons une autre dimension à vos événements.',
+                    'hero_desc' => 'Captation d\'événements, aftermovies dynamiques, régie multi-caméras et prises de vues aériennes par drone 8K homologué au Maroc.',
                     'image' => '/uploads/expertise_06_events.jpg',
+                    'alt' => 'Captation événementielle aftermovie et tournage drone Casablanca Maroc',
                 ],
             ];
         @endphp
@@ -93,6 +99,7 @@
                     $slug = is_object($item) ? $item->slug : $item['slug'];
                     $desc = is_object($item) ? $item->hero_desc : $item['hero_desc'];
                     $image = is_object($item) ? ($item->image ?? '/uploads/expertise_01_strategy.jpg') : ($item['image'] ?? '/uploads/expertise_01_strategy.jpg');
+                    $imgAlt = is_object($item) ? ($item->title . ' Casablanca') : ($item['alt'] ?? $title);
                     $icon = $iconMap[$orderNum] ?? 'bi-star';
                 @endphp
 
@@ -101,7 +108,7 @@
                     <!-- Elegant Passe-Partout Framed Image Container -->
                     <div class="p-3 sm:p-3.5 pb-0">
                         <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#060813] border border-white/10 shadow-inner">
-                            <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                            <img src="{{ $image }}" alt="{{ $imgAlt }}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
                             
                             <!-- Subtle cinematic contrast vignette (Edges only, no black wash over the image) -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/15 pointer-events-none"></div>
