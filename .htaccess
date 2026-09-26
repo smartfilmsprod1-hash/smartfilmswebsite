@@ -1,7 +1,18 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # توجيه أي طلب مباشرة لمجلد public بلا ماتبان فالرابط
+    # Redirection automatique vers public
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ public/$1 [L,QSA]
 </IfModule>
+
+# Protection des fichiers sensibles (.env, sqlite, logs)
+<FilesMatch "^\.(env|git)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(sqlite|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
