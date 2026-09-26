@@ -16,11 +16,23 @@
     <!-- Large Rounded Cinematic Hero Container (Fully Visible Inside Viewport) -->
     <div class="relative w-full h-full max-w-[96rem] mx-auto rounded-[22px] sm:rounded-[30px] lg:rounded-[34px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-black flex items-center">
         
-        <!-- 0ms: Cinematic Background Video (Exact Framing & Natural Colors Preserved - NO STATIC POSTER) -->
+        <!-- 0ms: Cinematic Background Video (Instant Autoplay on Page Open) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none bg-black">
-            <video id="heroVideoEl" autoplay loop muted playsinline preload="metadata" aria-label="Showreel cinématique SmartFilms Prod - Production audiovisuelle et shooting photo à Casablanca" title="Production audiovisuelle et réalisation de films à Casablanca - SmartFilms Prod" class="w-full h-full object-cover">
+            <video id="heroVideoEl" autoplay loop muted playsinline preload="auto" fetchpriority="high" aria-label="Showreel cinématique SmartFilms Prod - Production audiovisuelle et shooting photo à Casablanca" title="Production audiovisuelle et réalisation de films à Casablanca - SmartFilms Prod" class="w-full h-full object-cover">
                 <source src="{{ $heroVideo }}" type="video/mp4">
             </video>
+            <script>
+                (function() {
+                    var v = document.getElementById('heroVideoEl');
+                    if (v) {
+                        v.muted = true;
+                        v.defaultMuted = true;
+                        v.playsInline = true;
+                        var p = v.play();
+                        if (p !== undefined) p.catch(function() {});
+                    }
+                })();
+            </script>
             
             <!-- Neutral Contrast Overlays for Crisp Text Legibility (NO PURPLE, NO TINT, NATURAL FOOTAGE) -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 sm:via-black/30 to-transparent pointer-events-none"></div>
@@ -120,13 +132,15 @@
             }
         });
 
-        // 4. Initial autoplay trigger with muted assurance
+        // 4. Initial instant autoplay trigger
         function startVideo() {
+            if (!video) return;
             video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
             const promise = video.play();
             if (promise !== undefined) {
                 promise.catch(function() {
-                    // Retry on interaction if browser blocks auto-start
                     window.addEventListener('click', function() {
                         video.play().catch(function() {});
                     }, { once: true });
@@ -134,10 +148,9 @@
             }
         }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startVideo);
-        } else {
-            startVideo();
-        }
+        startVideo();
+        video.addEventListener('loadeddata', startVideo, { once: true });
+        video.addEventListener('canplay', startVideo, { once: true });
+        window.addEventListener('pageshow', startVideo);
     })();
 </script>

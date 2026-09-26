@@ -258,6 +258,11 @@
         <link rel="stylesheet" href="{{ asset('build/' . $cssFile) }}">
     @endif
 
+    <!-- Instant Preload for Cinematic Hero Video on Homepage -->
+    @if(request()->is('/') || request()->routeIs('home'))
+        <link rel="preload" as="video" href="{{ asset('uploads/hero_youtube.mp4') }}" type="video/mp4" fetchpriority="high">
+    @endif
+
     <!-- Rich Motion, Hero Entrance & Navbar Smooth Transition Styles -->
     <style>
         :root {

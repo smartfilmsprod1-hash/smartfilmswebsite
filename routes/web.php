@@ -16,6 +16,7 @@ use App\Models\Page;
 // 1. Front Pages & Film Case Studies
 Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/realisations', [FrontController::class, 'portfolio'])->name('portfolio');
+Route::redirect('/portfolio', '/realisations', 301);
 Route::get('/realisations/{slug}', [FrontController::class, 'projectShow'])->name('project.show');
 Route::get('/expertises', [FrontController::class, 'expertises'])->name('expertises');
 Route::get('/expertises/{slug}', [FrontController::class, 'expertiseDetail'])->name('expertises.show');
