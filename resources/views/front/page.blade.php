@@ -1,7 +1,10 @@
 @extends('layouts.front')
 
-@section('title', $page->meta_title ?? 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')
-@section('meta_description', $page->meta_description ?? 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')
+@section('title', $page->meta_title ?? 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca')
+@section('meta_description', $page->meta_description ?? 'Agence audiovisuelle et photographe à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.')
+@section('og_title', $page->meta_title ?? 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca')
+@section('og_description', $page->meta_description ?? 'Agence audiovisuelle et photographe à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.')
+@section('og_image', asset('uploads/vision_monitor.jpg'))
 
 @section('content')
 

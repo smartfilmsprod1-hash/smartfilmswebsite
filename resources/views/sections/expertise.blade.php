@@ -13,10 +13,10 @@
                     <span class="w-8 h-[1px] bg-[#FF5A68]/40"></span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-[#161828] leading-[1.15]">
-                    PRODUCTION AUDIOVISUELLE, SHOOTING PHOTO & DRONE À CASABLANCA.
+                    PRODUCTION DE FILMS INSTITUTIONNELS, SHOOTING PHOTO & CAPSULES VIDÉO À CASABLANCA.
                 </h2>
                 <p class="text-[#686580] text-sm sm:text-base font-light max-w-xl leading-relaxed mt-2">
-                    De la conception narrative à la diffusion : films d'entreprise, reportages photo corporate, packshots produits et tournages aériens à Casablanca et partout au Maroc.
+                    De la conception narrative à la diffusion : films institutionnels d'entreprise, reportages photo corporate, packshots produits et capsules vidéo percutantes à Casablanca et dans tout le Maroc.
                 </p>
             </div>
 
@@ -49,19 +49,19 @@
                 ],
                 [
                     'order' => 2,
-                    'title' => 'PRODUCTION AUDIOVISUELLE',
+                    'title' => 'FILMS INSTITUTIONNELS & VIDÉO',
                     'slug' => 'production-audiovisuelle',
-                    'hero_desc' => 'Films d\'entreprise, vidéos corporate institutionnelles et reportages de marque en 4K/6K cinéma pour valoriser votre société au Maroc.',
+                    'hero_desc' => 'Production de films institutionnels, vidéos corporate d\'entreprise et reportages de marque en 4K/6K cinéma pour valoriser votre société au Maroc.',
                     'image' => '/uploads/expertise_02_production.jpg',
-                    'alt' => 'Agence de production audiovisuelle et film d\'entreprise Casablanca Maroc',
+                    'alt' => 'Production de films institutionnels et agence audiovisuelle Casablanca Maroc',
                 ],
                 [
                     'order' => 3,
-                    'title' => 'CONTENUS SOCIAUX & REELS',
+                    'title' => 'CAPSULES VIDÉO & RÉSEAUX SOCIAUX',
                     'slug' => 'contenus-sociaux',
-                    'hero_desc' => 'Création de capsules vidéos percutantes au format vertical 9:16 pour Instagram Reels, TikTok et LinkedIn afin de booster votre visibilité.',
+                    'hero_desc' => 'Création de capsules vidéo dynamiques pour réseaux sociaux au format vertical 9:16 (Instagram Reels, TikTok, LinkedIn) pour maximiser votre impact digital.',
                     'image' => '/uploads/expertise_03_social.jpg',
-                    'alt' => 'Création de contenu vidéo réseaux sociaux Reels TikTok Casablanca',
+                    'alt' => 'Création de capsules vidéo réseaux sociaux et Reels Casablanca Maroc',
                 ],
                 [
                     'order' => 4,
@@ -77,15 +77,15 @@
                     'slug' => 'publicite-campagnes',
                     'hero_desc' => 'Conception et production de spots publicitaires TV et digitaux à fort impact émotionnel pour vos lancements de produits et campagnes au Maroc.',
                     'image' => '/uploads/expertise_05_advertising.jpg',
-                    'alt' => 'Réalisation de spots publicitaires TV et digitaux Maroc',
+                    'alt' => 'Réalisation de spots publicitaires TV et digitaux Casablanca Maroc',
                 ],
                 [
                     'order' => 6,
-                    'title' => 'ÉVÉNEMENT, DRONE & LIVE',
+                    'title' => 'ÉVÉNEMENTIEL, AFTERMOVIE & LIVE',
                     'slug' => 'evenement-live',
-                    'hero_desc' => 'Captation d\'événements, aftermovies dynamiques, régie multi-caméras et prises de vues aériennes par drone 8K homologué au Maroc.',
+                    'hero_desc' => 'Captation multi-caméras d\'événements professionnels, aftermovies rythmés, retransmission live streaming et prises de vues complémentaires au Maroc.',
                     'image' => '/uploads/expertise_06_events.jpg',
-                    'alt' => 'Captation événementielle aftermovie et tournage drone Casablanca Maroc',
+                    'alt' => 'Captation événementielle aftermovie et réalisation vidéo Casablanca Maroc',
                 ],
             ];
         @endphp
@@ -127,7 +127,7 @@
                             <h3 class="text-base sm:text-lg font-bold uppercase tracking-tight text-white group-hover:text-[#FF5A68] transition-colors leading-snug">
                                 <a href="{{ url('/expertises/' . $slug) }}">
                                     @if($orderNum == 2)
-                                        PRODUCTION <span class="text-[#FF5A68]">AUDIO</span>VISUELLE
+                                        FILMS <span class="text-[#FF5A68]">INSTITUTIONNELS</span> & VIDÉO
                                     @else
                                         {{ $title }}
                                     @endif

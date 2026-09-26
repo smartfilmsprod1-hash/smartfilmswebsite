@@ -25,7 +25,7 @@
                                 <img src="/uploads/3.jpg" alt="Shooting photo professionnel entreprise Maroc" class="w-full h-full object-cover">
                             </div>
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-[2.5px] border-white overflow-hidden shadow-sm relative z-30">
-                                <img src="/uploads/2.jpg" alt="Prise de vue aérienne par drone et aftermovie événementiel" class="w-full h-full object-cover">
+                                <img src="/uploads/2.jpg" alt="Capsules vidéo réseaux sociaux et captation Casablanca" class="w-full h-full object-cover">
                             </div>
                         </div>
 
@@ -61,7 +61,7 @@
 
                 <!-- Introduction Paragraph -->
                 <p class="text-[#686580] text-sm sm:text-base font-light leading-relaxed mb-10 max-w-2xl">
-                    SmartFilms est une <strong>agence de production audiovisuelle et de création visuelle basée à Casablanca</strong>. Nous accompagnons les entreprises, institutions et grandes marques au Maroc (Casablanca, Rabat, Tanger, Marrakech) dans la réalisation de <strong>films d'entreprise</strong>, <strong>spots publicitaires</strong>, <strong>shootings photo corporate</strong> (portraits de dirigeants, reportages industriels, packshots produits) et <strong>tournages drone 8K</strong>. Nous conjuguons vision stratégique d'agence de communication et exigence technique cinématographique.
+                    SmartFilms est votre <strong>agence audiovisuelle et studio photographe professionnel à Casablanca</strong>. Nous accompagnons les entreprises, institutions et grandes marques au Maroc dans la <strong>production de films institutionnels</strong>, <strong>capsules vidéo</strong> pour réseaux sociaux, <strong>shootings photo corporate</strong> (portraits de dirigeants, reportages industriels, packshots e-commerce) et <strong>spots publicitaires</strong>. Nous conjuguons vision stratégique d'agence de communication et exigence technique cinématographique.
                 </p>
 
                 <!-- 3 Pillars Row -->

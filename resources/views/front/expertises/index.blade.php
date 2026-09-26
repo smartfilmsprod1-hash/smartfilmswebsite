@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'Expertises & Savoir-Faire Audiovisuel | SmartFilms Prod Casablanca')
-@section('meta_description', 'Découvrez les 4 piliers de production de SmartFilms Prod à Casablanca : Films Corporate, Spots Publicitaires, Captation Événementielle et Prises de Vues Aériennes par Drone au Maroc.')
+@section('title', 'Expertises Audiovisuelles & Photo Casablanca | SmartFilms Prod')
+@section('meta_description', 'Découvrez les expertises de notre agence audiovisuelle à Casablanca : production de films institutionnels, shooting photo corporate, capsules vidéo et spots publicitaires.')
+@section('og_title', 'Expertises Audiovisuelles & Photo Casablanca | SmartFilms Prod')
+@section('og_description', 'Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires à Casablanca.')
 
 @section('content')
 <!-- HERO SECTION -->
@@ -16,18 +18,18 @@
             </div>
 
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">l'art du cinéma pour</span>
-                <span class="uppercase font-sans block text-white">NOS EXPERTISES</span>
+                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">nos expertises audiovisuelles</span>
+                <span class="uppercase font-sans block text-white">FILMS INSTITUTIONNELS & CAPSULES VIDÉO</span>
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                Quatre pôles d'excellence audiovisuelle pour concevoir, tourner et diffuser des films qui installent votre autorité sur le marché marocain et international.
+                Pôles d'excellence audiovisuelle et photographique à Casablanca pour concevoir, tourner et diffuser des contenus à fort impact pour votre marque au Maroc.
             </p>
         </div>
     </div>
 </section>
 
-<!-- 4 POLES DETAILED SECTION -->
+<!-- 5 POLES DETAILED SECTION -->
 <section class="py-24 bg-[#080914] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
@@ -36,7 +38,7 @@
                 [
                     'num' => '01',
                     'slug' => 'film-corporate',
-                    'title' => 'Film Corporate & Institutionnel',
+                    'title' => 'Production de Films Institutionnels',
                     'tagline' => 'Storytelling de marque & valorisation industrielle',
                     'desc' => 'Des films de référence pour présenter vos infrastructures, fédérer vos collaborateurs et incarner l\'ambition de votre groupe auprès de vos investisseurs et partenaires.',
                     'deliverables' => ['Film manifeste d\'entreprise', 'Reportages immersifs sur site', 'Portraits de dirigeants & experts', 'Teasers LinkedIn & relations presse'],
@@ -44,6 +46,24 @@
                 ],
                 [
                     'num' => '02',
+                    'slug' => 'shooting-photo-corporate',
+                    'title' => 'Shooting Photo Corporate & Portraits',
+                    'tagline' => 'Photographe professionnel à Casablanca',
+                    'desc' => 'Portraits de dirigeants, trombinoscopes d\'équipes, reportages industriels et packshots produits e-commerce pour affirmer une image de marque d\'excellence.',
+                    'deliverables' => ['Portraits exécutifs studio mobile', 'Trombinoscopes d\'équipes harmonisés', 'Reportages photo en immersion', 'Packshots produits haute définition'],
+                    'image' => '/uploads/expertise_04_corporate.jpg'
+                ],
+                [
+                    'num' => '03',
+                    'slug' => 'contenus-sociaux',
+                    'title' => 'Capsules Vidéo & Réseaux Sociaux',
+                    'tagline' => 'Formats verticaux 9:16 & Reels percutants',
+                    'desc' => 'Création de capsules vidéo engageantes et dynamiques pensées pour capter l\'attention et convertir sur Instagram Reels, TikTok et LinkedIn.',
+                    'deliverables' => ['Packs de capsules vidéo 9:16', 'Formats snack content pour LinkedIn', 'Montages dynamiques sous-titrés', 'Stratégie de diffusion sociale'],
+                    'image' => '/uploads/expertise_03_social.jpg'
+                ],
+                [
+                    'num' => '04',
                     'slug' => 'spot-publicitaire',
                     'title' => 'Spot Publicitaire & Brand Films',
                     'tagline' => 'Campagnes TV, cinéma et activations digitales',
@@ -52,22 +72,13 @@
                     'image' => '/uploads/studio_commercial_spot.png'
                 ],
                 [
-                    'num' => '03',
+                    'num' => '05',
                     'slug' => 'production-evenementielle',
-                    'title' => 'Captation & Événementiel',
+                    'title' => 'Captation Événementielle & Aftermovie',
                     'tagline' => 'Régie live multi-caméras & aftermovies de prestige',
                     'desc' => 'Immortalisez vos sommets internationaux, lancements de produits et conventions avec une régie de direct fluide et des aftermovies livrés en un temps record.',
                     'deliverables' => ['Aftermovie officiel dynamique', 'Same-Day Edit pour réseaux sociaux', 'Captation intégrale des keynotes', 'Live streaming sécurisé multi-flux'],
-                    'image' => '/uploads/cinema_corporate_film.png'
-                ],
-                [
-                    'num' => '04',
-                    'slug' => 'drone-aerien',
-                    'title' => 'Prise de Vue Drone & FPV',
-                    'tagline' => 'Perspectives aériennes 8K & télépilotes agréés',
-                    'desc' => 'Prenez de la hauteur avec des images aériennes d\'exception. Drones cinéma 8K et drones FPV agiles pour survoler des complexes industriels et des paysages grandioses au Maroc.',
-                    'deliverables' => ['Plans aériens RAW & ProRes 8K', 'Vols FPV immersifs indoor/outdoor', 'Autorisations de vol CCM & autorités', 'Plans séquences haute vitesse'],
-                    'image' => '/uploads/studio_commercial_spot.png'
+                    'image' => '/uploads/expertise_06_events.jpg'
                 ]
             ];
         @endphp

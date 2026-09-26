@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'Blog & Insights Audiovisuels | SmartFilms Prod Casablanca')
-@section('meta_description', 'Analyses, tendances vidéo, coulisses de tournage et conseils stratégiques pour réussir vos productions audiovisuelles au Maroc.')
+@section('title', 'Blog Audiovisuel & Photographie Casablanca | SmartFilms Prod')
+@section('meta_description', 'Conseils, tendances et guides sur la production de films institutionnels, capsules vidéo pour réseaux sociaux et photographie corporate à Casablanca.')
+@section('og_title', 'Blog Audiovisuel & Photographie Casablanca | SmartFilms Prod')
+@section('og_description', 'Tendances, astuces de réalisation et conseils d\'experts en production de films d\'entreprise et shooting photo à Casablanca.')
 
 @section('content')
 <!-- BLOG HERO -->
@@ -16,12 +18,12 @@
             </div>
 
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] uppercase">
-                IDÉES, TENDANCES & <br>
-                <span class="text-[#FF5A68]">CULTURE IMAGE.</span>
+                FILMS INSTITUTIONNELS, PHOTO & <br>
+                <span class="text-[#FF5A68]">CAPSULES VIDÉO CASABLANCA.</span>
             </h1>
 
             <p class="text-[#8E8B9F] text-base sm:text-lg font-light max-w-2xl leading-relaxed">
-                Retours d'expérience, innovations techniques et réflexions stratégiques partagés par nos réalisateurs et producteurs à Casablanca.
+                Analyses de tendances, guides de production et retours d'expérience partagés par notre agence audiovisuelle et photographes à Casablanca.
             </p>
         </div>
     </div>

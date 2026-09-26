@@ -32,7 +32,7 @@
               <div class="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[440px] md:min-h-[520px] overflow-hidden bg-[#2D2658]">
                   <img 
                       src="{{ $featuredProject->thumbnail ? asset($featuredProject->thumbnail) : asset('uploads/cinema_corporate_film.png') }}" 
-                      alt="{{ $featuredProject->title }} - Smart Films" 
+                      alt="{{ $featuredProject->title }} - SmartFilms Agence Audiovisuelle Casablanca" 
                       class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025] filter brightness-[0.92] contrast-[1.02]" 
                   />
                   

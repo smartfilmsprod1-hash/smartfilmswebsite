@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')</title>
-    <meta name="description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
-    <meta name="keywords" content="agence de production audiovisuelle casablanca, production audiovisuelle maroc, shooting photo corporate casablanca, photographe professionnel casablanca, film d'entreprise maroc, spot publicitaire tv, captation evenementielle, agence de communication casablanca, packshot produit, drone maroc 8k">
+    <title>@yield('title', 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca')</title>
+    <meta name="description" content="@yield('meta_description', 'Agence audiovisuelle et photographe à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.')">
+    <meta name="keywords" content="@yield('keywords', 'agence audiovisuelle casablanca, photographe casablanca, production de films institutionnels, capsules video, shooting photo corporate casablanca, photographe professionnel casablanca, film d\'entreprise maroc, spot publicitaire tv, captation evenementielle')">
     <meta name="author" content="SmartFilms Prod">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
 
     <!-- Geo-Targeting for Casablanca, Morocco Local SEO -->
     <meta name="geo.region" content="MA-06">
@@ -18,18 +18,18 @@
 
     <!-- OpenGraph Metadata -->
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')">
-    <meta property="og:description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('og_title', View::yieldContent('title', 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca'))">
+    <meta property="og:description" content="@yield('og_description', View::yieldContent('meta_description', 'Agence audiovisuelle et photographe à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.'))">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="SmartFilms Prod">
-    <meta property="og:image" content="{{ asset('uploads/vision_monitor.jpg') }}">
+    <meta property="og:image" content="@yield('og_image', asset('uploads/vision_monitor.jpg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('title', 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.')">
-    <meta name="twitter:image" content="{{ asset('uploads/vision_monitor.jpg') }}">
+    <meta name="twitter:title" content="@yield('og_title', View::yieldContent('title', 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca'))">
+    <meta name="twitter:description" content="@yield('og_description', View::yieldContent('meta_description', 'Agence audiovisuelle et photographe à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.'))">
+    <meta name="twitter:image" content="@yield('og_image', asset('uploads/vision_monitor.jpg'))">
 
     <!-- JSON-LD Structured Data Schema for Casablanca, Morocco & Google Rich Snippets -->
     <script type="application/ld+json">
@@ -41,7 +41,7 @@
           "@id": "{{ url('/') }}#website",
           "url": "{{ url('/') }}",
           "name": "SmartFilms Prod",
-          "description": "Agence de Production Audiovisuelle, Vidéo & Shooting Photo Corporate à Casablanca Maroc",
+          "description": "Agence Audiovisuelle, Photographe Professionnel & Production de Films Institutionnels à Casablanca Maroc",
           "inLanguage": "fr-FR",
           "publisher": {
             "@id": "{{ url('/') }}#organization"
@@ -52,7 +52,7 @@
           "@id": "{{ url('/') }}#organization",
           "name": "SmartFilms Prod",
           "alternateName": ["SmartFilms Maroc", "SmartFilms Production Casablanca", "Agence SmartFilms Prod"],
-          "description": "SmartFilms Prod est l'agence de production audiovisuelle et de photographie professionnelle de référence à Casablanca. Nous réalisons des films d'entreprise 4K/6K, spots publicitaires, shootings photo corporate, packshots produits et prises de vues drone au Maroc.",
+          "description": "SmartFilms Prod est l'agence audiovisuelle et le studio photographe professionnel de référence à Casablanca. Nous réalisons la production de films institutionnels 4K/6K, des capsules vidéo pour réseaux sociaux, des shootings photo corporate et des spots publicitaires au Maroc.",
           "image": "{{ asset('uploads/smartfilms_logo_white.png') }}",
           "logo": "{{ asset('uploads/smartfilms_logo_white.png') }}",
           "telephone": "{{ $settings['phone'] ?? '+212 6 17 20 23 45' }}",
@@ -99,7 +99,7 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Production Audiovisuelle & Films d'Entreprise",
+                  "name": "Production de Films Institutionnels & Films d'Entreprise",
                   "description": "Réalisation de films institutionnels, vidéos d'entreprise 4K/6K, marque employeur et communication interne à Casablanca et partout au Maroc."
                 }
               },
@@ -107,8 +107,16 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Shooting Photo Corporate & Packshot Produit",
+                  "name": "Photographe Casablanca & Shooting Photo Corporate",
                   "description": "Photographe professionnel à Casablanca : portraits de dirigeants, trombinoscopes d'équipes, reportages industriels et packshots produits e-commerce."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Création de Capsules Vidéo Réseaux Sociaux (Reels & TikTok)",
+                  "description": "Production de capsules vidéo percutantes au format 9:16 optimisées pour booster l'engagement sur Instagram, TikTok et LinkedIn."
                 }
               },
               {
@@ -123,15 +131,7 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Prise de Vue Aérienne par Drone 8K & FPV au Maroc",
-                  "description": "Tournages aériens par drone homologué CCM et DGAC avec télépilotes certifiés pour le cinéma, l'immobilier et l'industrie."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Captation Événementielle, Congrès & Aftermovie",
+                  "name": "Captation Événementielle, Congrès & Aftermovies",
                   "description": "Couverture vidéo et photo complète de congrès, séminaires, lancements de marques et réalisation d'aftermovies dynamiques."
                 }
               },
@@ -139,8 +139,8 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Création de Contenu Vidéo Réseaux Sociaux (Reels & TikTok)",
-                  "description": "Production de capsules vidéos courtes verticales 9:16 optimisées pour booster l'engagement sur Instagram, TikTok et LinkedIn."
+                  "name": "Prise de Vue Aérienne par Drone Homologué",
+                  "description": "Prises de vues aériennes d'appoint par drone homologué CCM et DGAC avec télépilotes certifiés pour valoriser vos infrastructures."
                 }
               }
             ]
@@ -149,8 +149,8 @@
         {
           "@type": "VideoObject",
           "@id": "{{ url('/') }}#showreel",
-          "name": "SmartFilms Showreel 2026 | Agence de Production Audiovisuelle Casablanca",
-          "description": "Showreel officiel de SmartFilms Prod : production cinématographique, films d'entreprise, spots publicitaires et prises de vues aériennes par drone à Casablanca et au Maroc.",
+          "name": "Showreel SmartFilms 2026 | Agence Audiovisuelle & Photographe Casablanca",
+          "description": "Showreel officiel de SmartFilms Prod à Casablanca : production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires au Maroc.",
           "thumbnailUrl": "{{ asset('uploads/vision_monitor.jpg') }}",
           "uploadDate": "2026-01-15T00:00:00+01:00",
           "contentUrl": "{{ asset('uploads/hero_youtube.mp4') }}",

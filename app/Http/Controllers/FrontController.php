@@ -35,8 +35,8 @@ class FrontController extends Controller
             $page = new Page([
                 'title' => 'Accueil',
                 'slug' => 'accueil',
-                'meta_title' => 'SmartFilms Prod | Agence de Production Audiovisuelle & Photo Casablanca',
-                'meta_description' => 'Agence de production audiovisuelle et photo à Casablanca. Films corporate, spots publicitaires, shooting photo d\'entreprise, drone 8K & aftermovies au Maroc.',
+                'meta_title' => 'SmartFilms Prod | Agence Audiovisuelle & Photographe Casablanca',
+                'meta_description' => 'Agence audiovisuelle et photographe professionnel à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo et spots publicitaires au Maroc.',
                 'content' => []
             ]);
         }
@@ -156,18 +156,18 @@ class FrontController extends Controller
                     ]
                 ],
                 'production-audiovisuelle' => [
-                    'title' => 'Production Audiovisuelle',
-                    'subtitle' => 'Transformer une idée en image',
-                    'meta_title' => 'Production Audiovisuelle Cinématographique | SmartFilms Maroc',
-                    'meta_description' => 'Films institutionnels, publicités, interviews, capsules et prises de vues cinéma au Maroc.',
-                    'h1' => 'PRODUCTION AUDIOVISUELLE HAUTE FIDÉLITÉ',
-                    'hero_desc' => 'Films institutionnels, publicités, interviews, capsules, photographie, drone, multi-caméra... Nous produisons des contenus cinématographiques et authentiques.',
+                    'title' => 'Films Institutionnels & Vidéo d\'Entreprise',
+                    'subtitle' => 'Agence de Production Audiovisuelle Casablanca',
+                    'meta_title' => 'Agence Audiovisuelle & Films Institutionnels Casablanca | SmartFilms',
+                    'meta_description' => 'Agence de production audiovisuelle à Casablanca spécialisée dans la création de films institutionnels, vidéos d\'entreprise et reportages corporate de prestige.',
+                    'h1' => 'PRODUCTION DE FILMS INSTITUTIONNELS & VIDÉO',
+                    'hero_desc' => 'Films institutionnels, vidéos corporate d\'entreprise, interviews de dirigeants et reportages de marque en 4K/6K cinéma pour valoriser votre société au Maroc.',
                     'image' => '/uploads/expertise_02_production.jpg',
                     'deliverables' => [
-                        'Films institutionnels master 4K',
-                        'Captations multi-caméras cinéma',
+                        'Films institutionnels master 4K cinéma',
+                        'Captations multi-caméras d\'entreprise',
                         'Interviews dirigeants & portraits collaborateurs',
-                        'Banque de plans B-Roll 4K/6K'
+                        'Banque de plans B-Roll 4K/6K haute définition'
                     ],
                     'equipment' => ['Caméras Cinéma Arri / RED / Sony FX', 'Optiques Anamorphiques & Cinéma', 'Éclairages studio professionnels ARRI / Aputure'],
                     'category_filter' => 'Film de Marque',
@@ -179,25 +179,52 @@ class FrontController extends Controller
                     ]
                 ],
                 'contenus-sociaux' => [
-                    'title' => 'Contenus Sociaux',
-                    'subtitle' => 'Créer du contenu qui mérite d\'être regardé',
-                    'meta_title' => 'Production de Contenus Sociaux & Reels 9:16 | SmartFilms Maroc',
-                    'meta_description' => 'Reels, vidéos verticales, contenus éditoriaux, shootings photo et séries de contenus adaptées aux codes des réseaux sociaux.',
-                    'h1' => 'CONTENUS SOCIAUX & SNACK CONTENT',
-                    'hero_desc' => 'Reels, vidéos verticales, contenus éditoriaux, shootings photo et séries de contenus : nous adaptons vos messages aux codes des réseaux sociaux et aux usages de vos audiences.',
+                    'title' => 'Capsules Vidéo & Réseaux Sociaux',
+                    'subtitle' => 'Formats Verticaux 9:16 & Reels Casablanca',
+                    'meta_title' => 'Capsules Vidéo Réseaux Sociaux & Reels Casablanca | SmartFilms',
+                    'meta_description' => 'Création de capsules vidéo dynamiques pour réseaux sociaux à Casablanca : formats verticaux 9:16 pour Instagram Reels, TikTok et LinkedIn adaptés à votre audience.',
+                    'h1' => 'CAPSULES VIDÉO POUR RÉSEAUX SOCIAUX',
+                    'hero_desc' => 'Capsules vidéo percutantes, Reels, formats verticaux 9:16 et contenus courts conçus pour capter l\'attention et susciter un engagement maximal sur Instagram, TikTok et LinkedIn.',
                     'image' => '/uploads/expertise_03_social.jpg',
                     'deliverables' => [
-                        'Packs de Reels & TikToks verticaux 9:16',
+                        'Packs de capsules vidéo & Reels au format vertical 9:16',
                         'Formats courts snack content pour LinkedIn & Instagram',
-                        'Shooting photo éditorial et corporate',
+                        'Shooting photo éditorial et corporate d\'accompagnement',
                         'Micro-animations et motion design'
                     ],
-                    'equipment' => ['Configurations agiles de tournage vertical', 'Éclairage mobile LED haute fidélité', 'Montage express optimisé pour les algorithmes'],
+                    'equipment' => ['Configurations agiles de tournage vertical 4K', 'Éclairage mobile LED haute fidélité', 'Montage express optimisé pour les algorithmes'],
                     'category_filter' => 'Publicité TV',
                     'faq' => [
                         [
-                            'q' => 'Quel est le délai moyen pour produire des Reels sociaux ?',
-                            'a' => 'Pour les séries de contenus sociaux, nous pouvons livrer des lots complets en quelques jours ouvrés après le tournage.'
+                            'q' => 'Quel est le délai moyen pour produire des capsules vidéo réseaux sociaux ?',
+                            'a' => 'Pour les séries de capsules vidéo sociales, nous pouvons livrer des lots complets en quelques jours ouvrés après le tournage.'
+                        ]
+                    ]
+                ],
+                'shooting-photo-corporate' => [
+                    'title' => 'Photographe Casablanca & Shooting Photo Corporate',
+                    'subtitle' => 'Portraits Professionnels, Trombinoscopes & Packshots Produits',
+                    'meta_title' => 'Photographe Casablanca & Shooting Photo Corporate | SmartFilms',
+                    'meta_description' => 'Photographe professionnel à Casablanca : shooting photo corporate, portraits de dirigeants, trombinoscopes d\'équipes, reportages industriels et packshots produits.',
+                    'h1' => 'PHOTOGRAPHE CASABLANCA & SHOOTING PHOTO CORPORATE',
+                    'hero_desc' => 'Valorisez le capital humain et l\'image de marque de votre entreprise grâce à des prises de vues photographiques d\'exception : portraits exécutifs, reportages industriels et packshots e-commerce.',
+                    'image' => '/uploads/expertise_04_corporate.jpg',
+                    'deliverables' => [
+                        'Portraits institutionnels de dirigeants et comités exécutifs',
+                        'Trombinoscopes d\'équipes harmonisés en studio mobile',
+                        'Reportages photographiques sur sites industriels & bureaux',
+                        'Packshots produits haute définition et retouches haut de gamme'
+                    ],
+                    'equipment' => ['Boîtiers plein format haute résolution (Sony A7R / Canon R5)', 'Optiques à focale fixe d\'excellence série G-Master / L', 'Systèmes d\'éclairage flash studio mobile Profoto'],
+                    'category_filter' => 'Film de Marque',
+                    'faq' => [
+                        [
+                            'q' => 'Pouvez-vous installer un studio photo directement dans nos locaux ?',
+                            'a' => 'Absolument. Nous nous déplaçons avec un studio photo nomade complet (fonds studio, éclairages Profoto, stations de visionnage immédiat) directement dans vos locaux à Casablanca ou partout au Maroc.'
+                        ],
+                        [
+                            'q' => 'Quels sont les délais de retouche et de livraison ?',
+                            'a' => 'Une planche de sélection vous est transmise sous 24h à 48h. Après sélection, la livraison finale des photos retouchées en haute définition s\'effectue sous 3 à 5 jours ouvrés.'
                         ]
                     ]
                 ],
@@ -271,12 +298,12 @@ class FrontController extends Controller
                     ]
                 ],
                 'film-corporate' => [
-                    'title' => 'Film Corporate & Institutionnel',
-                    'subtitle' => 'Maison de Production Audiovisuelle Casablanca',
-                    'meta_title' => 'Film Corporate & Institutionnel Casablanca | SmartFilms Prod Maroc',
-                    'meta_description' => 'Production de films corporate haut de gamme à Casablanca et au Maroc. Valorisez vos infrastructures, vos équipes et votre vision stratégique avec une esthétique cinématographique.',
-                    'h1' => 'FILM CORPORATE & INSTITUTIONNEL',
-                    'hero_desc' => 'Racontez l\'ambition de votre entreprise à travers un storytelling cinématographique puissant et des prises de vues d\'infrastructures d\'exception.',
+                    'title' => 'Production de Films Institutionnels & Vidéo Corporate',
+                    'subtitle' => 'Agence Audiovisuelle Casablanca',
+                    'meta_title' => 'Production de Films Institutionnels Casablanca | SmartFilms',
+                    'meta_description' => 'Production de films institutionnels et vidéos d\'entreprise haut de gamme à Casablanca. Valorisez vos équipes, vos infrastructures et votre vision stratégique au Maroc.',
+                    'h1' => 'PRODUCTION DE FILMS INSTITUTIONNELS & CORPORATE',
+                    'hero_desc' => 'Racontez l\'ambition de votre entreprise à travers la production de films institutionnels cinématographiques et des prises de vues d\'infrastructures d\'exception.',
                     'image' => '/uploads/cinema_corporate_film.png',
                     'deliverables' => [
                         'Film institutionnel master 4K (2 à 5 minutes)',
@@ -284,12 +311,12 @@ class FrontController extends Controller
                         'Interviews des dirigeants & collaborateurs clés',
                         'Banque de plans B-Roll haute fidélité'
                     ],
-                    'equipment' => ['Configurations caméras cinéma calibrées selon les besoins', 'Optiques Cinéma Anamorphiques & Sphériques', 'Prises de vues aériennes drone 4K/6K', 'Éclairage Studio & Gestion lumière continue'],
+                    'equipment' => ['Configurations caméras cinéma calibrées selon les besoins', 'Optiques Cinéma Anamorphiques & Sphériques', 'Prises de vues aériennes complémentaires', 'Éclairage Studio & Gestion lumière continue'],
                     'category_filter' => 'Film de Marque',
                     'faq' => [
                         [
-                            'q' => 'Combien de temps faut-il pour produire un film corporate ?',
-                            'a' => 'En moyenne, une production corporate complète nécessite entre 2 à 4 semaines, incluant l\'écriture du scénario, le tournage (1 à 3 jours) et la post-production (montage, étalonnage, sound design).'
+                            'q' => 'Combien de temps faut-il pour produire un film corporate institutionnel ?',
+                            'a' => 'En moyenne, une production institutionnelle complète nécessite entre 2 à 4 semaines, incluant l\'écriture du scénario, le tournage (1 à 3 jours) et la post-production (montage, étalonnage, sound design).'
                         ]
                     ]
                 ],
@@ -435,31 +462,31 @@ class FrontController extends Controller
 
         $articles = [
             [
-                'title' => 'Comment réussir son film corporate au Maroc en 2026',
+                'title' => 'Production de films institutionnels au Maroc : Les clés d\'un storytelling percutant',
                 'slug' => 'reussir-film-corporate-maroc',
-                'category' => 'Stratégie & Production',
+                'category' => 'Films Institutionnels',
                 'read_time' => '4 min',
                 'date' => '18 Septembre 2026',
-                'excerpt' => 'Le film institutionnel ne se résume plus à une visite guidée de bureaux. Découvrez les clés narratives et techniques pour capter l\'attention des décideurs.',
+                'excerpt' => 'La production de films institutionnels ne se résume plus à une simple vidéo d\'entreprise. Découvrez les méthodes narratives pour convaincre vos partenaires et clients.',
                 'image' => '/uploads/expertise_01_strategy.jpg',
             ],
             [
-                'title' => 'Vidéo Verticale & Reels : Pourquoi les marques doivent adapter leurs codes',
+                'title' => 'Capsules vidéo & Reels : Comment captiver son audience sur les réseaux sociaux',
                 'slug' => 'reels-video-verticale-marques',
-                'category' => 'Contenus Sociaux',
+                'category' => 'Capsules Vidéo',
                 'read_time' => '3 min',
                 'date' => '12 Septembre 2026',
-                'excerpt' => 'Les 3 premières secondes déterminent 80% de l\'impact. Comment allier exigence cinématographique et formats snackable sur Instagram et TikTok.',
+                'excerpt' => 'Les 3 premières secondes déterminent l\'impact de vos capsules vidéo. Comment concilier rigueur visuelle et formats verticaux dynamiques sur Instagram et LinkedIn.',
                 'image' => '/uploads/expertise_03_social.jpg',
             ],
             [
-                'title' => 'Prises de vues drone 8K & FPV : Donner une signature spectaculaire à vos films',
-                'slug' => 'drone-aerien-fpv-production',
-                'category' => 'Technique Cinéma',
-                'read_time' => '5 min',
+                'title' => 'Shooting photo corporate à Casablanca : Valoriser l\'humain et la direction',
+                'slug' => 'shooting-photo-corporate-casablanca',
+                'category' => 'Photographe Casablanca',
+                'read_time' => '4 min',
                 'date' => '05 Septembre 2026',
-                'excerpt' => 'Cadre légal au Maroc, choix des optiques et séquences immersives en drone FPV haute vitesse au service des marques.',
-                'image' => '/uploads/expertise_02_production.jpg',
+                'excerpt' => 'Portraits de dirigeants, trombinoscopes d\'équipes et reportages en entreprise : comment un photographe professionnel forge l\'autorité visuelle de votre société.',
+                'image' => '/uploads/expertise_04_corporate.jpg',
             ],
         ];
 

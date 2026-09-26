@@ -9,7 +9,7 @@
                     <img src="/uploads/smartfilms_logo_white.png" alt="SmartFilms Prod Agence Audiovisuelle & Photo Casablanca" class="h-10 w-auto" style="height: 40px; max-height: 40px; width: auto;">
                 </a>
                 <p class="text-[#ECE9F3]/80 leading-relaxed text-xs max-w-xs">
-                    Agence de production audiovisuelle et shooting photo à Casablanca. Films corporate, spots publicitaires, packshots produits et prises de vues drone 8K au Maroc.
+                    Agence audiovisuelle et photographe professionnel à Casablanca. Production de films institutionnels, shooting photo corporate, capsules vidéo et spots publicitaires au Maroc.
                 </p>
                 <div class="flex items-center gap-3 pt-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -21,12 +21,12 @@
             <div>
                 <h4 class="font-bold text-white uppercase tracking-widest text-xs mb-4">EXPERTISES</h4>
                 <ul class="space-y-2.5 text-[#ECE9F3]/80">
-                    <li><a href="{{ url('/expertises/film-corporate') }}" class="hover:text-[#FF5A68] transition-colors">Film d'Entreprise & Corporate</a></li>
-                    <li><a href="{{ url('/expertises/shooting-photo-corporate') }}" class="hover:text-[#FF5A68] transition-colors">Shooting Photo Corporate & Packshot</a></li>
-                    <li><a href="{{ url('/expertises/spot-publicitaire') }}" class="hover:text-[#FF5A68] transition-colors">Spot Publicitaire TV & Digital</a></li>
-                    <li><a href="{{ url('/expertises/drone-aerien') }}" class="hover:text-[#FF5A68] transition-colors">Prise de Vue Drone 8K & FPV</a></li>
-                    <li><a href="{{ url('/expertises/production-evenementielle') }}" class="hover:text-[#FF5A68] transition-colors">Captation Événementielle & Aftermovie</a></li>
-                    <li><a href="{{ url('/expertises/contenus-sociaux') }}" class="hover:text-[#FF5A68] transition-colors">Vidéos Réseaux Sociaux & Reels</a></li>
+                    <li><a href="{{ url('/expertises/production-audiovisuelle') }}" class="hover:text-[#FF5A68] transition-colors">Films Institutionnels & Vidéo</a></li>
+                    <li><a href="{{ url('/expertises/shooting-photo-corporate') }}" class="hover:text-[#FF5A68] transition-colors">Photographe Casablanca & Shooting Photo</a></li>
+                    <li><a href="{{ url('/expertises/contenus-sociaux') }}" class="hover:text-[#FF5A68] transition-colors">Capsules Vidéo & Réseaux Sociaux</a></li>
+                    <li><a href="{{ url('/expertises/publicite-campagnes') }}" class="hover:text-[#FF5A68] transition-colors">Spot Publicitaire TV & Digital</a></li>
+                    <li><a href="{{ url('/expertises/evenement-live') }}" class="hover:text-[#FF5A68] transition-colors">Captation Événementielle & Aftermovie</a></li>
+                    <li><a href="{{ url('/expertises/strategie-conception') }}" class="hover:text-[#FF5A68] transition-colors">Stratégie & Conception Audiovisuelle</a></li>
                 </ul>
             </div>
 
@@ -67,7 +67,7 @@
         
         <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#ECE9F3]/60 text-[11px] font-mono">
             <p>© {{ date('Y') }} SmartFilms Prod. Tous droits réservés.</p>
-            <p>Casablanca, Maroc &bull; Agence de Production Audiovisuelle, Vidéo & Shooting Photo Corporate</p>
+            <p>Casablanca, Maroc &bull; Agence Audiovisuelle, Photographe & Production de Films Institutionnels</p>
         </div>
     </div>
 </footer>

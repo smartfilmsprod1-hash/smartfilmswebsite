@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'À Propos du Studio & Vision Cinéma | SmartFilms Prod Casablanca')
-@section('meta_description', 'Découvrez l\'histoire, la vision et l\'exigence cinématographique de SmartFilms Prod, maison de production audiovisuelle de référence basée à Casablanca au Maroc.')
+@section('title', 'À Propos de SmartFilms | Agence Audiovisuelle & Studio Photo Casablanca')
+@section('meta_description', 'SmartFilms Prod est votre agence audiovisuelle et photographe professionnel à Casablanca. Spécialiste de la production de films institutionnels, shooting photo et capsules vidéo au Maroc.')
+@section('og_title', 'À Propos de SmartFilms | Agence Audiovisuelle & Photographe Casablanca')
+@section('og_description', 'Découvrez la vision cinématographique de SmartFilms Prod : production de films institutionnels, shooting photo corporate et capsules vidéo de prestige à Casablanca.')
 
 @section('content')
 <!-- ABOUT HERO -->
@@ -12,16 +14,16 @@
         <div class="max-w-4xl space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] tracking-widest uppercase font-semibold text-[#B8BDE0]">
                 <span class="w-2 h-2 rounded-full bg-[#FF4D42]"></span>
-                <span>MAISON DE PRODUCTION &bull; CASABLANCA</span>
+                <span>AGENCE AUDIOVISUELLE &bull; CASABLANCA</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">notre histoire &</span>
-                <span class="uppercase font-sans block text-white">VISION DU CINÉMA</span>
+                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">notre agence &</span>
+                <span class="uppercase font-sans block text-white">PHOTOGRAPHE & PRODUCTION AUDIOVISUELLE CASABLANCA</span>
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                SmartFilms Prod est née d'une conviction fondamentale : à l'ère de la surinformation visuelle, seules les œuvres dotées d'une forte exigence narrative et esthétique parviennent à créer un attachement durable.
+                SmartFilms Prod est une agence audiovisuelle et studio photographique basé à Casablanca. Nous concevons et réalisons des films institutionnels, des shootings photo corporate et des capsules vidéo pour valoriser les entreprises au Maroc.
             </p>
         </div>
     </div>

@@ -23,7 +23,7 @@
                 <div>
                     <div class="hero-eyebrow inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[9.5px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest uppercase font-semibold text-white/95 shadow-md max-w-full">
                         <span class="w-2 h-2 rounded-full bg-[#FF5A68] animate-pulse shrink-0"></span>
-                        <span class="truncate sm:whitespace-normal">AGENCE DE PRODUCTION AUDIOVISUELLE & PHOTO &bull; CASABLANCA</span>
+                        <span class="truncate sm:whitespace-normal">AGENCE AUDIOVISUELLE & PHOTOGRAPHE &bull; CASABLANCA</span>
                     </div>
                 </div>
 
@@ -48,14 +48,14 @@
                                 AUDIOVISUELLE
                             </span>
                         </span>
-                        <span class="sr-only"> & Shooting Photo Professionnel Casablanca Maroc</span>
+                        <span class="sr-only"> | Photographe Casablanca, Production de Films Institutionnels & Capsules Vidéo</span>
                     </h1>
                 </div>
 
                 <!-- 700ms: Supporting Description (Lower-Left underneath Title) -->
                 <div class="reveal-mask pt-0.5">
                     <p class="hero-desc text-white/90 text-xs sm:text-sm md:text-base font-light max-w-xl leading-relaxed drop-shadow-md">
-                        Films d'entreprise, spots publicitaires, shooting photo corporate et prises de vues drone 8K. Votre agence de production audiovisuelle et photo de référence à Casablanca et au Maroc.
+                        Production de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et spots publicitaires. Votre agence audiovisuelle et photographe de référence à Casablanca.
                     </p>
                 </div>
 

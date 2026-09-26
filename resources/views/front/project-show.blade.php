@@ -1,9 +1,9 @@
 @extends('layouts.front')
 
-@section('title', ($project->seo_title ?? $project->title) . ' | SmartFilms Prod Casablanca')
-@section('meta_description', $project->seo_description ?? $project->description ?? 'Production cinématographique réalisée par SmartFilms Prod à Casablanca, Maroc.')
-@section('og_title', $project->title . ' — ' . $project->client_name . ' | SmartFilms Prod')
-@section('og_description', $project->description)
+@section('title', ($project->seo_title ?? $project->title) . ' | Agence Audiovisuelle Casablanca | SmartFilms')
+@section('meta_description', $project->seo_description ?? ($project->description ? Str::limit(strip_tags($project->description), 155) : ('Découvrez la réalisation ' . $project->title . ' par SmartFilms Prod, agence de production audiovisuelle et photographe professionnel à Casablanca.')))
+@section('og_title', $project->title . ' | Agence Audiovisuelle Casablanca — SmartFilms')
+@section('og_description', $project->seo_description ?? ($project->description ? Str::limit(strip_tags($project->description), 155) : ('Production audiovisuelle réalisée par SmartFilms Prod à Casablanca, Maroc.')))
 @section('og_image', asset($project->thumbnail ?? 'uploads/cinema_corporate_film.png'))
 
 @push('head')
@@ -79,67 +79,18 @@
     </header>
 
     <!-- 2. Master Film Player Section -->
-    @php
-        $galleryItems = is_string($project->gallery) ? json_decode($project->gallery, true) : ($project->gallery ?? []);
-    @endphp
-
-    <section id="masterPlayerContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
-        @if(!empty($galleryItems) && count($galleryItems) > 1)
-            <!-- Multi-Video Deliverables Switcher Bar -->
-            <div class="mb-4 flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#101229] border border-white/10 shadow-xl">
-                <div class="flex items-center gap-2.5">
-                    <span class="flex h-2.5 w-2.5 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4D42] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FF4D42]"></span>
-                    </span>
-                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-white">Série Multi-Capsules ({{ count($galleryItems) }} Vidéos) :</span>
-                </div>
-                <div class="flex flex-wrap items-center gap-2" id="capsuleTabs">
-                    @foreach($galleryItems as $idx => $item)
-                        @if(($item['type'] ?? '') === 'video')
-                            <button type="button" 
-                                    onclick="switchProjectVideo('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}', this)" 
-                                    class="project-capsule-tab px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 {{ $idx === 0 ? 'bg-[#FF4D42] text-white shadow-lg shadow-rose-500/30' : 'bg-white/5 hover:bg-white/15 text-slate-300 border border-white/10' }}">
-                                <i class="bi bi-play-circle-fill"></i>
-                                <span>{{ $item['tab_title'] ?? $item['title'] ?? ('Capsule 0' . ($idx + 1)) }}</span>
-                            </button>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-        @endif
-
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
         <div class="aspect-video w-full rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl relative group">
             @if($project->video_url)
                 @php
                     $embedUrl = $project->video_url;
-                    $isGoogleDrive = false;
                     if(str_contains($embedUrl, 'youtube.com/watch?v=')) {
                         $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
                     } elseif(str_contains($embedUrl, 'youtu.be/')) {
                         $embedUrl = str_replace('youtu.be/', 'www.youtube.com/embed/', $embedUrl);
-                    } elseif(str_contains($embedUrl, 'drive.google.com/file/d/')) {
-                        $isGoogleDrive = true;
-                        $embedUrl = preg_replace('/\/view(\?.*)?$/', '/preview', $embedUrl);
-                        if (!str_contains($embedUrl, '/preview')) {
-                            $embedUrl = rtrim($embedUrl, '/') . '/preview';
-                        }
                     }
                 @endphp
-                @if($isGoogleDrive)
-                    <iframe id="mainProjectIframe"
-                            class="absolute -top-[56px] left-0 w-full h-[calc(100%+56px)] border-0" 
-                            src="{{ $embedUrl }}" 
-                            allow="autoplay; fullscreen" 
-                            allowfullscreen 
-                            sandbox="allow-scripts allow-same-origin allow-presentation">
-                    </iframe>
-                    <!-- Protective shield preventing top-corner redirect clicks -->
-                    <div id="mainProjectShield" class="absolute top-0 right-0 w-28 h-20 z-30 pointer-events-auto bg-transparent"></div>
-                @else
-                    <iframe id="mainProjectIframe" class="w-full h-full border-0" src="{{ $embedUrl }}" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    <div id="mainProjectShield" class="absolute top-0 right-0 w-28 h-20 z-30 pointer-events-auto bg-transparent hidden"></div>
-                @endif
+                <iframe class="w-full h-full border-0" src="{{ $embedUrl }}" allow="autoplay; fullscreen" allowfullscreen></iframe>
             @else
                 <img src="{{ $project->thumbnail ?? '/uploads/cinema_corporate_film.png' }}" class="w-full h-full object-cover" alt="{{ $project->title }}">
             @endif
@@ -160,7 +111,7 @@
                     {{ $project->description }}
                 </p>
                 <p class="text-sm text-slate-400">
-                    Concevoir une production à l'esthétique cinématographique internationale, valorisant la puissance des équipes et le rayonnement de la marque au Maroc et à l'export.
+                    Concevoir un film à l'esthétique cinématographique internationale, valorisant la puissance des équipes et le leadership de la marque au Maroc et à l'export.
                 </p>
             </div>
         </div>
@@ -174,6 +125,50 @@
                     <span class="font-bold text-white">Caméras Cinéma &bull; Séries Prime</span>
                 </div>
                 <div class="space-y-1">
+                    <span class="text-slate-400 uppercase block">Prises de Vues Aériennes</span>
+                    <span class="font-bold text-white">Drone 4K Stabilisé &bull; FPV</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="text-slate-400 uppercase block">Post-Production</span>
+                    <span class="font-bold text-white">Étalonnage HDR &bull; Mix Broadcast</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Studio Credits -->
+        <div class="border-t border-white/10 pt-10 flex flex-wrap justify-between items-center gap-6 text-xs font-mono text-slate-400">
+            <div>
+                <span class="text-white font-bold block">Production : SmartFilms Prod Casablanca</span>
+                <span>Boulevard d'Anfa &bull; Maroc</span>
+            </div>
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold">
+                <span>Discuter d'un projet similaire</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- 4. Next Project Navigation -->
+    @if(isset($nextProject) && $nextProject->id !== $project->id)
+        <nav class="border-t border-white/10 bg-[#101229] py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-1">PROJET SUIVANT</span>
+                    <h4 class="text-2xl font-bold text-white uppercase">{{ $nextProject->title }}</h4>
+                    <span class="text-xs text-[#FF4D42] font-mono">{{ $nextProject->client_name }}</span>
+                </div>
+
+                <a href="{{ route('project.show', $nextProject->slug ?? Str::slug($nextProject->title)) }}" class="bg-[#FF4D42] hover:bg-[#E94239] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-lg hover:scale-105 flex items-center gap-2">
+                    <span>Découvrir</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </nav>
+    @endif
+
+</article>
+@endsection
                     <span class="text-slate-400 uppercase block">Prises de Vues Aériennes</span>
                     <span class="font-bold text-white">Drone 4K Stabilisé &bull; FPV</span>
                 </div>

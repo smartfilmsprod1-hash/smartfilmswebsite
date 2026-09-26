@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'L\'Équipe & Réalisateurs du Studio | SmartFilms Prod Casablanca')
-@section('meta_description', 'Découvrez les réalisateurs, directeurs de la photographie, cadreurs et télépilotes drone de SmartFilms Prod à Casablanca et au Maroc.')
+@section('title', 'Équipe Réalisateurs & Photographes Casablanca | SmartFilms Prod')
+@section('meta_description', 'Découvrez les réalisateurs, directeurs de la photographie et photographes professionnels de SmartFilms Prod, agence audiovisuelle à Casablanca au Maroc.')
+@section('og_title', 'Équipe Réalisateurs & Photographes Casablanca | SmartFilms Prod')
+@section('og_description', 'Rencontrez l\'équipe de talents de SmartFilms Prod : réalisateurs de films institutionnels, photographes d\'entreprise et créateurs vidéo à Casablanca.')
 
 @section('content')
 <!-- TEAM HERO -->
@@ -17,11 +19,11 @@
 
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
                 <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">les artisans de l'image</span>
-                <span class="uppercase font-sans block text-white">L'ÉQUIPE SMARTFILMS</span>
+                <span class="uppercase font-sans block text-white">L'ÉQUIPE AUDIOVISUELLE DE CASABLANCA</span>
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                Une équipe soudée de réalisateurs, chefs opérateurs, étalonneurs et pilotes de drone animés par la passion du cadre et l'amour du récit.
+                Une équipe soudée de réalisateurs, directeurs de la photographie, photographes corporate et monteurs animés par la passion de l'image et l'exigence du récit de marque.
             </p>
         </div>
     </div>

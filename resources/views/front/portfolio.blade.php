@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'Réalisations & Portfolio Cinéma | SmartFilms Prod Casablanca')
-@section('meta_description', 'Découvrez toutes les productions audiovisuelles, films de marque et spots publicitaires réalisés par SmartFilms Prod à Casablanca et au Maroc.')
+@section('title', 'Réalisations Vidéo & Photo Casablanca | Portfolio SmartFilms Prod')
+@section('meta_description', 'Découvrez nos réalisations audiovisuelles à Casablanca et au Maroc : production de films institutionnels, shooting photo corporate, capsules vidéo et spots publicitaires.')
+@section('og_title', 'Réalisations Vidéo & Photo Casablanca | Portfolio SmartFilms Prod')
+@section('og_description', 'Découvrez nos réalisations audiovisuelles à Casablanca : films institutionnels, reportages photo corporate et capsules vidéo de marque.')
 
 @section('content')
 <!-- PORTFOLIO HERO (CHAPTER: CINEMATIC DARK) -->
@@ -12,16 +14,16 @@
         <div class="max-w-4xl space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] tracking-widest uppercase font-semibold text-[#B8BDE0]">
                 <span class="w-2 h-2 rounded-full bg-[#FF4D42]"></span>
-                <span>FILMOGRAPHY &bull; ARCHIVES</span>
+                <span>PORTFOLIO &bull; RÉALISATIONS</span>
             </div>
 
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">nos productions</span>
-                <span class="uppercase font-sans block text-white">RÉALISATIONS CINÉMA</span>
+                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">nos réalisations</span>
+                <span class="uppercase font-sans block text-white">FILMS INSTITUTIONNELS & PHOTOS CASABLANCA</span>
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                Une sélection rigoureuse de films de marque, spots publicitaires, documentaires d'entreprise et captations aériennes réalisés pour des organisations exigeantes.
+                Une sélection de films institutionnels, shooting photo corporate, capsules vidéo pour réseaux sociaux et campagnes publicitaires réalisés pour des marques et institutions au Maroc.
             </p>
         </div>
     </div>
@@ -51,14 +53,14 @@
                         <div class="relative aspect-[16/10] rounded-3xl overflow-hidden bg-[#171936] border border-white/10 shadow-2xl transition-all duration-700 group-hover:border-[#FF4D42]/50 group-hover:shadow-[0_20px_50px_rgba(255,77,66,0.2)]">
                             
                             @if($project->thumbnail)
-                                <img src="{{ asset($project->thumbnail) }}" alt="{{ $project->title }}" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                                <img src="{{ $project->thumbnail }}" alt="{{ $project->title }} - SmartFilms Agence Audiovisuelle Casablanca" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                             @else
                                 <div class="w-full h-full bg-gradient-to-br from-[#101229] to-[#171936] flex items-center justify-center">
                                     <i class="bi bi-film text-5xl text-white/20"></i>
                                 </div>
                             @endif
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#080914]/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity pointer-events-none"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
                             <!-- Play Overlay Badge -->
                             <div class="absolute inset-0 flex items-center justify-center">

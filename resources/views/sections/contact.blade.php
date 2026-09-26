@@ -39,7 +39,7 @@
                             SMARTFILMS <span class="text-[#FF5A68]">PROD</span>
                         </h3>
                         <p class="text-[#8E8B9F] text-xs sm:text-sm font-light mt-2 leading-relaxed">
-                            Agence de production audiovisuelle, shooting photo professionnel et réalisation de films d'entreprise au Maroc. Échangeons sur votre projet ou rendez-nous visite à nos bureaux à Casablanca.
+                            Agence audiovisuelle, photographe corporate et production de films institutionnels à Casablanca. Échangeons sur votre projet ou prenons rendez-vous à nos bureaux.
                         </p>
                     </div>
 
@@ -156,12 +156,12 @@
                             </label>
                             <select name="budget_tier" class="w-full px-4 py-3.5 bg-[#F8F6F1]/80 hover:bg-[#F8F6F1] border border-[#2D2658]/15 rounded-xl text-sm text-[#161828] focus:outline-none focus:ring-2 focus:ring-[#FF5A68]/20 focus:border-[#FF5A68] transition-all cursor-pointer">
                                 <option value="Non spécifié">Sélectionner un type de projet</option>
-                                <option value="Film Corporate & Institutionnel">Film Corporate & Institutionnel</option>
+                                <option value="Production de Films Institutionnels">Production de Films Institutionnels</option>
+                                <option value="Shooting Photo Corporate & Portraits">Shooting Photo Corporate & Portraits</option>
+                                <option value="Capsules Vidéo Réseaux Sociaux">Capsules Vidéo Réseaux Sociaux</option>
                                 <option value="Spot Publicitaire TV & Digital">Spot Publicitaire TV & Digital</option>
-                                <option value="Shooting Photo Corporate & Packshot">Shooting Photo Corporate & Packshot</option>
-                                <option value="Contenus Sociaux & Reels">Contenus Sociaux & Reels</option>
-                                <option value="Captation Événementielle">Captation Événementielle</option>
-                                <option value="Prises de Vues par Drone">Prises de Vues par Drone</option>
+                                <option value="Captation Événementielle & Aftermovie">Captation Événementielle & Aftermovie</option>
+                                <option value="Prises de Vues Drone">Prises de Vues Drone</option>
                             </select>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
         <div class="mt-14 pt-8 border-t border-[#2D2658]/10 text-center">
             <p class="text-[11px] font-mono uppercase tracking-wider text-[#686580]/85 leading-relaxed">
                 <span class="font-bold text-[#161828]">ZONES D'INTERVENTION & PRESTATIONS AUDIOVISUELLES AU MAROC :</span><br class="hidden sm:inline">
-                Agence de production audiovisuelle Casablanca &bull; Shooting photo corporate &bull; Film d'entreprise Rabat &bull; Photographe professionnel Tanger &bull; Spot publicitaire TV Marrakech &bull; Prises de vues par drone Agadir &bull; Vidéo marque employeur &bull; Aftermovie événementiel &bull; Packshot produit e-commerce
+                Agence audiovisuelle Casablanca &bull; Photographe Casablanca &bull; Production de films institutionnels &bull; Capsules vidéo pour réseaux sociaux &bull; Shooting photo corporate &bull; Film d'entreprise Rabat &bull; Spot publicitaire TV Marrakech &bull; Captation événementielle &bull; Packshot produit e-commerce
             </p>
         </div>
 

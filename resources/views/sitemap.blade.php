@@ -22,7 +22,16 @@
 
     <!-- 2. Dedicated Expertise Pages -->
     @php
-        $expertiseSlugs = ['film-corporate', 'spot-publicitaire', 'production-evenementielle', 'drone-aerien'];
+        $expertiseSlugs = [
+            'production-audiovisuelle',
+            'shooting-photo-corporate',
+            'contenus-sociaux',
+            'film-corporate',
+            'spot-publicitaire',
+            'production-evenementielle',
+            'strategie-conception',
+            'drone-aerien'
+        ];
     @endphp
     @foreach($expertiseSlugs as $slug)
     <url>

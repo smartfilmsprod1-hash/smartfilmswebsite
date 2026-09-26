@@ -1,7 +1,9 @@
 @extends('layouts.front')
 
-@section('title', 'Contact & Devis Production Audiovisuelle & Photo | SmartFilms Casablanca')
-@section('meta_description', 'Contactez SmartFilms Prod, agence de production audiovisuelle au 130 Bv d\'Anfa à Casablanca. Devis sous 24h pour vos films corporate, shooting photo et tournages drone.')
+@section('title', 'Contact & Devis Agence Audiovisuelle & Photographe Casablanca | SmartFilms')
+@section('meta_description', 'Contactez notre agence audiovisuelle à Casablanca au 130 Bv d\'Anfa. Devis gratuit sous 24h pour vos films institutionnels, shooting photo corporate et capsules vidéo.')
+@section('og_title', 'Contact & Devis Agence Audiovisuelle & Photographe Casablanca | SmartFilms')
+@section('og_description', 'Échangez sur votre projet de film institutionnel, shooting photo ou capsules vidéo avec notre équipe à Casablanca. Devis sous 24h.')
 
 @section('content')
 <!-- CONTACT HERO -->
@@ -16,12 +18,12 @@
             </div>
 
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">prenons contact pour</span>
-                <span class="uppercase font-sans block text-white">LANCER VOTRE PROJET</span>
+                <span class="font-serif-italic font-normal block lowercase text-3xl sm:text-5xl md:text-6xl text-[#B8BDE0]">prenons contact avec votre</span>
+                <span class="uppercase font-sans block text-white">AGENCE AUDIOVISUELLE & PHOTOGRAPHE À CASABLANCA</span>
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                Notre équipe vous accueille à Casablanca pour concevoir votre prochain film ou shooting photo. Échangez avec un producteur délégué dès aujourd'hui.
+                Notre agence vous accueille à Casablanca (Boulevard d'Anfa) pour concevoir votre prochain film institutionnel, shooting photo corporate ou capsule vidéo. Échangez avec un producteur dès aujourd'hui.
             </p>
         </div>
     </div>
@@ -134,10 +136,12 @@
                         <div>
                             <label class="block text-[11px] font-mono uppercase text-slate-400 mb-1">Type de Projet</label>
                             <select name="project_type" class="w-full px-4 py-3 bg-[#101229] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#FF4D42]">
-                                <option value="Film Corporate & Institutionnel">Film Corporate & Institutionnel</option>
-                                <option value="Spot Publicitaire & Commercial">Spot Publicitaire & Commercial</option>
+                                <option value="Production de Films Institutionnels">Production de Films Institutionnels</option>
+                                <option value="Shooting Photo Corporate & Portraits">Shooting Photo Corporate & Portraits</option>
+                                <option value="Capsules Vidéo Réseaux Sociaux">Capsules Vidéo Réseaux Sociaux</option>
+                                <option value="Spot Publicitaire TV & Digital">Spot Publicitaire TV & Digital</option>
                                 <option value="Captation Événementielle & Aftermovie">Captation Événementielle & Aftermovie</option>
-                                <option value="Prise de Vue Drone & Aérien 8K">Prise de Vue Drone & Aérien 8K</option>
+                                <option value="Prises de Vues Drone">Prises de Vues Drone</option>
                                 <option value="Autre format sur-mesure">Autre format sur-mesure</option>
                             </select>
                         </div>
