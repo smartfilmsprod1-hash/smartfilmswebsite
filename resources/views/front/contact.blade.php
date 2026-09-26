@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title', 'Contact & Devis Agence Audiovisuelle & Photographe Casablanca | SmartFilms')
-@section('meta_description', 'Contactez notre agence audiovisuelle à Casablanca au 130 Bv d\'Anfa. Devis gratuit sous 24h pour vos films institutionnels, shooting photo corporate et capsules vidéo.')
+@section('meta_description', 'Contactez notre agence audiovisuelle à Casablanca (Villa Brion, 7 rue Khadija courbée Khouailid). Devis gratuit sous 24h pour vos films institutionnels, shooting photo corporate et capsules vidéo.')
 @section('og_title', 'Contact & Devis Agence Audiovisuelle & Photographe Casablanca | SmartFilms')
 @section('og_description', 'Échangez sur votre projet de film institutionnel, shooting photo ou capsules vidéo avec notre équipe à Casablanca. Devis sous 24h.')
 
@@ -23,7 +23,7 @@
             </h1>
 
             <p class="text-[#B8BDE0] text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
-                Notre agence vous accueille à Casablanca (Boulevard d'Anfa) pour concevoir votre prochain film institutionnel, shooting photo corporate ou capsule vidéo. Échangez avec un producteur dès aujourd'hui.
+                Notre agence vous accueille à Casablanca (Villa Brion, 7 rue Khadija courbée Khouailid) pour concevoir votre prochain film institutionnel, shooting photo corporate ou capsule vidéo. Échangez avec un producteur dès aujourd'hui.
             </p>
         </div>
     </div>
@@ -54,7 +54,7 @@
                         <div>
                             <span class="text-[11px] font-mono uppercase text-slate-400 block mb-1">Bureaux & Production</span>
                             <span class="text-sm text-white font-medium block">{{ $settings['address'] }}</span>
-                            <span class="text-xs text-[#B8BDE0] mt-1 block">Casablanca 20300, Maroc</span>
+                            <span class="text-xs text-[#B8BDE0] mt-1 block">Casablanca 20250, Maroc</span>
                         </div>
                     </div>
 
@@ -172,11 +172,11 @@
 <section class="w-full h-96 bg-[#101229] relative border-t border-white/10">
     <iframe 
         class="w-full h-full border-0 grayscale opacity-80 contrast-125" 
-        src="https://maps.google.com/maps?q=130%20Boulevard%20d'Anfa%2C%20Casablanca%2020300&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        src="https://maps.google.com/maps?q=Villa%20Brion%20Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade"
-        title="SmartFilms Prod Casablanca Location">
+        title="SmartFilms Prod Casablanca Location - Villa Brion">
     </iframe>
 </section>
 

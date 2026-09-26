@@ -19,7 +19,7 @@ class FrontController extends Controller
             'settings' => [
                 'phone' => Setting::get('phone', '+212 6 17 20 23 45'),
                 'email' => Setting::get('email', 'contact@smartfilmsprod.com'),
-                'address' => Setting::get('address', '130 Bv d\'Anfa, 20300 Casablanca, Maroc'),
+                'address' => Setting::get('address', 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250'),
                 'whatsapp' => Setting::get('whatsapp', '212617202345'),
             ]
         ];

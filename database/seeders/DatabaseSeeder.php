@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'site_name' => 'SmartFilms Prod',
             'phone' => '+212 6 17 20 23 45',
             'email' => 'contact@smartfilmsprod.com',
-            'address' => '130 Bv d\'Anfa, 20300 Casablanca, Maroc',
+            'address' => 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250',
             'whatsapp' => '+212617202345',
             'instagram' => 'https://instagram.com/smartfilmsprod',
             'linkedin' => 'https://linkedin.com/company/smartfilmsprod',

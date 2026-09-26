@@ -53,7 +53,7 @@
                             <div>
                                 <h4 class="text-[10px] uppercase font-mono tracking-widest text-[#FADDE3] font-bold mb-0.5">ADRESSE</h4>
                                 <p class="text-white/90 text-xs sm:text-sm font-normal leading-relaxed">
-                                    {{ $settings['address'] ?? '130 Bv d\'Anfa, 20300 Casablanca, Maroc' }}
+                                    {{ $settings['address'] ?? 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250' }}
                                 </p>
                             </div>
                         </div>
@@ -96,9 +96,9 @@
 
                 <!-- Google Map Embed Styled with Overlay -->
                 <div class="relative z-10 rounded-2xl overflow-hidden border border-white/15 shadow-md group">
-                    <iframe class="w-full h-32 border-0 opacity-80 group-hover:opacity-100 transition-opacity" src="https://maps.google.com/maps?q=Boulevard+d+Anfa+Casablanca&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Bureaux SmartFilms Casablanca"></iframe>
+                    <iframe class="w-full h-32 border-0 opacity-80 group-hover:opacity-100 transition-opacity" src="https://maps.google.com/maps?q=Villa+Brion+Casablanca&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Bureaux SmartFilms Casablanca - Villa Brion"></iframe>
                     <div class="absolute bottom-2 right-2">
-                        <a href="https://maps.google.com/?q=Boulevard+d+Anfa+Casablanca" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#090D1E]/90 backdrop-blur-md text-[10px] font-mono text-white/90 hover:text-white border border-white/20 inline-flex items-center gap-1.5 transition-colors">
+                        <a href="https://maps.google.com/?q=Villa+Brion+7+rue+Khadija+courbée+Khouailid+Casablanca" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#090D1E]/90 backdrop-blur-md text-[10px] font-mono text-white/90 hover:text-white border border-white/20 inline-flex items-center gap-1.5 transition-colors">
                             <span>Ouvrir dans Maps</span>
                             <i class="bi bi-box-arrow-up-right text-[9px]"></i>
                         </a>

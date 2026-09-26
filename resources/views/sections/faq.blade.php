@@ -72,7 +72,7 @@
                     <i class="bi bi-chevron-down text-sm text-[#FF5A68] transition-transform duration-300 shrink-0"></i>
                 </button>
                 <div class="faq-content hidden px-6 pb-6 sm:px-8 sm:pb-7 text-[#686580] text-xs sm:text-sm font-light leading-relaxed border-t border-[#2D2658]/5 pt-4">
-                    Bien que nos bureaux soient implantés au <strong>Boulevard d'Anfa à Casablanca</strong>, nos équipes techniques et réalisateurs interviennent sur l'ensemble du territoire national : <strong>Rabat, Tanger, Marrakech, Fès, Agadir, Laâyoune</strong> ainsi que sur des sites industriels, miniers et logistiques isolés.
+                    Bien que nos bureaux soient implantés à la <strong>Villa Brion (rue Khadija courbée Khouailid) à Casablanca</strong>, nos équipes techniques et réalisateurs interviennent sur l'ensemble du territoire national : <strong>Rabat, Tanger, Marrakech, Fès, Agadir, Laâyoune</strong> ainsi que sur des sites industriels, miniers et logistiques isolés.
                 </div>
             </div>
 

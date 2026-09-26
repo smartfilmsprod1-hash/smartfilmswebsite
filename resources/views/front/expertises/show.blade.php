@@ -22,8 +22,9 @@
         "telephone": "{{ $settings['phone'] }}",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "130 Bv d'Anfa",
+          "streetAddress": "Villa Brion 7, rue Khadija courbée Khouailid",
           "addressLocality": "Casablanca",
+          "postalCode": "20250",
           "addressCountry": "MA"
         }
       },

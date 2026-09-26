@@ -41,7 +41,7 @@
                     NOUS NE PRODUISONS PAS DE SIMPLES VIDÉOS. NOUS FORGEONS VOTRE AUTORITÉ.
                 </h2>
                 <p class="text-[#B8BDE0] text-base font-light leading-relaxed">
-                    Basés au cœur de Casablanca (Boulevard d'Anfa), nous combinons l'agilité d'une structure boutique à l'envergure technique d'un grand studio de cinéma. Chaque projet est piloté avec une rigueur absolue : écriture ciselée, optiques d'exception, étalonnage haute fidélité et mixage broadcast.
+                    Basés au cœur de Casablanca (Villa Brion, rue Khadija courbée Khouailid), nous combinons l'agilité d'une structure boutique à l'envergure technique d'un grand studio de cinéma. Chaque projet est piloté avec une rigueur absolue : écriture ciselée, optiques d'exception, étalonnage haute fidélité et mixage broadcast.
                 </p>
                 <div class="grid grid-cols-2 gap-6 pt-4 border-t border-white/10">
                     <div>

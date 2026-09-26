@@ -60,9 +60,9 @@
           "url": "{{ url('/') }}",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "130 Bv d'Anfa",
+            "streetAddress": "Villa Brion 7, rue Khadija courbée Khouailid",
             "addressLocality": "Casablanca",
-            "postalCode": "20300",
+            "postalCode": "20250",
             "addressRegion": "Grand Casablanca",
             "addressCountry": "MA"
           },
@@ -200,7 +200,7 @@
               "name": "Dans quelles villes du Maroc intervenez-vous ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Basés au Boulevard d'Anfa à Casablanca, nos réalisateurs et techniciens interviennent rapidement partout au Maroc : Rabat, Tanger, Marrakech, Fès, Agadir ainsi que sur des sites industriels et miniers isolés."
+                "text": "Basés à la Villa Brion (rue Khadija courbée Khouailid) à Casablanca, nos réalisateurs et techniciens interviennent rapidement partout au Maroc : Rabat, Tanger, Marrakech, Fès, Agadir ainsi que sur des sites industriels et miniers isolés."
               }
             }
           ]

@@ -139,7 +139,7 @@
         <div class="border-t border-white/10 pt-10 flex flex-wrap justify-between items-center gap-6 text-xs font-mono text-slate-400">
             <div>
                 <span class="text-white font-bold block">Production : SmartFilms Prod Casablanca</span>
-                <span>Boulevard d'Anfa &bull; Maroc</span>
+                <span>Villa Brion &bull; Casablanca</span>
             </div>
             <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold">
                 <span>Discuter d'un projet similaire</span>
@@ -183,7 +183,7 @@
         <div class="border-t border-white/10 pt-10 flex flex-wrap justify-between items-center gap-6 text-xs font-mono text-slate-400">
             <div>
                 <span class="text-white font-bold block">Production : SmartFilms Prod Casablanca</span>
-                <span>Boulevard d'Anfa &bull; Maroc</span>
+                <span>Villa Brion &bull; Casablanca</span>
             </div>
             <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-[#FF4D42] hover:underline font-bold">
                 <span>Discuter d'un projet similaire</span>

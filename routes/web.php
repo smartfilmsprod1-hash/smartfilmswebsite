@@ -82,7 +82,7 @@ Route::get('/{slug}', function ($slug) {
     $settings = [
         'phone' => \App\Models\Setting::get('phone', '+212 6 17 20 23 45'),
         'email' => \App\Models\Setting::get('email', 'contact@smartfilmsprod.com'),
-        'address' => \App\Models\Setting::get('address', '130 Bv d\'Anfa, 20300 Casablanca, Maroc'),
+        'address' => \App\Models\Setting::get('address', 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250'),
         'whatsapp' => \App\Models\Setting::get('whatsapp', '212617202345'),
     ];
     return view('front.page', compact('page', 'menus', 'settings'));

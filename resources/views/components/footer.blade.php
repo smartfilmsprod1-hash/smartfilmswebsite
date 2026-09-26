@@ -34,7 +34,7 @@
             <div>
                 <h4 class="font-bold text-white uppercase tracking-widest text-xs mb-4">BUREAUX & PRODUCTION</h4>
                 <ul class="space-y-2.5 text-[#ECE9F3]/80">
-                    <li><i class="bi bi-geo-alt text-[#FF5A68] mr-2"></i> {{ $settings['address'] ?? '130 Bv d\'Anfa, 20300 Casablanca, Maroc' }}</li>
+                    <li><i class="bi bi-geo-alt text-[#FF5A68] mr-2"></i> {{ $settings['address'] ?? 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250' }}</li>
                     <li><i class="bi bi-telephone text-[#FF5A68] mr-2"></i> <a href="tel:{{ str_replace(' ', '', $settings['phone'] ?? '+212617202345') }}" class="hover:text-[#FF5A68]">{{ $settings['phone'] ?? '+212 6 17 20 23 45' }}</a></li>
                     <li><i class="bi bi-envelope text-[#FF5A68] mr-2"></i> <a href="mailto:{{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}" class="hover:text-[#FF5A68]">{{ $settings['email'] ?? 'contact@smartfilmsprod.com' }}</a></li>
                     <li><i class="bi bi-shield-check text-[#FF5A68] mr-2"></i> Devis gratuit sous 24h ouvrées</li>

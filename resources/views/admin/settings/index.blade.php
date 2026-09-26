@@ -43,7 +43,7 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Adresse du Studio à Casablanca</label>
-                        <input type="text" name="address" value="{{ $settings['address'] ?? '130 Bv d\'Anfa, 20300 Casablanca, Maroc' }}" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:border-blue-500">
+                        <input type="text" name="address" value="{{ $settings['address'] ?? 'Villa Brion 7, rue Khadija courbée Khouailid 20250, Casablanca 20250' }}" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:border-blue-500">
                     </div>
                 </div>
             </div>
