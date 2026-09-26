@@ -29,9 +29,6 @@
         </div>
 
         @php
-            // Fetch dynamically from Database (editable via Admin Panel /admin/expertises)
-            $dbExpertises = \App\Models\Expertise::where('is_active', true)->orderBy('order')->get();
-
             $iconMap = [
                 1 => 'bi-lightbulb',
                 2 => 'bi-camera-video',
@@ -41,54 +38,50 @@
                 6 => 'bi-broadcast',
             ];
 
-            if ($dbExpertises->isEmpty()) {
-                $expertisesList = [
-                    [
-                        'order' => 1,
-                        'title' => 'STRATÉGIE & CONCEPTION',
-                        'slug' => 'strategie-conception',
-                        'hero_desc' => 'Analyse, storytelling, direction artistique : une vision sur mesure pour des contenus qui ont du sens.',
-                        'image' => '/uploads/expertise_01_strategy.jpg',
-                    ],
-                    [
-                        'order' => 2,
-                        'title' => 'PRODUCTION AUDIOVISUELLE',
-                        'slug' => 'production-audiovisuelle',
-                        'hero_desc' => 'Du tournage à la post-production, nous assurons la réalisation de films sur mesure, avec un haut niveau d\'exigence.',
-                        'image' => '/uploads/expertise_02_production.jpg',
-                    ],
-                    [
-                        'order' => 3,
-                        'title' => 'CONTENUS SOCIAUX',
-                        'slug' => 'contenus-sociaux',
-                        'hero_desc' => 'Des formats adaptés aux réseaux sociaux pour engager vos communautés et renforcer votre visibilité.',
-                        'image' => '/uploads/expertise_03_social.jpg',
-                    ],
-                    [
-                        'order' => 4,
-                        'title' => 'SHOOTING PHOTO CORPORATE',
-                        'slug' => 'shooting-photo-corporate',
-                        'hero_desc' => 'Portraits de dirigeants, reportages industriels, packshots produits et banques d\'images sur mesure à Casablanca et au Maroc.',
-                        'image' => '/uploads/expertise_04_corporate.jpg',
-                    ],
-                    [
-                        'order' => 5,
-                        'title' => 'PUBLICITÉ & CAMPAGNES',
-                        'slug' => 'publicite-campagnes',
-                        'hero_desc' => 'Des campagnes créatives et percutantes pour faire rayonner vos marques et atteindre vos objectifs.',
-                        'image' => '/uploads/expertise_05_advertising.jpg',
-                    ],
-                    [
-                        'order' => 6,
-                        'title' => 'ÉVÉNEMENT & LIVE',
-                        'slug' => 'evenement-live',
-                        'hero_desc' => 'Captation, diffusion, régie multi-caméras... Nous donnons une autre dimension à vos événements.',
-                        'image' => '/uploads/expertise_06_events.jpg',
-                    ],
-                ];
-            } else {
-                $expertisesList = $dbExpertises;
-            }
+            $expertisesList = [
+                [
+                    'order' => 1,
+                    'title' => 'STRATÉGIE & CONCEPTION',
+                    'slug' => 'strategie-conception',
+                    'hero_desc' => 'Analyse, storytelling, direction artistique : une vision sur mesure pour des contenus qui ont du sens.',
+                    'image' => '/uploads/expertise_01_strategy.jpg',
+                ],
+                [
+                    'order' => 2,
+                    'title' => 'PRODUCTION AUDIOVISUELLE',
+                    'slug' => 'production-audiovisuelle',
+                    'hero_desc' => 'Du tournage à la post-production, nous assurons la réalisation de films sur mesure, avec un haut niveau d\'exigence.',
+                    'image' => '/uploads/expertise_02_production.jpg',
+                ],
+                [
+                    'order' => 3,
+                    'title' => 'CONTENUS SOCIAUX',
+                    'slug' => 'contenus-sociaux',
+                    'hero_desc' => 'Des formats adaptés aux réseaux sociaux pour engager vos communautés et renforcer votre visibilité.',
+                    'image' => '/uploads/expertise_03_social.jpg',
+                ],
+                [
+                    'order' => 4,
+                    'title' => 'SHOOTING PHOTO CORPORATE',
+                    'slug' => 'shooting-photo-corporate',
+                    'hero_desc' => 'Portraits de dirigeants, reportages industriels, packshots produits et banques d\'images sur mesure à Casablanca et au Maroc.',
+                    'image' => '/uploads/expertise_04_corporate.jpg',
+                ],
+                [
+                    'order' => 5,
+                    'title' => 'PUBLICITÉ & CAMPAGNES',
+                    'slug' => 'publicite-campagnes',
+                    'hero_desc' => 'Des campagnes créatives et percutantes pour faire rayonner vos marques et atteindre vos objectifs.',
+                    'image' => '/uploads/expertise_05_advertising.jpg',
+                ],
+                [
+                    'order' => 6,
+                    'title' => 'ÉVÉNEMENT & LIVE',
+                    'slug' => 'evenement-live',
+                    'hero_desc' => 'Captation, diffusion, régie multi-caméras... Nous donnons une autre dimension à vos événements.',
+                    'image' => '/uploads/expertise_06_events.jpg',
+                ],
+            ];
         @endphp
 
         <!-- 6 Expertises Cards Grid (Sleek Dark Cards with Elegant Passe-Partout Image Framing) -->

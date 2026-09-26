@@ -44,148 +44,6 @@ class DatabaseSeeder extends Seeder
         // 3. Projects (Case Studies)
         $projects = [
             [
-                'title' => 'Événement Institutionnel & Convention — Best Of',
-                'slug' => 'banque-populaire-aftermovie-evenement',
-                'client_name' => 'Banque Populaire',
-                'category' => 'Événementiel',
-                'video_url' => 'https://drive.google.com/file/d/1eeZsN5L3eRbSIUM2-4iGhYvK_ri9fQ0A/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/banque_populaire_event.webp',
-                'description' => 'Captation cinématographique et réalisation de l\'aftermovie officiel pour l\'événement institutionnel d\'envergure de la Banque Populaire. Un condensé immersif et dynamique capturant l\'intensité des interventions, la cohésion des collaborateurs et la célébration des réussites du Groupe. Couverture multi-caméras 4K cinéma, prises de son dédiées, montage percutant et étalonnage soigné réalisés par SmartFilms Prod.',
-                'duration' => '02:30',
-                'year' => '2026',
-                'metrics' => 'Captation Multi-Caméras & Aftermovie 4K',
-                'is_featured' => true,
-                'order' => 1,
-            ],
-            [
-                'title' => 'Séminaire & Événement Corporate — Best Of',
-                'slug' => 'siemens-evenement-aftermovie',
-                'client_name' => 'Siemens',
-                'category' => 'Événementiel',
-                'video_url' => 'https://drive.google.com/file/d/1UbdHzuuX5fjjG5fedk218xtfV37Hm-OH/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/siemens_event.webp',
-                'description' => 'Captation audiovisuelle d\'envergure et aftermovie cinématique pour l\'événement d\'entreprise de Siemens. Mise en valeur des interventions clés, des démonstrations technologiques, de la dynamique collaborative des équipes et des moments d\'échange conviviaux. Réalisation dynamique en 4K avec sound design immersif et habillage graphique soigné par SmartFilms Prod.',
-                'duration' => '02:15',
-                'year' => '2026',
-                'metrics' => 'Couverture Multi-Caméras & Aftermovie 4K',
-                'is_featured' => false,
-                'order' => 2,
-            ],
-            [
-                'title' => 'Cérémonie & Événement — Aftermovie Officiel',
-                'slug' => 'elu-evenement-aftermovie-gala',
-                'client_name' => 'ELU',
-                'category' => 'Événementiel',
-                'video_url' => 'https://drive.google.com/file/d/1w_a19-43GO3HZgKS0yhAK7GZd9QlolmT/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/elu_event.webp',
-                'description' => 'Aftermovie officiel et captation cinématographique pour l\'événement et la soirée de célébration ELU. Immersion au cœur de l\'ambiance festive, des remises de prix, des prises de parole inspirantes et des émotions partagées. Production intégrale assurée par l\'équipe SmartFilms Prod avec caméras cinéma 4K, gestion de la lumière continue et montage percutant.',
-                'duration' => '02:00',
-                'year' => '2026',
-                'metrics' => 'Aftermovie 4K & Soirée de Gala',
-                'is_featured' => false,
-                'order' => 3,
-            ],
-            [
-                'title' => 'Documentaire & Capsule de Sensibilisation — Protection de l\'Enfance',
-                'slug' => 'onde-documentaire-capsule-sensibilisation',
-                'client_name' => 'ONDE',
-                'category' => 'Documentaire & RSE',
-                'video_url' => 'https://drive.google.com/file/d/1ncYauMnh7JbPyPqO2wriYWDtRShnHryF/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/onde_documentaire.webp',
-                'description' => 'Film documentaire et capsule de sensibilisation institutionnelle réalisée pour l\'ONDE (Observatoire National des Droits de l\'Enfant). Une narration humaine, poignante et engagée traitant des enjeux de protection, de prévention du harcèlement et des droits fondamentaux des enfants au Maroc. Réalisation intimiste avec direction d\'acteurs sensible, témoignages poignants et étalonnage cinématographique signés SmartFilms Prod.',
-                'duration' => '03:20',
-                'year' => '2026',
-                'metrics' => 'Campagne Nationale & Impact Sociétal',
-                'is_featured' => false,
-                'order' => 4,
-            ],
-            [
-                'title' => 'Spot Publicitaire TV 30s — Campagne Nationale',
-                'slug' => 'or-blanc-spot-publicitaire-tv',
-                'client_name' => 'Or Blanc',
-                'category' => 'Spot Publicitaire',
-                'video_url' => 'https://drive.google.com/file/d/1-buIV0VUzACl-c2nBmgUK9_Fovv5Er83/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/or_blanc_spot_tv.webp',
-                'description' => 'Spot publicitaire broadcast TV de 30 secondes conçu pour la marque Or Blanc. Une direction artistique gourmande et dynamique mettant en scène la qualité, la fraîcheur et la convivialité des produits au cœur du quotidien des familles marocaines. Production publicitaire complète par SmartFilms Prod : stylisme culinaire (food styling), tournage haute vitesse slow-motion et mixage sonore broadcast.',
-                'duration' => '00:30',
-                'year' => '2026',
-                'metrics' => 'Diffusion TV Nationale & Digital 360',
-                'is_featured' => false,
-                'order' => 5,
-            ],
-            [
-                'title' => 'Campagne Social Media & Reels — Immersion & Univers Équestre',
-                'slug' => 'domaine-limoune-campagne-reels-reseaux-sociaux',
-                'client_name' => 'Domaine Limoune',
-                'category' => 'Réseaux Sociaux',
-                'video_url' => 'https://drive.google.com/file/d/1pRxTlEnJMmrg_U0lPfYhnSmze4zrm1JH/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/domaine_limoune_thumb.webp',
-                'description' => 'Production d\'une série de formats verticaux (Reels & TikTok) haute définition pour le prestigieux Domaine Limoune. Une immersion cinématographique articulée autour de l\'art de vivre, du spa haut de gamme et de l\'univers équestre d\'exception du domaine. Captation multi-angles, étalonnage lumineux et sound design percutant taillé pour maximiser l\'engagement et la portée sur les réseaux sociaux.',
-                'duration' => 'Série 2 Reels',
-                'year' => '2026',
-                'metrics' => 'Formats Reels 9:16 • Multi-Capsules',
-                'is_featured' => false,
-                'order' => 6,
-                'gallery' => [
-                    [
-                        'type' => 'video',
-                        'tab_title' => 'Capsule 01 : Immersion & Spa',
-                        'title' => 'Capsule 01 — Immersion Spa, Villas & Architecture',
-                        'video_url' => 'https://drive.google.com/file/d/1pRxTlEnJMmrg_U0lPfYhnSmze4zrm1JH/preview',
-                        'thumbnail' => '/uploads/domaine_limoune_pool.webp',
-                        'format' => '9:16',
-                        'badge' => 'Reel Social Media 4K',
-                        'description' => 'Exploration visuelle des espaces bien-être, piscines privatives et de l\'atmosphère apaisante et luxueuse du Domaine Limoune.'
-                    ],
-                    [
-                        'type' => 'video',
-                        'tab_title' => 'Capsule 02 : Expérience Équestre',
-                        'title' => 'Capsule 02 — L\'Expérience Équestre & Les Écuries',
-                        'video_url' => 'https://drive.google.com/file/d/1pDIn5rT70OAoz5sIUqDLxmjlTVWDCPnD/preview',
-                        'thumbnail' => '/uploads/domaine_limoune_horse.webp',
-                        'format' => '9:16',
-                        'badge' => 'Reel Social Media 4K',
-                        'description' => 'Immersion dynamique au cœur des écuries du domaine, complicité cavalière et élégance équine au coucher du soleil.'
-                    ]
-                ],
-            ],
-            [
-                'title' => 'Film Institutionnel — L\'Ingénierie & la Haute Technologie Industrielle',
-                'slug' => 'flowpipe-film-institutionnel-ingenierie',
-                'client_name' => 'Flow Pipe',
-                'category' => 'Film Institutionnel',
-                'video_url' => 'https://drive.google.com/file/d/1aM8xwFvkHWQ8XQoZc8zFXzkP89PyY2JG/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/flowpipe_institutionnel.webp',
-                'description' => 'Film institutionnel d\'envergure réalisé pour Flow Pipe (Groupe Plastima), référence nationale et continentale dans la fabrication de systèmes de tuyauterie et canalisations composites haute résistance. Une immersion cinématographique au cœur des infrastructures de production automatisées, valorisant l\'innovation technologique, la précision robotisée des lignes d\'extrusion et le dévouement des équipes d\'ingénierie au service des grands chantiers d\'infrastructure et d\'irrigation au Maroc.',
-                'duration' => '03:40',
-                'year' => '2026',
-                'metrics' => 'Film Institutionnel 4K • Industrie & BTP',
-                'is_featured' => false,
-                'order' => 7,
-            ],
-            [
-                'title' => 'La Vie des Collaborateurs — Marque Employeur & Culture d\'Entreprise',
-                'slug' => 'inetum-film-corporate-vie-des-collaborateurs',
-                'client_name' => 'Inetum',
-                'category' => 'Film Corporate',
-                'video_url' => 'https://drive.google.com/file/d/1ywD-CmGpUXmf3ntgWOKEGCiSVHz5GW2r/preview',
-                'video_type' => 'google_drive',
-                'thumbnail' => '/uploads/inetum_corporate.webp',
-                'description' => 'Capsule corporate et film de marque employeur réalisé pour Inetum Maroc, acteur majeur des services informatiques et de la transformation digitale. À travers le portrait immersif de collaborateurs et le quotidien des équipes au sein des espaces de travail agiles, ce film met en lumière les valeurs de partage, l\'épanouissement des talents, les perspectives d\'évolution et l\'esprit collaboratif qui forgent l\'identité d\'Inetum.',
-                'duration' => '02:15',
-                'year' => '2026',
-                'metrics' => 'Marque Employeur & Culture d\'Entreprise',
-                'is_featured' => false,
-                'order' => 8,
-            ],
-            [
                 'title' => 'Empowering Digital Leaders',
                 'slug' => 'dell-technologies-empowering-digital',
                 'client_name' => 'DELL Technologies',
@@ -197,8 +55,8 @@ class DatabaseSeeder extends Seeder
                 'duration' => '02:45',
                 'year' => '2026',
                 'metrics' => 'Diffusion C-Level & Salons Tech',
-                'is_featured' => false,
-                'order' => 9,
+                'is_featured' => true,
+                'order' => 1,
             ],
             [
                 'title' => 'De la Terre à la Table',
@@ -212,8 +70,8 @@ class DatabaseSeeder extends Seeder
                 'duration' => '00:45',
                 'year' => '2026',
                 'metrics' => '+3.8M Vues Digitales & TV',
-                'is_featured' => false,
-                'order' => 10,
+                'is_featured' => true,
+                'order' => 2,
             ],
             [
                 'title' => 'Hub Maritime Mondial',
@@ -227,8 +85,23 @@ class DatabaseSeeder extends Seeder
                 'duration' => '01:30',
                 'year' => '2025',
                 'metrics' => 'Captation FPV & 8K Cinema',
-                'is_featured' => false,
-                'order' => 11,
+                'is_featured' => true,
+                'order' => 3,
+            ],
+            [
+                'title' => 'L\'Audace d\'Entreprendre',
+                'slug' => 'bcp-l-audace-d-entreprendre',
+                'client_name' => 'BCP International',
+                'category' => 'Film Corporate',
+                'video_url' => 'https://www.youtube.com/embed/_yWLYCiW1Z8',
+                'video_type' => 'youtube',
+                'thumbnail' => '/uploads/studio_commercial_spot.png',
+                'description' => 'Récit humain et dynamique valorisant les entrepreneurs marocains accompagnés par la Banque Centrale Populaire.',
+                'duration' => '03:10',
+                'year' => '2025',
+                'metrics' => 'Campagne Marque Employeur',
+                'is_featured' => true,
+                'order' => 4,
             ],
             [
                 'title' => 'L\'Énergie en Mouvement',
@@ -242,10 +115,24 @@ class DatabaseSeeder extends Seeder
                 'duration' => '01:00',
                 'year' => '2025',
                 'metrics' => 'Campagne 360 & TV',
-                'is_featured' => false,
-                'order' => 12,
+                'is_featured' => true,
+                'order' => 5,
             ],
-
+            [
+                'title' => 'L\'Ingénierie de Précision',
+                'slug' => 'flowpipe-ingenierie-de-precision',
+                'client_name' => 'FlowPipe Plastima',
+                'category' => 'Documentaire & RSE',
+                'video_url' => 'https://www.youtube.com/embed/_yWLYCiW1Z8',
+                'video_type' => 'youtube',
+                'thumbnail' => '/uploads/studio_commercial_spot.png',
+                'description' => 'Documentaire technique immersif sur les procédés d\'extrusion industrielle et l\'engagement pour le développement durable.',
+                'duration' => '04:15',
+                'year' => '2025',
+                'metrics' => 'Reportage Industriel & Salons',
+                'is_featured' => true,
+                'order' => 6,
+            ],
         ];
 
         foreach ($projects as $p) {
@@ -397,152 +284,188 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 7. Expertises (CMS Database Model)
+        // 7. Expertises (The 6 Core Editorial CMS Disciplines)
         $expertises = [
             [
-                'title' => 'Film Corporate & Institutionnel',
-                'slug' => 'film-corporate',
-                'subtitle' => 'Maison de Production Audiovisuelle Casablanca',
-                'seo_title' => 'Film Corporate & Institutionnel Casablanca | SmartFilms Prod Maroc',
-                'seo_description' => 'Production de films corporate haut de gamme à Casablanca et au Maroc. Valorisez vos infrastructures, vos équipes et votre vision stratégique avec une esthétique cinématographique.',
-                'h1' => 'FILM CORPORATE & INSTITUTIONNEL',
-                'hero_desc' => 'Racontez l\'ambition de votre entreprise à travers un storytelling cinématographique puissant et des prises de vues d\'infrastructures d\'exception.',
-                'image' => '/uploads/cinema_corporate_film.png',
+                'title' => 'Stratégie & Conception',
+                'slug' => 'strategie-conception',
+                'subtitle' => 'Donner du sens à chaque projet',
+                'seo_title' => 'Stratégie de Contenu & Conception Audiovisuelle | SmartFilms Maroc',
+                'seo_description' => 'Conception de stratégies de contenu percutantes et lignes éditoriales adaptées à vos objectifs et à votre audience à Casablanca et au Maroc.',
+                'h1' => 'STRATÉGIE & CONCEPTION CRÉATIVE',
+                'hero_desc' => 'Analyse, storytelling, direction artistique : une vision sur mesure pour des contenus qui ont du sens.',
+                'image' => '/uploads/expertise_01_strategy.jpg',
                 'deliverables' => [
-                    'Film institutionnel master 4K (2 à 5 minutes)',
-                    'Teasers réseaux sociaux 9:16 pour LinkedIn et Instagram',
-                    'Interviews des dirigeants & collaborateurs clés',
-                    'Banque de plans B-Roll haute fidélité'
+                    'Lignes éditoriales et chartes audiovisuelles',
+                    'Storyboards détaillés et moodboards créatifs',
+                    'Scénarisation et rédaction des voix-off',
+                    'Plan de diffusion multi-canaux'
                 ],
                 'equipment' => [
-                    'Configurations caméras cinéma calibrées selon les besoins',
-                    'Optiques Cinéma Anamorphiques & Sphériques',
-                    'Prises de vues aériennes drone 4K/6K',
-                    'Éclairage Studio & Gestion lumière continue'
+                    'Direction artistique dédiée',
+                    'Scénaristes & Concepteurs rédacteurs',
+                    'Ateliers de co-création stratégique'
                 ],
-                'category_filter' => 'Film de Marque',
+                'category_filter' => 'Stratégie',
                 'faq' => [
                     [
-                        'q' => 'Combien de temps faut-il pour produire un film corporate ?',
-                        'a' => 'En moyenne, une production corporate complète nécessite entre 2 à 4 semaines, incluant l\'écriture du scénario, le tournage (1 à 3 jours) et la post-production (montage, étalonnage, sound design).'
-                    ],
-                    [
-                        'q' => 'SmartFilms intervient-il partout au Maroc ?',
-                        'a' => 'Oui. Bien que notre studio soit basé à Casablanca (Bd d\'Anfa), nos équipes régie et caméras tournent régulièrement à Rabat, Tanger, Marrakech, Agadir et sur des sites industriels dans tout le Royaume.'
-                    ],
-                    [
-                        'q' => 'Accompagnez-vous les démarches d\'autorisations de tournage au Maroc ?',
-                        'a' => 'Absolument. Nous accompagnons nos clients dans l\'obtention et la coordination des autorisations administratives nécessaires auprès des autorités compétentes pour sécuriser chaque tournage.'
+                        'q' => 'Comment démarre la phase de conception ?',
+                        'a' => 'Nous débutons par un brief approfondi pour comprendre vos objectifs, vos personas et vos messages clés, puis nous élaborons 2 à 3 pistes créatives.'
                     ]
                 ],
                 'order' => 1,
                 'is_active' => true,
             ],
             [
-                'title' => 'Spot Publicitaire & Commercial',
-                'slug' => 'spot-publicitaire',
-                'subtitle' => 'Campagnes TV, Cinéma & Formats Digitaux',
-                'seo_title' => 'Spot Publicitaire & Publicité TV/Digitale Casablanca | SmartFilms Maroc',
-                'seo_description' => 'Création et réalisation de spots publicitaires percutants à Casablanca. Diffusion TV, cinéma et réseaux sociaux calibrée pour maximiser l\'impact et la mémorisation.',
-                'h1' => 'SPOTS PUBLICITAIRES & BRAND FILMS',
-                'hero_desc' => 'Des concepts publicitaires audacieux, des castings rigoureux et une réalisation millimétrée pour imposer votre marque dans l\'esprit du public.',
-                'image' => '/uploads/studio_commercial_spot.png',
+                'title' => 'Production Audiovisuelle',
+                'slug' => 'production-audiovisuelle',
+                'subtitle' => 'Transformer une idée en image',
+                'seo_title' => 'Production Audiovisuelle Cinématographique | SmartFilms Maroc',
+                'seo_description' => 'Films institutionnels, publicités, interviews, capsules et prises de vues cinéma au Maroc.',
+                'h1' => 'PRODUCTION AUDIOVISUELLE HAUTE FIDÉLITÉ',
+                'hero_desc' => "Du tournage à la post-production, nous assurons la réalisation de films sur mesure, avec un haut niveau d'exigence.",
+                'image' => '/uploads/expertise_02_production.jpg',
                 'deliverables' => [
-                    'Spots TV & Cinéma broadcast masters 4K (15s, 30s, 60s)',
-                    'Déclinaisons digitales dynamiques (Story, Reel, YouTube Ads)',
-                    'Sound design immersif et composition musicale originale',
-                    'Voice-over multilingue (Arabe Darija, Français, Anglais)'
+                    'Films institutionnels master 4K',
+                    'Captations multi-caméras cinéma',
+                    'Interviews dirigeants & portraits collaborateurs',
+                    'Banque de plans B-Roll 4K/6K'
                 ],
                 'equipment' => [
-                    'Caméras Haute Vitesse & Slow-Motion',
-                    'Machinerie travelling & Stabilisation 3 axes',
-                    'Production sonore & Mixage multicanal broadcast',
-                    'Étalonnage couleur DaVinci Resolve Studio HDR'
+                    'Caméras Cinéma Arri / RED / Sony FX',
+                    'Optiques Anamorphiques & Sphériques',
+                    'Éclairages studio professionnels ARRI / Aputure'
                 ],
-                'category_filter' => 'Publicité TV',
+                'category_filter' => 'Production',
                 'faq' => [
                     [
-                        'q' => 'Comment se déroule la conception d\'un spot publicitaire ?',
-                        'a' => 'Nous commençons par l\'élaboration du concept créatif et du storyboard, suivi du casting, du stylisme et du repérage des décors. Après validation, nous orchestrons le tournage et la post-production complète.'
-                    ],
-                    [
-                        'q' => 'Pouvez-vous adapter le spot pour TikTok et Instagram Reels ?',
-                        'a' => 'Oui. Dès la phase de cadrage, nous anticipons les cadrages 9:16 et 1:1 pour livrer des déclinaisons natives parfaitement adaptées aux algorithmes des réseaux sociaux.'
+                        'q' => 'Quels équipements utilisez-vous en tournage ?',
+                        'a' => 'Nous tournons exclusivement avec des configurations cinéma certifiées (capteurs grand format, optiques de cinéma et machinerie stabilisée).'
                     ]
                 ],
                 'order' => 2,
                 'is_active' => true,
             ],
             [
-                'title' => 'Production & Captation Événementielle',
-                'slug' => 'production-evenementielle',
-                'subtitle' => 'Congrès, Sommets Internationaux & Galas',
-                'seo_title' => 'Captation Événementielle & Aftermovie Casablanca | SmartFilms Maroc',
-                'seo_description' => 'Couverture audiovisuelle haut de gamme pour sommets internationaux, lancements de produits et galas au Maroc. Régie multi-caméras 4K et aftermovies percutants.',
-                'h1' => 'CAPTATION & PRODUCTION ÉVÉNEMENTIELLE',
-                'hero_desc' => 'Immortalisez vos grands rendez-vous professionnels avec une régie multi-caméras 4K fluide et des aftermovies rythmés livrés en un temps record.',
-                'image' => '/uploads/cinema_corporate_film.png',
+                'title' => 'Contenus Sociaux',
+                'slug' => 'contenus-sociaux',
+                'subtitle' => "Créer du contenu qui mérite d'être regardé",
+                'seo_title' => 'Production de Contenus Sociaux & Reels 9:16 | SmartFilms Maroc',
+                'seo_description' => "Capsules verticales, Reels, TikTok et séries vidéo pensées pour maximiser l'engagement sur les réseaux sociaux.",
+                'h1' => 'CONTENUS SOCIAUX & ENGAGEMENT DIGITAL',
+                'hero_desc' => 'Des formats adaptés aux réseaux sociaux pour engager vos communautés et renforcer votre visibilité.',
+                'image' => '/uploads/expertise_03_social.jpg',
                 'deliverables' => [
-                    'Aftermovie officiel dynamique (2 à 3 minutes)',
-                    'Teaser Same-Day Edit (livré pendant l\'événement)',
-                    'Captation intégrale des keynotes & tables rondes',
-                    'Diffusion en direct live streaming multi-plateformes'
+                    'Reels & TikTok 9:16 verticaux dynamiques',
+                    'Capsules interviews format Snack Content',
+                    'Stories animées et motion design',
+                    'Déclinaisons multi-ratios (9:16, 1:1, 16:9)'
                 ],
                 'equipment' => [
-                    'Régie vidéo broadcast 4K',
-                    'Systèmes de transmission HF sans fil longue portée',
-                    'Caméras PTZ robotisées & tourelles',
-                    'Prise de son HF professionnelle Sennheiser'
+                    'Rigs verticaux cinéma',
+                    'Systèmes de captation sonore nomade sans fil',
+                    'Setup lumière compact et réactif'
                 ],
-                'category_filter' => 'Événementiel',
+                'category_filter' => 'Réseaux Sociaux',
                 'faq' => [
                     [
-                        'q' => 'Pouvez-vous livrer une vidéo le jour même de l\'événement ?',
-                        'a' => 'Oui. Grâce à notre régie de montage nomade sur site, nous produisons des teasers "Same-Day" en quelques heures pour alimenter vos réseaux sociaux en temps réel.'
-                    ],
-                    [
-                        'q' => 'Comment est dimensionnée l\'équipe technique sur un événement ?',
-                        'a' => 'Selon l\'envergure du projet, nos équipes événementielles sont calibrées sur-mesure (cadreurs, télépilote, ingénieur son, réalisation régie et monteur sur site).'
+                        'q' => 'À quel rythme pouvons-nous produire des vidéos pour les réseaux ?',
+                        'a' => 'Nous proposons des forfaits mensuels récurrents ou des packs de tournage permettant de produire en 1 ou 2 jours de shooting tout un mois de contenu.'
                     ]
                 ],
                 'order' => 3,
                 'is_active' => true,
             ],
             [
-                'title' => 'Prise de Vue Drone 4K/6K & FPV',
-                'slug' => 'drone-aerien',
-                'subtitle' => 'Captations Aériennes & Télépilotes Agréés',
-                'seo_title' => 'Prise de Vue par Drone 4K/6K & FPV Maroc | SmartFilms Prod',
-                'seo_description' => 'Images aériennes spectaculaires par drone et FPV à Casablanca et au Maroc. Télépilotes certifiés, conformité réglementaire et qualité cinéma.',
-                'h1' => 'PRISES DE VUES AÉRIENNES & DRONE FPV',
-                'hero_desc' => 'Prenez de la hauteur avec des perspectives aériennes spectaculaires. Drones cinéma stabilisés et drones FPV de précision pour valoriser vos sites industriels et projets d\'envergure.',
-                'image' => '/uploads/studio_commercial_spot.png',
+                'title' => 'Shooting Photo Corporate',
+                'slug' => 'shooting-photo-corporate',
+                'subtitle' => "Capturer l'humain et l'excellence industrielle",
+                'seo_title' => 'Shooting Photo Corporate & Industriel Casablanca | SmartFilms Maroc',
+                'seo_description' => "Photographe d'entreprise à Casablanca : portraits de dirigeants, reportages industriels et packshots produits.",
+                'h1' => 'SHOOTING PHOTO CORPORATE & INDUSTRIEL',
+                'hero_desc' => "Portraits de dirigeants, reportages industriels, packshots produits et banques d'images sur mesure à Casablanca et au Maroc.",
+                'image' => '/uploads/expertise_04_corporate.jpg',
                 'deliverables' => [
-                    'Plans aériens cinématiques 4K/6K Prores & RAW',
-                    'Plans séquences FPV immersifs intérieur/extérieur',
-                    'Survols d\'infrastructures et d\'aménagements',
-                    'Intégration directe dans vos films de marque'
+                    'Portraits corporate HD dirigeants & équipes',
+                    'Reportage in situ ateliers et chantiers',
+                    'Packshots produits haute résolution',
+                    "Banque d'images exclusive et droits d'exploitation"
                 ],
                 'equipment' => [
-                    'Drones cinéma professionnels haute définition',
-                    'Drones FPV agiles pour plans dynamiques',
-                    'Systèmes de double commande pilote / cadreur',
-                    'Capteurs stabilisés sur 3 axes'
+                    'Boîtiers plein format haute résolution (60MP+)',
+                    'Flashes studio autonomes Profoto',
+                    'Optiques portraits & macro de précision'
                 ],
-                'category_filter' => 'Drone',
+                'category_filter' => 'Photographie',
                 'faq' => [
                     [
-                        'q' => 'Les vols par drone sont-ils conformes à la réglementation au Maroc ?',
-                        'a' => 'Oui. Nos vols sont encadrés par des télépilotes qualifiés avec l\'ensemble des autorisations administratives et protocoles de sécurité requis pour chaque mission.'
-                    ],
-                    [
-                        'q' => 'Quelle est la différence entre un drone classique et un drone FPV ?',
-                        'a' => 'Le drone classique offre des plans larges et stables à haute altitude. Le drone FPV (First Person View) permet des trajectoires dynamiques, des passages étroits en intérieur et des sensations de vitesse uniques.'
+                        'q' => 'Où se déroulent les shootings photos ?',
+                        'a' => 'Nous nous déplaçons directement dans vos locaux avec notre studio mobile (fonds, éclairages pro) ou en extérieur/sites de production.'
                     ]
                 ],
                 'order' => 4,
                 'is_active' => true,
-            ]
+            ],
+            [
+                'title' => 'Publicité & Campagnes',
+                'slug' => 'publicite-campagnes',
+                'subtitle' => 'Des concepts percutants pour faire rayonner vos marques',
+                'seo_title' => 'Campagnes Publicitaires & Brand Films | SmartFilms Maroc',
+                'seo_description' => 'Création et réalisation de campagnes publicitaires percutantes pour la télévision, le cinéma et le digital.',
+                'h1' => 'PUBLICITÉ & GRANDES CAMPAGNES',
+                'hero_desc' => 'Des campagnes créatives et percutantes pour faire rayonner vos marques et atteindre vos objectifs.',
+                'image' => '/uploads/expertise_05_advertising.jpg',
+                'deliverables' => [
+                    'Spots TV broadcast masters (15s, 30s, 60s)',
+                    'Déclinaisons digitales ads (YouTube, Meta, TikTok)',
+                    'Bandes-son originales et mixage 5.1',
+                    'Étalonnage couleur HDR DaVinci Resolve'
+                ],
+                'equipment' => [
+                    'Caméras Cinéma haute vitesse slow-motion',
+                    'Machinerie travelling, gimbal et grue',
+                    'Éclairages cinéma grande puissance'
+                ],
+                'category_filter' => 'Publicité',
+                'faq' => [
+                    [
+                        'q' => 'Gérez-vous le casting et les décors ?',
+                        'a' => "Oui, nous prenons en charge l'ensemble de la pré-production : direction de casting, repérage des lieux, stylisme et autorisations de tournage."
+                    ]
+                ],
+                'order' => 5,
+                'is_active' => true,
+            ],
+            [
+                'title' => 'Événement & Live',
+                'slug' => 'evenement-live',
+                'subtitle' => 'Donner une autre dimension à vos événements',
+                'seo_title' => 'Captation Événementielle & Aftermovie 4K | SmartFilms Maroc',
+                'seo_description' => 'Captation multi-caméras, aftermovies percutants et streaming live pour vos conventions, séminaires et galas.',
+                'h1' => 'ÉVÉNEMENTIEL, AFTERMOVIES & LIVE',
+                'hero_desc' => 'Captation, diffusion, régie multi-caméras... Nous donnons une autre dimension à vos événements.',
+                'image' => '/uploads/expertise_06_events.jpg',
+                'deliverables' => [
+                    'Aftermovie dynamique 4K (2 à 4 minutes)',
+                    'Teaser Same-Day pour diffusion le soir même',
+                    'Captation intégrale des keynotes & conférences',
+                    'Photos professionnelles en temps réel'
+                ],
+                'equipment' => [
+                    'Régie multi-caméras sans fil HF',
+                    'Drones certifiés pour captation extérieure',
+                    'Prise de son numérique multi-pistes'
+                ],
+                'category_filter' => 'Événementiel',
+                'faq' => [
+                    [
+                        'q' => "Pouvez-vous livrer un teaser pendant l'événement ?",
+                        'a' => "Oui, notre équipe de montage sur place peut monter et étalonner un teaser dès la fin de la matinée ou de la journée pour vos réseaux sociaux."
+                    ]
+                ],
+                'order' => 6,
+                'is_active' => true,
+            ],
         ];
 
         \App\Models\Expertise::truncate();
@@ -551,5 +474,3 @@ class DatabaseSeeder extends Seeder
         }
     }
 }
-
-
