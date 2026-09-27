@@ -215,8 +215,8 @@
                             <img src="{{ $relThumb }}" alt="{{ $proj->title }} — Réalisation {{ $expertise['title'] }} SmartFilms Prod Casablanca" loading="lazy" decoding="async" width="600" height="338" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                            <button onclick="openVideoModal('{{ $proj->video_url }}', '{{ $proj->title }} &bull; {{ $proj->client_name }}')" class="w-14 h-14 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-lg shadow-2xl hover:scale-110 transition-transform" aria-label="Visionner le film {{ $proj->title }}">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity bg-black/40">
+                            <button onclick="openVideoModal('{{ $proj->video_url }}', '{{ $proj->title }} &bull; {{ $proj->client_name }}')" class="w-14 h-14 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-lg shadow-2xl hover:scale-110 active:scale-95 transition-transform" aria-label="Visionner le film {{ $proj->title }}">
                                 <i class="bi bi-play-fill ml-0.5" aria-hidden="true"></i>
                             </button>
                         </div>

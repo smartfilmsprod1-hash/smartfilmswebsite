@@ -148,7 +148,7 @@
                             </div>
 
                             <!-- Center Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#2D2658]/40 backdrop-blur-[2px]">
+                            <div class="absolute inset-0 flex items-center justify-center z-10 opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 bg-[#2D2658]/30 sm:bg-[#2D2658]/40 backdrop-blur-[2px]">
                                 <button 
                                   onclick="openVideoModal('{{ $project->video_url }}', '{{ addslashes($project->title) }} • {{ addslashes($project->client_name) }}')"
                                   class="w-14 h-14 rounded-full bg-[#FF5A68] hover:bg-[#E84554] text-white flex items-center justify-center text-lg shadow-[0_0_25px_rgba(255,90,104,0.6)] transform transition-transform duration-300 hover:scale-105 focus:outline-none"

@@ -91,18 +91,62 @@
 
     <!-- 2. Master Film Player Section -->
     <section id="masterPlayerContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20" aria-label="Lecteur vidéo immersif du projet {{ $project->title }}">
-        <div class="aspect-video w-full rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl relative group">
+        <div id="masterVideoBox" class="aspect-video w-full rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl relative group">
             @if($project->video_url)
                 @php
-                    $embedUrl = $project->video_url;
-                    if(str_contains($embedUrl, 'youtube.com/watch?v=')) {
-                        $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
-                    } elseif(str_contains($embedUrl, 'youtu.be/')) {
-                        $embedUrl = str_replace('youtu.be/', 'www.youtube.com/embed/', $embedUrl);
+                    $rawVideoUrl = $project->video_url;
+                    $embedUrl = $rawVideoUrl;
+                    $isGoogleDrive = false;
+                    if($embedUrl) {
+                        if(str_contains($embedUrl, 'youtube.com/watch?v=')) {
+                            $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
+                        } elseif(str_contains($embedUrl, 'youtu.be/')) {
+                            $embedUrl = str_replace('youtu.be/', 'www.youtube.com/embed/', $embedUrl);
+                        } elseif(str_contains($embedUrl, 'drive.google.com/file/d/')) {
+                            $isGoogleDrive = true;
+                            $embedUrl = preg_replace('/\/view(\?.*)?$/', '/preview', $embedUrl);
+                            if(!str_contains($embedUrl, '/preview')) {
+                                $embedUrl = rtrim($embedUrl, '/') . '/preview';
+                            }
+                        }
                     }
                 @endphp
-                <iframe id="mainProjectIframe" class="w-full h-full border-0" src="{{ $embedUrl }}" title="Lecteur vidéo du film {{ $project->title }} - SmartFilms Prod Casablanca" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                <div id="mainProjectShield" class="hidden absolute top-0 left-0 right-0 h-14 bg-black/90 pointer-events-auto z-10"></div>
+                <iframe id="mainProjectIframe" 
+                        class="{{ $isGoogleDrive ? 'absolute -top-[56px] left-0 w-full h-[calc(100%+56px)] border-0' : 'w-full h-full border-0' }}" 
+                        src="{{ $embedUrl }}" 
+                        title="Lecteur vidéo du film {{ $project->title }} - SmartFilms Prod Casablanca" 
+                        allow="autoplay; fullscreen" 
+                        allowfullscreen
+                        {{ $isGoogleDrive ? 'sandbox=allow-scripts allow-same-origin allow-presentation allow-forms' : '' }}>
+                </iframe>
+
+                <!-- Top Safety Shield (Always active for Google Drive to block clicks on top toolbar) -->
+                <div id="mainProjectShield" class="{{ $isGoogleDrive ? '' : 'hidden' }} absolute top-0 left-0 right-0 h-14 bg-black/95 pointer-events-auto z-10 flex items-center justify-between px-4 sm:px-6">
+                    <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#FF4D42] font-bold flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#FF4D42] animate-pulse"></span>
+                        SmartFilms Master 4K
+                    </span>
+                    <button type="button" 
+                            onclick="launchMasterFullscreen()" 
+                            class="text-xs font-mono font-bold text-white/90 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-[#FF4D42] transition-colors"
+                            aria-label="Visionner en plein écran">
+                        <i class="bi bi-arrows-fullscreen" aria-hidden="true"></i>
+                        <span class="hidden sm:inline">Plein Écran</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Tap Overlay: "une fois tu click ytl3 plein ecran" -->
+                <div id="mobileFullscreenTrigger" 
+                     class="sm:hidden absolute inset-0 z-20 cursor-pointer bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col items-center justify-center p-4 transition-all"
+                     onclick="launchMasterFullscreen()">
+                    <div class="w-16 h-16 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-2xl shadow-[0_0_30px_rgba(255,77,66,0.7)] animate-pulse mb-3">
+                        <i class="bi bi-play-fill ml-1" aria-hidden="true"></i>
+                    </div>
+                    <span class="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-white text-xs font-mono font-bold uppercase tracking-wider border border-white/20 flex items-center gap-2 shadow-2xl">
+                        <i class="bi bi-arrows-fullscreen text-[#FF4D42]" aria-hidden="true"></i>
+                        Visionner en Plein Écran
+                    </span>
+                </div>
             @else
                 @php
                     $mediaThumb = $project->thumbnail ?? '/uploads/cinema_corporate_film.png';
@@ -188,7 +232,7 @@
                             <div>
                                 <!-- Card Media Box with Play Overlay -->
                                 <div class="relative aspect-video rounded-2xl overflow-hidden bg-black mb-5 group/box cursor-pointer"
-                                     onclick="switchProjectVideo('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}'); document.getElementById('masterPlayerContainer').scrollIntoView({ behavior: 'smooth' });">
+                                     onclick="handleCapsuleClick('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}', this);">
                                     
                                     @php
                                         $galThumb = asset($item['thumbnail']);
@@ -234,10 +278,10 @@
                             <div class="pt-4 border-t border-white/10 flex items-center justify-between">
                                 <span class="text-xs font-mono text-slate-500 uppercase">Capsule {{ sprintf('%02d', $idx + 1) }}</span>
                                 <button type="button" 
-                                        onclick="switchProjectVideo('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}'); document.getElementById('masterPlayerContainer').scrollIntoView({ behavior: 'smooth' });"
+                                        onclick="handleCapsuleClick('{{ $item['video_url'] }}', '{{ addslashes($item['title'] ?? '') }}', this);"
                                         class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#FF4D42] text-white text-xs font-mono font-bold transition-all"
-                                        aria-label="Visionner {{ $item['title'] }} dans le lecteur vidéo">
-                                    <span>Visionner dans le lecteur</span>
+                                        aria-label="Visionner {{ $item['title'] }} en plein écran">
+                                    <span>Visionner le film</span>
                                     <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -250,9 +294,27 @@
 
     @push('scripts')
     <script>
+        function launchMasterFullscreen() {
+            const iframe = document.getElementById('mainProjectIframe');
+            const currentUrl = iframe ? iframe.src : '{{ $project->video_url }}';
+            const title = '{{ addslashes($project->title) }} • SmartFilms Prod';
+            openVideoModal(currentUrl, title);
+        }
+
+        function handleCapsuleClick(url, title, el) {
+            if (window.innerWidth < 768) {
+                openVideoModal(url, title);
+            } else {
+                switchProjectVideo(url, title, el);
+                const container = document.getElementById('masterPlayerContainer');
+                if (container) container.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         function switchProjectVideo(url, title, tabBtn) {
             const iframe = document.getElementById('mainProjectIframe');
             const shield = document.getElementById('mainProjectShield');
+            const mobileTrigger = document.getElementById('mobileFullscreenTrigger');
             if (!iframe) return;
 
             let embedUrl = url;
@@ -271,7 +333,8 @@
 
             if (isGoogleDrive) {
                 iframe.className = "absolute -top-[56px] left-0 w-full h-[calc(100%+56px)] border-0";
-                iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-presentation");
+                // Strictest sandbox without allow-popups
+                iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-presentation allow-forms");
                 if (shield) shield.classList.remove('hidden');
             } else {
                 iframe.className = "w-full h-full border-0";
@@ -280,6 +343,11 @@
             }
 
             iframe.src = embedUrl;
+
+            // Hide mobile trigger if desktop switches video
+            if (mobileTrigger && window.innerWidth >= 768) {
+                mobileTrigger.classList.add('hidden');
+            }
 
             // Highlight corresponding button
             const allTabs = document.querySelectorAll('.project-capsule-tab');

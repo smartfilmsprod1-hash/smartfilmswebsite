@@ -69,22 +69,25 @@
 
                             <div class="absolute inset-0 bg-gradient-to-t from-[#080914] via-[#080914]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
-                            <!-- Play Overlay Badge -->
-                            <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-                                <div class="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border border-white/30 text-white flex items-center justify-center transform scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 shadow-2xl group-hover:bg-[#FF4D42] group-hover:border-transparent">
-                                    <i class="bi bi-play-fill text-2xl ml-1"></i>
-                                </div>
+                            <!-- Center Play Action (Instant Fullscreen Player on Click) -->
+                            <div class="absolute inset-0 flex items-center justify-center z-20">
+                                <button type="button" 
+                                        onclick="event.preventDefault(); event.stopPropagation(); openVideoModal('{{ $project->video_url }}', '{{ addslashes($project->title) }} • {{ addslashes($project->client_name ?? 'SmartFilms Prod') }}');"
+                                        class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FF4D42] text-white flex items-center justify-center text-2xl sm:text-3xl shadow-[0_0_35px_rgba(255,77,66,0.65)] hover:scale-110 active:scale-95 transition-all duration-300 opacity-95 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer pointer-events-auto focus:outline-none"
+                                        aria-label="Visionner en plein écran : {{ $project->title }}">
+                                    <i class="bi bi-play-fill ml-0.5" aria-hidden="true"></i>
+                                </button>
                             </div>
 
                             <!-- Category Badge -->
-                            <div class="absolute top-6 left-6">
+                            <div class="absolute top-6 left-6 z-10">
                                 <span class="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[10px] uppercase font-bold tracking-widest text-[#B8BDE0]">
                                     {{ $project->category ?? 'Film de Marque' }}
                                 </span>
                             </div>
 
                             <!-- Year / Specs Badge -->
-                            <div class="absolute top-6 right-6">
+                            <div class="absolute top-6 right-6 z-10">
                                 <span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/80">
                                     {{ $project->year ?? '2026' }}
                                 </span>
@@ -102,7 +105,7 @@
                                 </h3>
                             </div>
                             <span class="text-xs font-bold uppercase tracking-widest text-[#B8BDE0] group-hover:text-white group-hover:translate-x-1 transition-all flex items-center gap-1.5 self-start sm:self-auto">
-                                <span>Voir le film</span>
+                                <span>Étude de cas</span>
                                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </span>
                         </div>

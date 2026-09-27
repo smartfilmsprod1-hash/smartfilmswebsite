@@ -561,17 +561,37 @@
     <!-- Shared Studio Footer -->
     @include('components.footer')
 
-    <!-- 4K Cinema Video Lightbox Modal -->
-    <div id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalVideoTitle" class="fixed inset-0 z-50 bg-[#2D2658]/95 backdrop-blur-xl hidden flex items-center justify-center p-4 transition-opacity duration-300">
-        <div class="relative w-full max-w-5xl bg-[#2D2658] rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
-            <div class="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-[#252238]">
-                <h2 id="modalVideoTitle" class="font-bold text-xs uppercase tracking-widest text-white/90 font-mono">SmartFilms Cinema Player</h2>
-                <button type="button" onclick="closeVideoModal()" aria-label="Fermer le lecteur vidéo" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#FF5A68] text-white flex items-center justify-center text-xs transition-colors">
-                    <i class="bi bi-x-lg" aria-hidden="true"></i>
-                </button>
+    <!-- 4K Cinema Video Lightbox Modal (True Mobile Fullscreen & Anti-Redirection Protected) -->
+    <div id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalVideoTitle" class="fixed inset-0 z-50 bg-black/95 sm:bg-[#080914]/95 backdrop-blur-2xl hidden flex items-center justify-center p-0 sm:p-6 transition-all duration-300">
+        <!-- Floating Close Button (Accessible & High Touch Target on Mobile) -->
+        <button type="button" onclick="closeVideoModal()" aria-label="Fermer le lecteur vidéo" class="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-[#FF4D42] text-white flex items-center justify-center text-lg sm:text-xl shadow-2xl border border-white/20 hover:scale-105 active:scale-95 transition-all focus:outline-none">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+
+        <div id="modalDialogBox" class="relative w-full h-full sm:h-auto sm:max-w-5xl bg-black rounded-none sm:rounded-3xl overflow-hidden border-0 sm:border sm:border-white/15 shadow-2xl flex flex-col justify-center">
+            <!-- Header on Desktop -->
+            <div class="hidden sm:flex justify-between items-center px-6 py-4 border-b border-white/10 bg-[#101229]">
+                <h2 id="modalVideoTitle" class="font-bold text-xs uppercase tracking-widest text-white/90 font-mono flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#FF4D42] animate-pulse"></span>
+                    SmartFilms Cinema Player
+                </h2>
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] text-white font-bold">4K MASTER</span>
+                </div>
             </div>
-            <div class="aspect-video w-full bg-black">
+
+            <!-- Video Player Aspect Container -->
+            <div id="modalPlayerAspect" class="relative aspect-video w-full bg-black overflow-hidden sm:rounded-b-3xl">
                 <iframe id="modalIframe" title="Lecteur vidéo immersif SmartFilms" class="w-full h-full border-0" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                
+                <!-- Google Drive Safety Shield (Covers top toolbar to prevent clicking pop-out) -->
+                <div id="modalDriveShield" class="hidden absolute top-0 left-0 right-0 h-14 bg-black/95 pointer-events-auto z-20 flex items-center justify-between px-6">
+                    <span class="text-[11px] font-mono uppercase tracking-widest text-[#FF4D42] font-bold flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#FF4D42] animate-pulse"></span>
+                        SmartFilms Cinema 4K
+                    </span>
+                    <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Lecture Haute Fidélité</span>
+                </div>
             </div>
         </div>
     </div>
@@ -591,34 +611,95 @@
         <script type="module" src="{{ asset('build/' . $jsFile) }}" defer></script>
     @endif
 
-    <!-- Lightweight Non-Blocking Video Lightbox Script -->
+    <!-- Lightweight Non-Blocking Video Lightbox Script with Mobile Fullscreen & Drive Protection -->
     <script>
         function openVideoModal(url, title) {
             const modal = document.getElementById('videoModal');
             const iframe = document.getElementById('modalIframe');
+            const shield = document.getElementById('modalDriveShield');
             const titleEl = document.getElementById('modalVideoTitle');
-            if (modal && iframe) {
+            if (!modal || !iframe) return;
+
+            if (titleEl) {
                 titleEl.innerText = title || 'SmartFilms Cinema Player';
-                let embedUrl = url;
-                if (url && url.includes('youtube.com/watch?v=')) {
-                    embedUrl = url.replace('watch?v=', 'embed/');
+            }
+
+            let embedUrl = url || '';
+            let isGoogleDrive = false;
+
+            if (embedUrl.includes('youtube.com/watch?v=') || embedUrl.includes('youtu.be/')) {
+                if (embedUrl.includes('youtube.com/watch?v=')) {
+                    embedUrl = embedUrl.replace('watch?v=', 'embed/');
+                } else {
+                    embedUrl = embedUrl.replace('youtu.be/', 'www.youtube.com/embed/');
                 }
-                if (embedUrl && !embedUrl.includes('autoplay=1')) {
+                if (!embedUrl.includes('autoplay=1')) {
                     embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
                 }
-                iframe.src = embedUrl || '';
-                modal.classList.remove('hidden');
+            } else if (embedUrl.includes('drive.google.com/file/d/')) {
+                isGoogleDrive = true;
+                // Force preview format
+                embedUrl = embedUrl.replace(/\/view(\?.*)?$/, '/preview');
+                if (!embedUrl.includes('/preview')) {
+                    embedUrl = embedUrl.replace(/\/?$/, '/preview');
+                }
+            }
+
+            if (isGoogleDrive) {
+                // Shift top 56px outside visible boundary to crop Google Drive header
+                iframe.className = "absolute -top-[56px] left-0 w-full h-[calc(100%+56px)] border-0";
+                // Sandbox without allow-popups prevents any new tab redirection
+                iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-presentation allow-forms");
+                if (shield) shield.classList.remove('hidden');
+            } else {
+                iframe.className = "w-full h-full border-0";
+                iframe.removeAttribute("sandbox");
+                if (shield) shield.classList.add('hidden');
+            }
+
+            iframe.src = embedUrl;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Attempt native fullscreen on mobile for true immersive view
+            if (window.innerWidth < 768) {
+                const target = modal;
+                if (target.requestFullscreen) {
+                    target.requestFullscreen().catch(() => {});
+                } else if (target.webkitRequestFullscreen) {
+                    target.webkitRequestFullscreen().catch(() => {});
+                }
             }
         }
 
         function closeVideoModal() {
             const modal = document.getElementById('videoModal');
             const iframe = document.getElementById('modalIframe');
+            const shield = document.getElementById('modalDriveShield');
             if (modal && iframe) {
                 iframe.src = '';
+                iframe.removeAttribute("sandbox");
+                if (shield) shield.classList.add('hidden');
                 modal.classList.add('hidden');
+                document.body.style.overflow = '';
+
+                if (document.fullscreenElement) {
+                    document.exitFullscreen().catch(() => {});
+                } else if (document.webkitFullscreenElement) {
+                    document.webkitExitFullscreen().catch(() => {});
+                }
             }
         }
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('videoModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeVideoModal();
+                }
+            }
+        });
     </script>
     @stack('scripts')
 </body>
